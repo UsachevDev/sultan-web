@@ -1,0 +1,70 @@
+[
+    {
+      "id": 0,
+      "barCode": 25896624085,
+      "productName": "aliqua nulla excepteur",
+      "brandName": "Aquazure",
+      "price": 387.49,
+      "manufacturer": "Prismatic"
+    },
+    {
+      "id": 1,
+      "barCode": 15154295058,
+      "productName": "eu proident ut",
+      "brandName": "Apexia",
+      "price": 125.53,
+      "manufacturer": "Inventure"
+    },
+    {
+      "id": 2,
+      "barCode": 10038069659,
+      "productName": "est sit laboris",
+      "brandName": "Dogspa",
+      "price": 869.18,
+      "manufacturer": "Sensate"
+    },
+    {
+      "id": 3,
+      "barCode": 22652956126,
+      "productName": "cupidatat proident fugiat",
+      "brandName": "Acrodance",
+      "price": 786.52,
+      "manufacturer": "Martgo"
+
+    },
+    {
+      "id": 4,
+      "barCode": 17720663897,
+      "productName": "irure pariatur nulla",
+      "brandName": "Daycore",
+      "price": 426.77,
+      "manufacturer": "Virva"
+
+    },
+    {
+      "id": 5,
+      "barCode": 16959869517,
+      "productName": "est ipsum veniam",
+      "brandName": "Geekosis",
+      "price": 188.35,
+      "manufacturer": "Dancity"
+
+    },
+    {
+      "id": 6,
+      "barCode": 80525533803,
+      "productName": "sit cupidatat consequat",
+      "brandName": "Pulze",
+      "price": 271.99,
+      "manufacturer": "Gynk"
+    },
+    {
+      "id": 7,
+      "barCode": 26680964822,
+      "productName": "tempor culpa sit",
+      "brandName": "Atomica",
+      "price": 480.48,
+      "manufacturer": "Telepark"
+
+    }
+  ]
