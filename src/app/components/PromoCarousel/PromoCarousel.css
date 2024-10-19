@@ -1,0 +1,130 @@
+.swiper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.swiper-slide {
+    color: white;
+    font-size: 14px;
+    background: linear-gradient(0deg, #B7BFCA 0%, #BDC7D0 65.9%, #BDC7D1 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.content{
+    position: relative;
+    margin-left: 110px;
+    width: 576px;
+}
+
+.promo-date{
+    line-height: 21px;
+}
+
+.promo-title{
+    margin-top: 10px;
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 77px;
+}
+
+.promo-title-span{
+    font-weight: 400;
+}
+
+.slider-image{
+    position: absolute;
+    margin-left: 374px;
+    max-width: 992px;
+    max-height: 500px;
+    z-index: -1;
+}
+
+.promo-description{
+    max-width: 496px;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 35px;
+}
+
+.promo-button{
+    font-family: var(--font-inter), sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    height: 90px;
+    width: 344px;
+    border-radius: 80px;
+    border: none;
+    margin-top: 50px;
+    color: white;
+    background: var(--button-color);
+}
+
+.swiper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Стиль для стрелок навигации
+Нужен фикс кнопок
+*/
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 68px;  
+    height: 68px; 
+    background-color: #fff; 
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--button-color);
+    z-index: 10;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #f0f0f0; /* Цвет фона при наведении */
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 16px; /* Увеличьте размер значков */
+}
+
+/* Установка позиции стрелок */
+.swiper-button-next {
+    right: -34px; /* Отступ от правого края */
+}
+
+.swiper-button-prev {
+    left: -34px; /* Отступ от левого края */
+}
+
+/* Стиль для пагинации */
+.swiper-pagination {
+    bottom: 10px; /* Расположение пагинации */
+}
+
+/* Стиль для обычных точек пагинации */
+.swiper-pagination-bullet {
+    background: var(--background-color); /* Цвет обычных точек */
+    width: 16px;
+    height: 7px;
+    border-radius: 10px;
+    opacity: 0.5; /* Прозрачность обычных точек */
+}
+
+/* Стиль для активной точки пагинации */
+.swiper-pagination-bullet-active {
+    background: white; /* Цвет активной точки */
+    opacity: 1; /* Полная непрозрачность активной точки */
+    width: 26px;
+    height: 7px;
+    border-radius: 10px;
+}

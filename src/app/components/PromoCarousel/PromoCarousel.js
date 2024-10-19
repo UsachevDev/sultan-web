@@ -1,54 +1,84 @@
 'use client'
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import './PromoCarousel.css';
+
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
 
 const PromoCarousel = () => {
     return (
-        <div>
-            <Carousel
-                showArrows={true}
-                showIndicators={true}
-                showStatus={false}
-                infiniteLoop={true}
-                autoPlay={true}
-                interval={3000}
-                stopOnHover={true}
-                showThumbs={false}
+        <>
+            <Swiper
+                slidesPerView={1}
+                spaceBetween={30}
+                loop={true}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                modules={[Pagination, Navigation]}
+                className="swiper"
             >
-                <div className="slider" style={{backgroundImage: 'url("/data/image/carousel-image.png")'}}>
-                    <div className="content">
-                        <p className="promoDate">*АКЦИЯ ДЕЙСТВУЕТ ДО 04/09/22</p>
-                        <h2 className="promoTitle">Название Акции</h2>
-                        <p className="promoDescription">Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк</p>
-                        <button className="promoButton">Принять участие</button>
+                <SwiperSlide>
+                    <div className="swiper-slide">
+                        <div className="content">
+                            <p className="promo-date">*АКЦИЯ ДЕЙСТВУЕТ ДО 04/09/22</p>
+                            <h2 className="promo-title">Название <span className="promo-title-span">Акции</span></h2>
+                            <p className="promo-description">Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк</p>
+                            <button className="promo-button">Принять участие</button>
+                        </div>
+                        <Image
+                            className="slider-image"
+                            src="/image/carousel-image.png"
+                            alt="Рекламное изображение"
+                            layout="fill"
+                            objectFit="contain"
+                        />
                     </div>
-                </div>
-                <div className="slider" style={{backgroundImage: 'url("/data/image/carousel-image.png")'}}>
-                    <div className="content">
-                        <p className="promoDate">*АКЦИЯ ДЕЙСТВУЕТ ДО 04/09/22</p>
-                        <h2 className="promoTitle">Название Акции</h2>
-                        <p className="promoDescription">Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк</p>
-                        <button className="promoButton">Принять участие</button>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="swiper-slide">
+                        <div className="content">
+                            <p className="promo-date">*АКЦИЯ ДЕЙСТВУЕТ ДО 04/09/22</p>
+                            <h2 className="promo-title">Название <span className="promo-title-span">Акции</span></h2>
+                            <p className="promo-description">Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк</p>
+                            <button className="promo-button">Принять участие</button>
+                        </div>
+                        <Image
+                            className="slider-image"
+                            src="/image/carousel-image.png"
+                            alt="Рекламное изображение"
+                            layout="fill"
+                            objectFit="contain"
+                        />
                     </div>
-                </div>
-                <div className="slider" style={{backgroundImage: 'url("/data/image/carousel-image.png")'}}>
-                    <div className="content">
-                        <p className="promoDate">*АКЦИЯ ДЕЙСТВУЕТ ДО 04/09/22</p>
-                        <h2 className="promoTitle">Название Акции</h2>
-                        <p className="promoDescription">Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк</p>
-                        <button className="promoButton">Принять участие</button>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="swiper-slide">
+                        <div className="content">
+                            <p className="promo-date">*АКЦИЯ ДЕЙСТВУЕТ ДО 04/09/22</p>
+                            <h2 className="promo-title">Название <span className="promo-title-span">Акции</span></h2>
+                            <p className="promo-description">Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк</p>
+                            <button className="promo-button">Принять участие</button>
+                        </div>
+                        <Image
+                            className="slider-image"
+                            src="/image/carousel-image.png"
+                            alt="Рекламное изображение"
+                            layout="fill"
+                            objectFit="contain"
+                        />
                     </div>
-                </div>
-                <div className="slider" style={{backgroundImage: 'url("/data/image/carousel-image.png")'}}>
-                    <div className="content">
-                        <p className="promoDate">*АКЦИЯ ДЕЙСТВУЕТ ДО 04/09/22</p>
-                        <h2 className="promoTitle">Название Акции</h2>
-                        <p className="promoDescription">Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк</p>
-                        <button className="promoButton">Принять участие</button>
-                    </div>
-                </div>
-            </Carousel>
-        </div>
+                </SwiperSlide>
+            </Swiper>
+        </>
     );
 };
 
