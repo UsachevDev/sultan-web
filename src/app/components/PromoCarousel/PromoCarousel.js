@@ -2,7 +2,7 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
-const NextJsCarousel = () => {
+const PromoCarousel = () => {
     return (
         <div>
             <Carousel
@@ -52,4 +52,4 @@ const NextJsCarousel = () => {
     );
 };
 
-export default NextJsCarousel;
+export default PromoCarousel;
