@@ -1,1 +1,6 @@
 @import 'reset-css';
+
+body {
+    max-width: 1368px;
+    margin: 0 auto;
+}
