@@ -1,12 +1,14 @@
 import styles from './searchBar.module.css';
+import { useTranslations } from 'next-intl';
 
-const SearchBar = ({ placeholderText = 'Поиск...', customStyles = {} }) => {
+const SearchBar = ({ customStyles = {}}) => {
+  const t = useTranslations('Header');
   return (
     <div className={styles["search-bar"]} style={customStyles}>
       <input 
         type="text" 
         className={styles["search-input"]} 
-        placeholder={placeholderText} 
+        placeholder={t('search')} 
       />
       <button className={styles["search-button"]}>
         <div className={styles["search-icon-circle"]}>
