@@ -6,72 +6,98 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 
 import './PromoCarousel.css';
 
 // import required modules
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+
+import { sliderData } from '../../../../public/data/sliderData';
+
+const promotionSlide = sliderData[0];
 
 const PromoCarousel = () => {
     return (
         <>
             <Swiper
                 slidesPerView={1}
-                spaceBetween={30}
+                spaceBetween={600}
                 loop={true}
                 pagination={{
                     clickable: true,
                 }}
                 navigation={true}
-                modules={[Pagination, Navigation]}
-                className="swiper"
+                autoplay={{
+                    delay: 10000,
+                    disableOnInteraction: false,
+                }}
+                modules={[Pagination, Navigation, Autoplay]}
+                className="promo-swiper"
             >
                 <SwiperSlide>
-                    <div className="swiper-slide">
-                        <div className="content">
-                            <p className="promo-date">*АКЦИЯ ДЕЙСТВУЕТ ДО 04/09/22</p>
-                            <h2 className="promo-title">Название <span className="promo-title-span">Акции</span></h2>
-                            <p className="promo-description">Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк</p>
-                            <button className="promo-button">Принять участие</button>
+                    <div className="promo-swiper-slide swiper-slide">
+                        <div className="promo-content">
+                            <p className="promo-date">{promotionSlide.promoDate}</p>
+                            <h2 className="promo-title">{promotionSlide.promoTitle} <span className="promo-title-span">{promotionSlide.promoTitleSpan}</span></h2>
+                            <p className="promo-description">{promotionSlide.promoDescriptor}</p>
+                            <button className="promo-button">{promotionSlide.promoButton}</button>
                         </div>
                         <Image
-                            className="slider-image"
-                            src="/image/carousel-image.png"
-                            alt="Рекламное изображение"
+                            className="promo-slider-image"
+                            src={promotionSlide.imageSrc}
+                            alt={promotionSlide.title}
                             layout="fill"
                             objectFit="contain"
                         />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="swiper-slide">
-                        <div className="content">
-                            <p className="promo-date">*АКЦИЯ ДЕЙСТВУЕТ ДО 04/09/22</p>
-                            <h2 className="promo-title">Название <span className="promo-title-span">Акции</span></h2>
-                            <p className="promo-description">Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк</p>
-                            <button className="promo-button">Принять участие</button>
+                    <div className="promo-swiper-slide swiper-slide">
+                        <div className="promo-content">
+                            <p className="promo-date">{promotionSlide.promoDate}</p>
+                            <h2 className="promo-title">{promotionSlide.promoTitle} <span className="promo-title-span">{promotionSlide.promoTitleSpan}</span></h2>
+                            <p className="promo-description">{promotionSlide.promoDescriptor}</p>
+                            <button className="promo-button">{promotionSlide.promoButton}</button>
                         </div>
                         <Image
-                            className="slider-image"
-                            src="/image/carousel-image.png"
-                            alt="Рекламное изображение"
+                            className="promo-slider-image"
+                            src={promotionSlide.imageSrc}
+                            alt={promotionSlide.title}
                             layout="fill"
                             objectFit="contain"
                         />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="swiper-slide">
-                        <div className="content">
-                            <p className="promo-date">*АКЦИЯ ДЕЙСТВУЕТ ДО 04/09/22</p>
-                            <h2 className="promo-title">Название <span className="promo-title-span">Акции</span></h2>
-                            <p className="promo-description">Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк</p>
-                            <button className="promo-button">Принять участие</button>
+                    <div className="promo-swiper-slide swiper-slide">
+                        <div className="promo-content">
+                            <p className="promo-date">{promotionSlide.promoDate}</p>
+                            <h2 className="promo-title">{promotionSlide.promoTitle} <span className="promo-title-span">{promotionSlide.promoTitleSpan}</span></h2>
+                            <p className="promo-description">{promotionSlide.promoDescriptor}</p>
+                            <button className="promo-button">{promotionSlide.promoButton}</button>
                         </div>
                         <Image
-                            className="slider-image"
-                            src="/image/carousel-image.png"
-                            alt="Рекламное изображение"
+                            className="promo-slider-image"
+                            src={promotionSlide.imageSrc}
+                            alt={promotionSlide.title}
+                            layout="fill"
+                            objectFit="contain"
+                        />
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="promo-swiper-slide swiper-slide">
+                        <div className="promo-content">
+                            <p className="promo-date">{promotionSlide.promoDate}</p>
+                            <h2 className="promo-title">{promotionSlide.promoTitle} <span className="promo-title-span">{promotionSlide.promoTitleSpan}</span></h2>
+                            <p className="promo-description">{promotionSlide.promoDescriptor}</p>
+                            <button className="promo-button">{promotionSlide.promoButton}</button>
+                        </div>
+                        <Image
+                            className="promo-slider-image"
+                            src={promotionSlide.imageSrc}
+                            alt={promotionSlide.title}
                             layout="fill"
                             objectFit="contain"
                         />
