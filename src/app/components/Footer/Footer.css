@@ -1,0 +1,13 @@
+.page-footer{
+    flex: 0 0 auto;
+    background-color: var(--background-color);
+}
+
+
+.footer-container{
+    max-width: 1368px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
