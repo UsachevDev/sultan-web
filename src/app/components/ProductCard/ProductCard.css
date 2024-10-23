@@ -1,0 +1,51 @@
+.product-card{
+    max-width: 326px;
+    min-width: 326px;
+    overflow: hidden;
+    background: #FFFFFF;
+    height: 490px;
+    border-radius: 10px;
+    box-shadow: 0px 14px 39px -11px #0000000F;
+    
+}
+
+.product-img{
+    text-align: center;
+    height: 240px;
+    padding: 4px;
+}
+
+.product{
+    margin: 0 auto;
+    width: 282px;
+    color: #000000;
+}
+
+.product-name{
+    line-height: 20.8px;
+}
+
+.product-desc{
+    margin-top: 21px;
+    line-height: 21px;
+}
+
+.product-desc > ul{
+    font-size: 14px;
+}
+
+.product-desc-name{
+    font-size: 14px;
+    font-weight: 300;
+    color: #3F4E65;
+}
+
+.product-footer{
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.product-tobasket
+{
+    margin-left: 40px;
+}
