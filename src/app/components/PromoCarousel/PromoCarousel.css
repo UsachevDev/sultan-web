@@ -1,17 +1,26 @@
+.promo-container{
+    overflow: hidden;
+}
+
 .promo-swiper {
+    position: relative;
     height: 500px;
     width: 100%;
     margin: 0 auto;
     overflow: visible;
 }
 
+
 .promo-swiper-slide {
+    max-width: 1368px;
+    margin: 0 auto;
     color: white;
     font-size: 14px;
     background: linear-gradient(0deg, #B7BFCA 0%, #BDC7D0 65.9%, #BDC7D1 100%);
     border-radius: 10px;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .promo-content {
@@ -67,7 +76,6 @@
 .swiper-button-prev {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     width: 68px;
     height: 68px;
     background-color: #fff;
@@ -90,11 +98,11 @@
 
 /* Установка позиции стрелок */
 .swiper-button-next {
-    right: -34px;
+    right: 0;
 }
 
 .swiper-button-prev {
-    left: -34px;
+    left: 0;
 }
 
 /* Стиль для пагинации */
@@ -121,6 +129,10 @@
 }
 
 @media (max-width:1440px) {
+    /* .promo-swiper-slide {
+        max-width: 95%;
+    } */
+
     .promo-slider-image {
         margin-top: auto;
         margin-left: 18%;
@@ -139,6 +151,7 @@
     .promo-content {
         margin-left: 68px;
     }
+
 }
 
 @media (max-width:1200px) {
@@ -237,8 +250,8 @@
 @media (max-width:768px) {
     .promo-slider-image {
         margin-left: 15%;
-        max-width: 90%;
-        max-height: 80%;
+        max-width: 100%;
+        max-height: 90%;
     }
 
     .promo-swiper {
@@ -311,7 +324,8 @@
 
 @media (max-width:540px) {
     .promo-slider-image {
-        max-height: 70%;
+        max-height: 80%;
+        max-width: 95%;
     }
 
     .promo-swiper {
@@ -356,9 +370,8 @@
     }
 
     .promo-slider-image {
-        margin-left: 14%;
-        max-width: 88%;
-        max-height: 62%;
+        max-width: 95%;
+        max-height: 70%;
     }
 
     .promo-description {

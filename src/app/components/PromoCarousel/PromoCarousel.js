@@ -19,10 +19,12 @@ const promotionSlide = sliderData[0];
 
 const PromoCarousel = () => {
     return (
-        <>
+        <div
+        className="promo-container"
+        >
             <Swiper
                 slidesPerView={1}
-                spaceBetween={600}
+                spaceBetween={50}
                 loop={true}
                 pagination={{
                     clickable: true,
@@ -104,7 +106,7 @@ const PromoCarousel = () => {
                     </div>
                 </SwiperSlide>
             </Swiper>
-        </>
+        </div>
     );
 };
 
