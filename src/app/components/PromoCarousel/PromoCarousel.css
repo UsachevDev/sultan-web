@@ -64,11 +64,21 @@
     line-height: 21px;
     height: 90px;
     width: 344px;
+    margin-top: 50px;
     border-radius: 80px;
     border: none;
-    margin-top: 50px;
+    background-color: var(--button-color);
     color: white;
-    background: var(--button-color);
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.promo-button:hover {
+    background-color: darken(var(--button-color), 10%);
+    border: 3px white solid;
 }
 
 /* Стиль для стрелок навигации*/

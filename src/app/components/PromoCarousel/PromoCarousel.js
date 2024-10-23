@@ -20,7 +20,7 @@ const promotionSlide = sliderData[0];
 const PromoCarousel = () => {
     return (
         <div
-        className="promo-container"
+            className="promo-container"
         >
             <Swiper
                 slidesPerView={1}
@@ -43,7 +43,9 @@ const PromoCarousel = () => {
                             <p className="promo-date">{promotionSlide.promoDate}</p>
                             <h2 className="promo-title">{promotionSlide.promoTitle} <span className="promo-title-span">{promotionSlide.promoTitleSpan}</span></h2>
                             <p className="promo-description">{promotionSlide.promoDescriptor}</p>
-                            <button className="promo-button">{promotionSlide.promoButton}</button>
+                            <button className="promo-button" onClick={() => console.log('Кнопка нажата!')}>
+                                {promotionSlide.promoButton}
+                            </button>
                         </div>
                         <Image
                             className="promo-slider-image"
