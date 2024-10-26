@@ -17,3 +17,9 @@ body {
     margin: 0 auto;
 	flex: 1 0 auto;
 }
+
+@media (max-width: 1440px) {
+    .content {
+        width: 95%;
+    }
+}
