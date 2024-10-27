@@ -1,17 +1,14 @@
+
+import Image from "next/image";
 import "./ToBasketButton.css"
 
 export function ToBasketButton() {  
-
-
     return (
-        <div> 
+        <> 
             <button className="btn-basket">
-                <div>
-                    <span>В КОРЗИНУ</span>
-                    <span className="icon-basket" />
-                </div>
-            </button>
-            
-        </div>
+                <span>В КОРЗИНУ</span>
+                <span><Image src={"/icon/basket-icon.svg"} width={27} height={27} alt="basket"/></span>
+            </button>          
+        </>
     );
-}
+};
