@@ -1,3 +1,9 @@
+.button-wrapper {
+  background: none;
+  border: none;
+  text-decoration: none;
+}
+
 .button {
     display: flex;
     flex-direction: row;
@@ -6,7 +12,7 @@
     width: 192px;
     height: 59px;
     gap: 12px;
-    background-color: #ffc85e;
+    background: #ffc85e;
     border-radius: 79px;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
@@ -14,11 +20,12 @@
     color: #ffffff;
     cursor: pointer;
     box-sizing: border-box;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s ease;
   }
   
   .button:hover {
     background-color: #ffbf45;
+
   }
   
   .button:active {

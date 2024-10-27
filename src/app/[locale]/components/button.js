@@ -2,20 +2,20 @@
 import {Link} from '@/i18n/routing';
 import styles from './button.module.css';
 
-const Button = ({ children, style = {}, icon = null, onClick = null, href = null }) => {
+const Button = ({ text, customStyle = {}, icon = null, onClick = null, href = null }) => {
   const content = (
-    <div className={styles.button} style={style}>
-      <span>{children}</span>
+    <div className={styles.button} style={customStyle}>
+      <span>{text}</span>
       {icon && <span className={styles['button-icon']}>{icon}</span>}
     </div>
   );
 
   return href ? (
-    <Link href={href} style={{textDecoration: 'none'}}>
+    <Link href={href} className={styles['button-wrapper']}>
       {content}
     </Link>
   ) : (
-    <button onClick={onClick} style={{textDecoration: 'none'}}>
+    <button onClick={onClick} className={styles['button-wrapper']}>
       {content}
     </button>
   );
