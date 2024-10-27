@@ -19,7 +19,7 @@ const Footer = () => {
                     />
                     <p className="company-info-description">
                         Компания «Султан» — снабжаем розничные магазины товарами
-                        &quot;под ключ&quot; в Кокшетау и Акмолинской области
+                        &quot;под ключ&quot; в Кокчетаве и Акмолинской области
                     </p>
                     <form action="#" method="post" className="subscribe-form">
                         <label className="subscribe-form-label" htmlFor="email">

@@ -32,7 +32,7 @@
 }
 
 .company-info-description {
-    max-width: 320px;
+    width: 320px;
     margin-top: 15px;
     font-size: 16px;
     line-height: 24px;
@@ -123,7 +123,7 @@
     transition: border 0.3s;
 }
 
-.price-list-button-icon{
+.price-list-button-icon {
     margin-left: 12px;
 }
 
@@ -157,7 +157,7 @@
     line-height: 18px;
 }
 
-.contacts-phone-container .order-call-ref{
+.contacts-phone-container .order-call-ref {
     font-size: 10px;
     line-height: 15px;
     text-decoration: underline;
@@ -182,4 +182,92 @@
     display: flex;
     gap: 5px;
     margin-top: 25px;
+}
+
+@media (max-width: 1440px) {
+    .footer-container {
+        margin: 40px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .footer-container {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 540px) {
+    .footer-container {
+        position: relative;
+        margin: 15px;
+    }
+
+    .company-logo {
+        width: 97px;
+        height: 41px;
+    }
+
+    .company-info-description {
+        width: 100%;
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 15px;
+    }
+
+    .contacts {
+        order: 1;
+    }
+
+    .price-list {
+        order: 2;
+        width: 160px;
+    }
+
+    .price-list h3 {
+        visibility: hidden;
+        height: 45px;
+        margin: 0;
+    }
+
+    .price-list-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 149px;
+        height: 40px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .price-list-button-icon {
+        width: 13px;
+        height: 13px;
+    }
+
+    .subscribe-form {
+        margin-top: 15px;
+    }
+
+    .email-input {
+        width: 100%;
+    }
+
+    .site-menu ul,
+    .categories ul {
+        a {
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+}
+
+
+@media (max-width:390px) {
+    .price-list {
+        width: 110px;
+    }
+
+    .footer-container {
+        gap: 15px;
+    }
 }
