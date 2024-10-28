@@ -1,8 +1,29 @@
-@import 'reset-css';
-@import './vars.css';
+@import "reset-css";
+@import "./vars.css";
 
 body {
     font-family: var(--font-inter), sans-serif;
-    max-width: 1440px;
+}
+
+html,
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-main {
+    width: 1432px;
     margin: 0 auto;
+    flex: 1 0 auto;
+}
+
+.page-main > * {
+    margin-bottom: 100px;
+}
+
+@media (max-width: 1440px) {
+    .content {
+        width: 95%;
+    }
 }

@@ -3,7 +3,7 @@ import "./globals.css";
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
-  weight: ['400', '800'],
+  weight: ['300','400', '600', '700', '800'],
   variable: '--font-inter',
 });
 
@@ -20,4 +20,4 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
-}
+};
