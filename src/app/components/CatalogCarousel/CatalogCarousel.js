@@ -1,4 +1,5 @@
 'use client'
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -6,28 +7,48 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import './CatalogCarousel.css';
 import { Pagination, Autoplay, FreeMode } from 'swiper/modules';
-import { sliderData } from '../../../../public/data/sliderData';
 
 const CatalogCarousel = () => {
-    const catalogSlide = sliderData[1];
+    const [mainSlider, setMainSlider] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch("/data/catalogData.json");
+                const data = await response.json();
+                setMainSlider(data.mainSlider);
+                setIsLoading(false);
+            } catch (error) {
+                console.error("Ошибка загрузки данных:", error);
+                setIsLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (isLoading) {
+        return <p>Загрузка...</p>;
+    }
 
     return (
-        <>
-            <Swiper
-                slidesPerView={1}
-                spaceBetween={10}
-                loop={false}
-                pagination={{
-                    clickable: true,
-                }}
-                autoplay={{
-                    delay: 10000,
-                    disableOnInteraction: false,
-                }}
-                modules={[Pagination, Autoplay]}
-                className="catalog-swiper"
-            >
-                <SwiperSlide>
+        <Swiper
+            slidesPerView={1}
+            spaceBetween={10}
+            loop={false}
+            pagination={{
+                clickable: true,
+            }}
+            autoplay={{
+                delay: 10000,
+                disableOnInteraction: false,
+            }}
+            modules={[Pagination, Autoplay]}
+            className="catalog-swiper"
+        >
+            {mainSlider.map((slideGroup, groupIndex) => (
+                <SwiperSlide key={groupIndex}>
                     <Swiper
                         slidesPerView="auto"
                         spaceBetween={10}
@@ -38,7 +59,7 @@ const CatalogCarousel = () => {
                         modules={[FreeMode]}
                         className="catalog-swiper-slide"
                     >
-                        {catalogSlide.map((image, imgIndex) => (
+                        {slideGroup.slides.map((image, imgIndex) => (
                             <SwiperSlide key={imgIndex} style={{ width: `${image.width}px` }}>
                                 <Image
                                     className="catalog-slider-image"
@@ -51,57 +72,8 @@ const CatalogCarousel = () => {
                         ))}
                     </Swiper>
                 </SwiperSlide>
-                <SwiperSlide>
-                    <Swiper
-                        slidesPerView="auto"
-                        spaceBetween={10}
-                        loop={false}
-                        freeMode={{
-                            enabled: true,
-                        }}
-
-                        modules={[FreeMode]}
-                        className="catalog-swiper-slide"
-                    >
-                        {catalogSlide.map((image, imgIndex) => (
-                            <SwiperSlide key={imgIndex} style={{ width: `${image.width}px` }}>
-                                <Image
-                                    className="catalog-slider-image"
-                                    src={image.imageSrc}
-                                    alt={image.title}
-                                    width={image.width}
-                                    height={image.height}
-                                />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Swiper
-                        slidesPerView="auto"
-                        spaceBetween={10}
-                        loop={false}
-                        freeMode={{
-                            enabled: true,
-                        }}
-                        modules={[FreeMode]}
-                        className="catalog-swiper-slide"
-                    >
-                        {catalogSlide.map((image, imgIndex) => (
-                            <SwiperSlide key={imgIndex} style={{ width: `${image.width}px` }}>
-                                <Image
-                                    className="catalog-slider-image"
-                                    src={image.imageSrc}
-                                    alt={image.title}
-                                    width={image.width}
-                                    height={image.height}
-                                />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </SwiperSlide>
-            </Swiper>
-        </>
+            ))}
+        </Swiper>
     );
 };
 
