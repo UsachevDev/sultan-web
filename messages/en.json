@@ -5,7 +5,6 @@
     "Header": {
         "address-1": "Kokchetav, 129B Zh. Tashenov street",
         "address-2": "(Vostochny Market)",
-        "email": "opt.sultan@mail.ru",
         "email-text": "Available at any time",
         "menu": {
             "1": "About Us",
@@ -18,6 +17,9 @@
         "workingHours": "working hours: 9:00 AM - 8:00 PM",
         "call": "Request a call",
         "search": "Search...",
-        "cart": "Cart"
+        "searchMobile": "Search",
+        "cart": "Cart",
+        "salesDep": "Sales Department",
+        "siteMenu": "Site menu:"
     }
   }

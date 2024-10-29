@@ -3,9 +3,8 @@
       "title": "Главная страница"
     },
     "Header": {
-        "address-1": "Kokchetav, 129B Zh. Tashenov street",
-        "address-2": "(Vostochny Market)",
-        "email": "opt.sultan@mail.ru",
+        "address-1": "г. Кокчетав, ул. Ж. Ташенова 129Б",
+        "address-2": "(Рынок Восточный)",
         "email-text": "На связи в любое время",
         "menu": {
             "1": "О компании",
@@ -18,6 +17,9 @@
         "workingHours": "время работы: 9:00-20:00",
         "call": "Заказать звонок",
         "search": "Поиск...",
-        "cart": "Корзина"
+        "searchMobile": "Поиск",
+        "cart": "Корзина",
+        "salesDep": "Отдел продаж",
+        "siteMenu": "Меню сайта:"
     }
   }
