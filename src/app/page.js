@@ -1,3 +1,4 @@
+import ContactMapSection from "./components/ContactMapSection/ContactMapSection";
 import Footer from "./components/Footer/Footer";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
                 <div>
                     <p>Просто еще один тестовый контент</p>
                     <p>Просто еще один тестовый контент</p>
+                    <ContactMapSection></ContactMapSection>
                 </div>
             </main>
             <Footer></Footer>
