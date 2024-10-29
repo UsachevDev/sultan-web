@@ -4,6 +4,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import Header from './components/header/header';
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
@@ -29,6 +30,7 @@ export default async function RootLayout({ children, params }) {
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
+          <Header/>
           {children}
         </NextIntlClientProvider>
       </body>
