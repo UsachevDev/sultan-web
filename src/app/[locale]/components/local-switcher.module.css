@@ -1,0 +1,23 @@
+.localeSwitcher {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .languageText {
+    display: none;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+    color: #3F4E65;
+  }
+  
+  @media (max-width: 768px) {
+    .languageText {
+      display: inline;
+    }
+  }
+  

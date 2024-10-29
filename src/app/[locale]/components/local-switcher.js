@@ -3,6 +3,7 @@ import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { useTransition } from 'react';
 import { useState } from 'react';
+import styles from './local-switcher.module.css';
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition();
@@ -59,12 +60,17 @@ export default function LocalSwitcher() {
 
   return (
     <button 
-    onClick={onButtonClick} 
-    onMouseEnter={() => setIsHovered(true)} 
-    onMouseLeave={() => setIsHovered(false)}
-    disabled={isPending} 
-    style={{ background: 'none', border: 'none', padding: 0 }}>
+      onClick={onButtonClick} 
+      onMouseEnter={() => setIsHovered(true)} 
+      onMouseLeave={() => setIsHovered(false)}
+      disabled={isPending} 
+      style={{ background: 'none', border: 'none', padding: 0 }}
+      className={styles.localeSwitcher}
+    >
       {getFlagSvg(currentLocale)}
+      <span className={styles.languageText}>
+        {currentLocale === 'ru' ? 'English' : 'Русский'}
+      </span>
     </button>
   );
 }
