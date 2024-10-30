@@ -1,3 +1,4 @@
+
 import {useTranslations} from 'next-intl';
 import Footer from './components/Footer/Footer';
 import FeaturedProducts from './components/FeaturedProducts/FeaturedProducts';
@@ -19,4 +20,3 @@ export default function Home() {
 
   );
 }
-
