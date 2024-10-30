@@ -18,12 +18,11 @@ export const metadata = {
 
 
 export default async function RootLayout({ children, params }) {
-  const { locale } = params;
+  const {locale} = params;
 
   if (!routing.locales.includes(locale)) {
     notFound();
   }
-
   const messages = await getMessages();
 
   return (
