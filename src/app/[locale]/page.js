@@ -1,6 +1,9 @@
 
 import {useTranslations} from 'next-intl';
+import Footer from './components/Footer/Footer';
 import FeaturedProducts from './components/FeaturedProducts/FeaturedProducts';
+import PromoCarousel from './components/PromoCarousel/PromoCarousel';
+import CatalogCarousel from './components/CatalogCarousel/CatalogCarousel';
 
 export default function Home() {
   const t = useTranslations('HomePage');
@@ -8,24 +11,11 @@ export default function Home() {
     <>
         <h1>{t('title')}</h1>
         <main className="page-main">
-                <p>Просто тестовый контент</p>
-                <div>
-                    <p>Просто еще один тестовый контент</p>
-                    <p>Просто еще один тестовый контент</p>
-                </div>
-                <p>Просто тестовый контент</p>
-                <div>
-                    <p>Просто еще один тестовый контент</p>
-                    <p>Просто еще один тестовый контент</p>
-                </div>
-                <p>Просто тестовый контент</p>
-                <div>
-                    <p>Просто еще один тестовый контент</p>
-                    <p>Просто еще один тестовый контент</p>
-                    <ContactMapSection></ContactMapSection>
-                </div>
-            </main>
-            <Footer></Footer>
+               <FeaturedProducts />
+               <PromoCarousel />
+               <CatalogCarousel />
+        </main>
+        <Footer></Footer>
     </>
 
   );
