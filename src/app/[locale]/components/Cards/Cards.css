@@ -1,7 +1,8 @@
 .cards{
     display: grid;
     grid-auto-flow: row;
-    justify-items: center;
+    justify-items: start;
+    justify-content: space-between;
     gap: 21px;
 }
 @media screen and (max-width: 672px) {
@@ -24,12 +25,6 @@
         grid-template-columns: repeat(4,auto);      
     }
 }
-@media screen and (min-width: 2100px) {
-    .cards{
-        grid-template-columns: repeat(5,auto);      
-    }
-}
-
 
 
 
