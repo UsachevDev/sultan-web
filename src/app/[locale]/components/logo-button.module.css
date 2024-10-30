@@ -1,0 +1,21 @@
+.logo-icon {
+    width: 156px;
+    height: 66px;
+}
+
+.logo-icon svg {
+    width: 156px;
+    height: 66px;
+}
+
+@media (max-width: 768px) {
+    .logo-icon {
+        width: 97px;
+        height: 41px;
+    }
+
+    .logo-icon svg {
+        width: 97px;
+        height: 41px;
+    }
+}
