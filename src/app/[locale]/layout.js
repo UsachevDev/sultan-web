@@ -7,7 +7,7 @@ import {routing} from '@/i18n/routing';
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
-  weight: ['400', '800'],
+  weight: ['300','400', '600', '700', '800'],
   variable: '--font-inter',
 });
 

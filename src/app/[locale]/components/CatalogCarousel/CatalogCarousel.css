@@ -1,0 +1,27 @@
+.catalog-swiper {
+    max-width: 1368px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.catalog-swiper-slide {
+    padding: 0 auto;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.catalog-swiper .swiper-wrapper {
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.catalog-swiper .swiper-pagination-bullet-active {
+    background: var(--button-color);
+}
+
+@media (max-width:1440px) {
+    .catalog-swiper{
+        width: 95%;
+    }
+}
