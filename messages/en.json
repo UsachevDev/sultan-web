@@ -21,5 +21,17 @@
         "cart": "Cart",
         "salesDep": "Sales Department",
         "siteMenu": "Site menu:"
+    },
+    "ToBasketButton":{
+        "text":"ADD TO CART"
+    },
+    "ProductCard":{
+        "brand": "Brand",
+        "barcode": "Barcode",
+        "manufacturer": "Manufacturer",
+        "productName": "en",
+        "popular": "POPULAR",
+        "type": "g",
+        "liquidType": "ml"
     }
   }

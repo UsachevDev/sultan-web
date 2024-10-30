@@ -21,5 +21,17 @@
         "cart": "Корзина",
         "salesDep": "Отдел продаж",
         "siteMenu": "Меню сайта:"
+    },
+    "ToBasketButton":{
+        "text":"В КОРЗИНУ"
+    },
+    "ProductCard":{
+        "brand": "Бренд",
+        "barcode": "Штрихкод",
+        "manufacturer": "Производитель",
+        "productName": "ru",
+        "popular": "ПОПУЛЯРНОЕ",
+        "type": "г",
+        "liquidType": "мл"
     }
   }
