@@ -1,10 +1,13 @@
-import ContactMapSection from "./components/ContactMapSection/ContactMapSection";
-import Footer from "./components/Footer/Footer";
+
+import {useTranslations} from 'next-intl';
+import FeaturedProducts from './components/FeaturedProducts/FeaturedProducts';
 
 export default function Home() {
-    return (
-        <>
-            <main className="page-main">
+  const t = useTranslations('HomePage');
+  return (
+    <>
+        <h1>{t('title')}</h1>
+        <main className="page-main">
                 <p>Просто тестовый контент</p>
                 <div>
                     <p>Просто еще один тестовый контент</p>
@@ -23,7 +26,7 @@ export default function Home() {
                 </div>
             </main>
             <Footer></Footer>
-        </>
-    );
-}
+    </>
 
+  );
+}
