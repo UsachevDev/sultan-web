@@ -48,7 +48,7 @@ function ShowSize({card: card, t:t})
     return <span className="product-size">{icon} {size} {type}</span>
 }
 
-export default async function ProductCard({card: el, info: filter}) {  
+export default function ProductCard({card: el, info: filter}) {  
     const t = useTranslations("ProductCard");
     
     return (
