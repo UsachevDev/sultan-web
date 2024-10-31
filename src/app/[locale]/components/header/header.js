@@ -12,7 +12,7 @@ import MobileButton from './mobileHeader/mobileButton';
 import { Link } from '@/i18n/routing';
 import MobileMenu from './mobileHeader/mobileMenu';
 import Image from 'next/image';
-import img from '../../../../../public/img.png';
+import img from '../../../../../public/image/header-image.png';
 
 const icon1 = (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
