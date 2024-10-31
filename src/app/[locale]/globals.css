@@ -19,15 +19,21 @@ body {
     margin: 0 auto; /* Центрирование */
     flex: 1 0 auto; /* Позволяет занимать оставшееся пространство */
     box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+    /* padding-top: 100px; */
 }
 
 .page-main > * {
+    margin-top: 170px;
     margin-bottom: 100px; /* Отступ между элементами внутри .page-main */
 }
 
 @media (max-width: 1440px) {
     .page-main {
         padding: 0 15px; /* Отступы для меньших экранов */
+    }
+
+    .page-main > * {
+        margin-top: 103px;
     }
 }
 
