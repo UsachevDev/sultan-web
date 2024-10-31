@@ -6,6 +6,7 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { useEffect, useState } from "react";
 
 
+
 const Cards = ({info: filter}) =>{
     const [isLoading, setIsLoading] = useState(true);
     const [cards, setCards] = useState(null);
@@ -45,25 +46,28 @@ const Cards = ({info: filter}) =>{
 
             {/* mobile */}
             <div className="cards-mobile">
-            <Swiper
+                <Swiper
+                className="cards-slider"
                 slidesPerView="auto"
-                spaceBetween={50}
-                loop={true}
-                pagination={{ clickable: true }}
-                navigation={true}
-                autoplay={{ delay: 10000, disableOnInteraction: false }}
-                modules={[Pagination, Navigation, Autoplay]}
+                loop={false}
+                pagination={{
+                    clickable: true,
+                }}
+                autoplay={{
+                    delay: 10000,
+                    disableOnInteraction: false,
+                }}
+                modules={[Pagination, Autoplay]}
             >
-                {cards.map((card) => (
-                    <SwiperSlide key={card.id}>
-                        <ProductCard 
-                        card={card} 
-                        info={filter}   
-                        key={card.id}                 
-                    /> 
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+                    {cards.map((card) => (
+                        <SwiperSlide key={card.id} style={{width: 326}}>
+                                <ProductCard 
+                                card={card} 
+                                info={filter} 
+                        />  
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </>
         
