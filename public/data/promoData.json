@@ -1,0 +1,31 @@
+{
+    "slides": [
+        {
+            "imageSrc": "/image/carousel-image.png",
+            "title": "Рекламное изображение",
+            "promoDate": "*АКЦИЯ ДЕЙСТВУЕТ ДО 14/12/24",
+            "promoTitle": "Название",
+            "promoTitleSpan": "Акции",
+            "promoDescriptor": "Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк",
+            "promoButton": "Принять участие"
+        },
+        {
+            "imageSrc": "/image/carousel-image.png",
+            "title": "Рекламное изображение",
+            "promoDate": "*АКЦИЯ ДЕЙСТВУЕТ ДО 04/12/24",
+            "promoTitle": "Название",
+            "promoTitleSpan": "Акции",
+            "promoDescriptor": "Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк",
+            "promoButton": "Принять участие"
+        },
+        {
+            "imageSrc": "/image/carousel-image.png",
+            "title": "Рекламное изображение",
+            "promoDate": "*АКЦИЯ ДЕЙСТВУЕТ ДО 08/11/24",
+            "promoTitle": "Название",
+            "promoTitleSpan": "Акции",
+            "promoDescriptor": "Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк",
+            "promoButton": "Принять участие"
+        }
+    ]
+}

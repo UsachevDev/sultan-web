@@ -1,25 +1,18 @@
 {
     "HomePage": {
-        "title": "Home page"
+      "title": "Home page",
+      "about": "Go to the about page"
     },
-    "Header": {
-        "address-1": "Kokchetav, 129B Zh. Tashenov street",
-        "address-2": "(Vostochny Market)",
-        "email-text": "Available at any time",
-        "menu": {
-            "1": "About Us",
-            "2": "Delivery and Payment",
-            "3": "Returns",
-            "4": "Contacts"
-        },
-        "button-1": "Catalog",
-        "button-2": "Price List",
-        "workingHours": "working hours: 9:00 AM - 8:00 PM",
-        "call": "Request a call",
-        "search": "Search...",
-        "searchMobile": "Search",
-        "cart": "Cart",
-        "salesDep": "Sales Department",
-        "siteMenu": "Site menu:"
+    "ToBasketButton":{
+        "text":"ADD TO CART"
+    },
+    "ProductCard":{
+        "brand": "Brand",
+        "barcode": "Barcode",
+        "manufacturer": "Manufacturer",
+        "productName": "en",
+        "popular": "POPULAR",
+        "type": "g",
+        "liquidType": "ml"
     }
   }

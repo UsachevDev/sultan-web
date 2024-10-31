@@ -1,0 +1,69 @@
+{
+    "companyInfo": {
+        "logo": "/image/logo.svg",
+        "logoAlt": "Логотип компании Султан",
+        "description": "Компания «Султан» — снабжаем розничные магазины товарами \"под ключ\" в Кокчетаве и Акмолинской области",
+        "subscribeLabel": "Подпишитесь на скидки и акции",
+        "subscribePlaceholder": "Введите ваш E-mail"
+    },
+    "siteMenu": {
+        "title": "Меню сайта:",
+        "items": [
+            {
+                "name": "О компании",
+                "link": "#"
+            },
+            {
+                "name": "Доставка и оплата",
+                "link": "#"
+            },
+            {
+                "name": "Возврат",
+                "link": "#"
+            },
+            {
+                "name": "Контакты",
+                "link": "#"
+            }
+        ]
+    },
+    "categories": {
+        "title": "Категории:",
+        "items": [
+            {
+                "name": "Бытовая химия",
+                "link": "#"
+            },
+            {
+                "name": "Косметика и гигиена",
+                "link": "#"
+            },
+            {
+                "name": "Товары для дома",
+                "link": "#"
+            },
+            {
+                "name": "Товары для детей и мам",
+                "link": "#"
+            },
+            {
+                "name": "Посуда",
+                "link": "#"
+            }
+        ]
+    },
+    "priceList": {
+        "title": "Скачать прайс-лист:",
+        "buttunLabel": "Прайс-лист",
+        "messengersLabel": "Связь в мессенджерах:"
+    },
+    "contacts": {
+        "title": "Контакты:",
+        "phone": "+7 (777) 490-00-91",
+        "workTime": "время работы: 9:00-20:00",
+        "email": "opt.sultan@mail.ru",
+        "orderCallRefLable": "Заказать звонок",
+        "orderCallRefHref": "#",
+        "contactsEmailContainerSpan":""
+    }
+}
