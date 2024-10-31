@@ -10,8 +10,8 @@
 }
 .featured-products{
     justify-content: center;
-    display: flex;
-
+    max-width: 1368px;
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 651px) {
