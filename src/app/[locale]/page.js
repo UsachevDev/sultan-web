@@ -4,12 +4,13 @@ import Footer from './components/Footer/Footer';
 import FeaturedProducts from './components/FeaturedProducts/FeaturedProducts';
 import PromoCarousel from './components/PromoCarousel/PromoCarousel';
 import CatalogCarousel from './components/CatalogCarousel/CatalogCarousel';
+import Header from './components/header/header';
 
 export default function Home() {
   const t = useTranslations('HomePage');
   return (
     <>
-        <h1>{t('title')}</h1>
+        <Header />
         <main className="page-main">
                <FeaturedProducts />
                <PromoCarousel />
