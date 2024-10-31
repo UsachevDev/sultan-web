@@ -3,7 +3,7 @@ import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { useTransition } from 'react';
 import { useState } from 'react';
-import styles from './local-switcher.module.css';
+import styles from './componentsStyles.module.css';
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition();

@@ -1,5 +1,5 @@
 import { Link } from '@/i18n/routing';
-import styles from './cart.module.css';
+import styles from './componentsStyles.module.css';
 import { useTranslations } from 'next-intl';
 
 const Cart = ({itemCount = 3, totalAmount = 0 }) => {
