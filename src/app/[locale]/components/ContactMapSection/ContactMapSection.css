@@ -134,3 +134,21 @@
 .map-image {
     z-index: -1;
 }
+
+@media (max-width:1440px) {
+    .contact-info-container {
+        
+    }
+}
+
+@media (max-width:1200px) {
+    .contact-info-container {
+        
+    }
+}
+
+@media (max-width:768px) {
+    .contact-info-container {
+        flex-direction: column;
+    }
+}
