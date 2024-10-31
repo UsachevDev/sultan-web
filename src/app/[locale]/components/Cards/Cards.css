@@ -1,0 +1,30 @@
+.cards{
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: start;
+    justify-content: space-between;
+    gap: 21px;
+}
+@media screen and (max-width: 672px) {
+    .cards{
+        grid-template-columns: repeat(1,auto);      
+    }
+}
+@media screen and (min-width: 673px) {
+    .cards{
+        grid-template-columns: repeat(2,auto);      
+    }
+}
+@media screen and (min-width: 1020px) {
+    .cards{
+        grid-template-columns: repeat(3,auto);      
+    }
+}
+@media screen and (min-width: 1367px) {
+    .cards{
+        grid-template-columns: repeat(4,auto);      
+    }
+}
+
+
+
