@@ -1,0 +1,38 @@
+{
+    "HomePage": {
+      "title": "Главная страница",
+      "about": "Go to the about page"
+    },
+    "ToBasketButton":{
+        "text":"В КОРЗИНУ"
+    },
+    "ProductCard":{
+        "brand": "Бренд",
+        "barcode": "Штрихкод",
+        "manufacturer": "Производитель",
+        "productName": "ru",
+        "popular": "ПОПУЛЯРНОЕ",
+        "type": "г",
+        "liquidType": "мл"
+    },
+    "Header": {
+        "address-1": "г. Кокчетав, ул. Ж. Ташенова 129Б",
+        "address-2": "(Рынок Восточный)",
+        "email-text": "На связи в любое время",
+        "menu": {
+            "1": "О компании",
+            "2": "Доставка и оплата",
+            "3": "Возврат",
+            "4": "Контакты"
+        },
+        "button-1": "Каталог",
+        "button-2": "Прайс-лист",
+        "workingHours": "время работы: 9:00-20:00",
+        "call": "Заказать звонок",
+        "search": "Поиск...",
+        "searchMobile": "Поиск",
+        "cart": "Корзина",
+        "salesDep": "Отдел продаж",
+        "siteMenu": "Меню сайта:"
+    }
+  }
