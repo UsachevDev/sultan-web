@@ -15,7 +15,11 @@ export default function Home() {
       <Banner />
       <main className='page-main'>
         <FeaturedProducts />
+        <PromoCarousel />
+        <CatalogCarousel />
+        <ContactMapSection />
       </main>
+      <Footer />
     </>
 
   );
