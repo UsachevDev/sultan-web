@@ -1,3 +1,8 @@
+.banner-footer-mobile
+{
+    display: none;
+}
+
 .banner {
     height: 790px;
     background-image: url("/image/banner.png");
@@ -63,12 +68,12 @@
                 letter-spacing: 0.15em;
                 text-decoration: none;
             }
-   
+
         }
 
-        .btn-to-products:hover{
+        .btn-to-products:hover {
             background-color: #e8b75b;
-   
+
         }
 
         .banner-footer {
@@ -80,23 +85,114 @@
                 border: 0;
                 background-color: var(--button-color);
                 margin-right: 8px;
-                color:#FFFFFF;
+                color: #FFFFFF;
             }
 
             span {
                 font-size: 14px;
                 margin-right: 35px;
-                font-weight: 300;
+                font-weight: 400;
                 line-height: 21px;
                 text-align: left;
 
             }
 
-            b{
+            b {
                 font-weight: 700;
+            }
+
+
+
+        }
+    }
+
+
+
+
+
+}
+
+@media (max-width: 1460px) {
+    .banner-content {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 675px) {
+
+    .btn-to-products,
+    #banner-footer-1 {
+        display: none;
+    }
+
+    .banner {
+        height: 300px;
+        padding-top: 50px;
+
+        .banner-blur {
+            display: none;
+        }
+
+        .banner-container {
+            width: 82%;
+            height: 40%;
+            padding-top: 50px;
+            display: flex;
+            background-color: #8A94AB;
+            background: linear-gradient(89.86deg, #8A94AB 0.13%, rgba(138, 148, 171, 0) 99.89%);
+            backdrop-filter: blur(4px);
+
+            .banner-content {
+                text-align: center;
+
+                h1 {
+                    font-size: 18px;
+                    word-spacing: 10px;
+
+                    line-height: 19.8px;
+                }
+
+                h2 {
+                    margin-top: 10px;
+                    font-size: 15px;
+                    line-height: 15px;
+                    font-weight: 500;
+                }
             }
         }
     }
+    .banner-footer-mobile > * {
+        margin-top: 15px;
+    }
+    .banner-footer-mobile {
+        padding-left: 15px;
+        display: block;
+        .btn-banner-plus {
+            border-radius: 100px;
+            border: 0;
+            background-color: var(--button-color);
+            margin-right: 5px;
+            color: #FFFFFF;
+            font-size: 10px;
+        }
+
+
+        span {
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 15px;
+            text-align: left;
+
+        }
+
+        b {
+            font-weight: 700;
+        }
+
+    }
+
+
+
 
 
 }
