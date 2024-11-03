@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+How to use git branches: https://gist.github.com/rdnvndr/201c3d21738d4526040597498169a1db
+
 ## Getting Started
 
 First, run the development server:

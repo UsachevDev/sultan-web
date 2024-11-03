@@ -5,22 +5,25 @@
     justify-content: space-between;
     gap: 21px;
 }
-@media screen and (max-width: 672px) {
+
+.cards-mobile{
+    display: none;
+}
+@media screen and (max-width: 1320px) {
     .cards{
-        grid-template-columns: repeat(1,auto);      
+        display: none;     
+    }
+
+    .cards-mobile{
+        display:block;
+        height: 490px;
+    }
+
+    .cards-mobile .swiper-pagination-bullet-active{
+        background: var(--button-color);
     }
 }
-@media screen and (min-width: 673px) {
-    .cards{
-        grid-template-columns: repeat(2,auto);      
-    }
-}
-@media screen and (min-width: 1020px) {
-    .cards{
-        grid-template-columns: repeat(3,auto);      
-    }
-}
-@media screen and (min-width: 1367px) {
+@media screen and (min-width: 1320px) {
     .cards{
         grid-template-columns: repeat(4,auto);      
     }

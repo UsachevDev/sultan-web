@@ -4,8 +4,9 @@ import CompanyInfo from "./CompanyInfo";
 import SiteMenu from "./SiteMenu";
 import Categories from "./Categories";
 import Contacts from "./Contacts";
-import "./Footer.css";
 import PriceList from "./PriceList";
+import "./Footer.css";
+
 
 const Footer = () => {
     const [data, setData] = useState(null);

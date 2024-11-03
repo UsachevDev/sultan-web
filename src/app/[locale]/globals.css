@@ -8,6 +8,7 @@ body {
 html,
 body {
     height: 100%;
+    flex-direction: column;
     margin: 0; /* Убираем отступы по умолчанию */
 }
 

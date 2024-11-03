@@ -3,7 +3,7 @@ import Image from "next/image";
 import "./ToBasketButton.css";
 import { useTranslations } from "next-intl";
 
-export async function ToBasketButton() {  
+export function ToBasketButton() {  
     const t = useTranslations("ToBasketButton");
 
     return (
