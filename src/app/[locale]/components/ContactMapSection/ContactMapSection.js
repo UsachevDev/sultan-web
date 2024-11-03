@@ -1,31 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+
 import Image from "next/image";
 import "./ContactMapSection.css";
 
 const ContactMapSection = () => {
-    // const [Data, setData] = useState(null);
-    // const [isLoading, setIsLoading] = useState(true);
 
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await fetch("/data/promoData.json");
-    //             const data = await response.json();
-    //             setData(data);
-    //             setIsLoading(false);
-    //         } catch (error) {
-    //             console.error("Ошибка загрузки данных промо:", error);
-    //             setIsLoading(false);
-    //         }
-    //     };
-
-    //     fetchData();
-    // }, []);
-
-    // if (isLoading) {
-    //     return <p>Загрузка...</p>;
-    // }
     return (
         <section className="contact-map-section">
             <Image

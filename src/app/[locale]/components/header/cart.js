@@ -1,6 +1,6 @@
 import { Link } from '@/i18n/routing';
-import styles from './componentsStyles.module.css';
 import { useTranslations } from 'next-intl';
+import styles from './componentsStyles.module.css';
 
 const Cart = ({itemCount = 3, totalAmount = 0 }) => {
     const t = useTranslations('Header');

@@ -1,5 +1,4 @@
-.banner-footer-mobile
-{
+.banner-footer-mobile {
     display: none;
 }
 
@@ -101,14 +100,8 @@
                 font-weight: 700;
             }
 
-
-
         }
     }
-
-
-
-
 
 }
 
@@ -161,12 +154,15 @@
             }
         }
     }
-    .banner-footer-mobile > * {
+
+    .banner-footer-mobile>* {
         margin-top: 15px;
     }
+
     .banner-footer-mobile {
         padding-left: 15px;
         display: block;
+
         .btn-banner-plus {
             border-radius: 100px;
             border: 0;
