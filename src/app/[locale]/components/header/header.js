@@ -1,5 +1,5 @@
 'use client';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
@@ -51,7 +51,19 @@ const Header = () => {
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
-  
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   return (
     <header className={styles.header}>
       <div className={styles.menuHeader}>
