@@ -1,10 +1,11 @@
-import styles from './mobileMenu.module.css';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import styles from './mobileMenu.module.css';
 import MobileButton from './mobileButton';
 import Button from '../button';
 import handleDownload from '../handleDownload';
 import LocalSwitcher from '../local-switcher';
+import NavMenu from '../navMenu';
 
 const icon = (
     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -72,21 +73,8 @@ const MobileMenu = ({ onClose }) => {
         <div className={styles.devider}></div>
 
         <div className={styles.menuText}>{t('siteMenu')}</div>
-
-        <nav className={styles.navMenu}>
-          <Link href="" className={styles.navMenuItem}>
-          {t("menu.1")}
-          </Link>
-          <Link href="" className={styles.navMenuItem}>
-          {t("menu.2")}
-          </Link>
-          <Link href="" className={styles.navMenuItem}>
-          {t("menu.3")}
-          </Link>
-          <Link href="" className={styles.navMenuItem}>
-          {t("menu.4")}
-          </Link>
-        </nav>
+        
+        <NavMenu />
 
         <div className={styles.button2}>
         <Button text={t('button-2')} 
