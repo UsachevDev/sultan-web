@@ -1,37 +1,13 @@
-"use client";
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import "./ContactMapSection.css";
 
 const ContactMapSection = () => {
-    // const [Data, setData] = useState(null);
-    // const [isLoading, setIsLoading] = useState(true);
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await fetch("/data/promoData.json");
-    //             const data = await response.json();
-    //             setData(data);
-    //             setIsLoading(false);
-    //         } catch (error) {
-    //             console.error("Ошибка загрузки данных промо:", error);
-    //             setIsLoading(false);
-    //         }
-    //     };
-
-    //     fetchData();
-    // }, []);
-
-    // if (isLoading) {
-    //     return <p>Загрузка...</p>;
-    // }
     return (
         <section className="contact-map-section">
             <Image
                 className="map-image"
                 src="/image/map-image.jpg"
-                alt="Visa"
+                alt="Map"
                 layout="fill"
                 objectFit="cover"
             />
@@ -49,14 +25,12 @@ const ContactMapSection = () => {
 
                     <div className="sales-department">
                         <h3>Отдел продаж:</h3>
-                        <p className="phone-number">+7 (777) 490-00-91</p>
-                        {/* <a className="phone-number" href={`tel:${phone}`}>
-                            {phone}
-                        </a> */}
-                        <p>opt.sultan@mail.ru</p>
-                        {/* <p>
-                            <a href={`mailto:${email}`}>{email}</a>
-                        </p> */}
+                        <a className="phone-number" href={`tel:+7 (777) 490-00-91`}>
+                            +7 (777) 490-00-91
+                        </a>
+                        <p>
+                            <a href={`mailto:opt.sultan@mail.ru`}>opt.sultan@mail.ru</a>
+                        </p>
                     </div>
 
                     <div className="tax-info">
