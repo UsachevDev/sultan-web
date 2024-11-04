@@ -38,19 +38,19 @@
 }
 
 .category-item {
-    text-align: center; // Центрирует текст и изображение
+    text-align: center;
 
     a {
-        text-decoration: none; // Убирает подчеркивание у ссылки
-        color: inherit; // Устанавливает цвет текста в соответствии с родительским элементом
+        text-decoration: none;
+        color: inherit;
     }
 }
 
-.category-image { 
+.category-image {
+    object-fit: cover;
     display: block;
-    width: 250px; // Устанавливаем фиксированную ширину
-    height: 250px; // Устанавливаем фиксированную высоту
-    object-fit: cover; // Изображение будет обрезано, чтобы заполнить контейнер
+    width: 250px;
+    height: 250px;
     border-radius: 25px;
 }
 
