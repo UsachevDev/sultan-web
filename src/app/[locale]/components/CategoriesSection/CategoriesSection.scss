@@ -63,12 +63,16 @@
     .categories-section{
         .categories-list {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); // 2 столбца
-            grid-template-rows: repeat(3, auto); // 3 строки
-            gap: 10px; // Отступ между элементами
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, auto);
+            gap: 10px;
 
             .category-item:last-child {
                 grid-column: span 2;
+
+                .category-image {
+                    object-fit: contain;
+                }
             }
         }
     }
