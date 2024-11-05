@@ -1,17 +1,18 @@
 'use client';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
+import Image from 'next/image';
+import styles from './header.module.css';
 import LocalSwitcher from './local-switcher';
 import LogoButton from './logo-button';
 import Button from './button';
 import SearchBar from './searchBar';
 import Cart from './cart';
-import styles from './header.module.css';
-import { useTranslations } from 'next-intl';
 import handleDownload from './handleDownload';
 import MobileButton from './mobileHeader/mobileButton';
-import { Link } from '@/i18n/routing';
 import MobileMenu from './mobileHeader/mobileMenu';
-import Image from 'next/image';
+import NavMenu from './navMenu';
 import img from '../../../../../public/image/header-image.png';
 
 const icon1 = (
@@ -50,11 +51,23 @@ const Header = () => {
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
-  
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   return (
     <header className={styles.header}>
       <div className={styles.menuHeader}>
-        {/* desktop  vesion*/}
+        {/* desktop  version*/}
         <div className={styles.locationBlockHeader}>
           <div className={styles.wrapper}>
               <div className={styles.locationBlock}>
@@ -67,7 +80,6 @@ const Header = () => {
                       <span>{t('address-2')}</span>
                   </div>
               </div>
-              <div className={styles.divider}></div>
               <div className={styles.emailBlock}>
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4.37508 3.33325H15.6251C16.3169 3.33321 16.9824 3.59788 17.4853 4.07298C17.9881 4.54808 18.2901 5.19758 18.3293 5.88825L18.3334 6.04158V13.9583C18.3335 14.65 18.0688 15.3156 17.5937 15.8184C17.1186 16.3213 16.4691 16.6233 15.7784 16.6624L15.6251 16.6666H4.37508C3.6833 16.6666 3.01772 16.402 2.51489 15.9269C2.01205 15.4518 1.71008 14.8023 1.67091 14.1116L1.66675 13.9583V6.04158C1.6667 5.3498 1.93138 4.68423 2.40647 4.18139C2.88157 3.67856 3.53108 3.37658 4.22175 3.33742L4.37508 3.33325H15.6251H4.37508ZM17.0834 7.81075L10.2917 11.3858C10.2151 11.4263 10.1308 11.4504 10.0443 11.4565C9.95776 11.4627 9.87091 11.4508 9.78925 11.4216L9.70925 11.3866L2.91675 7.81158V13.9583C2.91676 14.3242 3.05439 14.6768 3.30231 14.9461C3.55024 15.2153 3.89033 15.3815 4.25508 15.4116L4.37508 15.4166H15.6251C15.9912 15.4166 16.3439 15.2788 16.6132 15.0307C16.8824 14.7826 17.0485 14.4423 17.0784 14.0774L17.0834 13.9583V7.81075ZM15.6251 4.58325H4.37508C4.00909 4.58327 3.65648 4.72089 3.38726 4.96882C3.11803 5.21674 2.95186 5.55683 2.92175 5.92159L2.91675 6.04158V6.39908L10.0001 10.1266L17.0834 6.39825V6.04158C17.0834 5.67546 16.9456 5.32274 16.6975 5.0535C16.4494 4.78425 16.1091 4.61817 15.7442 4.58825L15.6251 4.58325Z" fill="#3F4E65"/>
@@ -81,28 +93,16 @@ const Header = () => {
           </div>
         </div>
         <div className={styles.navigationMenu}>
-          <nav className={styles.menu}>
-            <Link href="" className={styles.menuItem}>
-            {t("menu.1")}
-            </Link>
-            <div className={styles.divider}></div>
-            <Link href="" className={styles.menuItem}>
-            {t("menu.2")}
-            </Link>
-            <div className={styles.divider}></div>
-            <Link href="" className={styles.menuItem}>
-            {t("menu.3")}
-            </Link>
-            <div className={styles.divider}></div>
-            <Link href="" className={styles.menuItem}>
-            {t("menu.4")}
-            </Link>
-          </nav>
+          <NavMenu />
         </div>
         <div className={styles.localSwitcher}><LocalSwitcher /></div>
 
-        {/* mobile  vesion*/}
-        <div className={styles.mobileMenuButton}><MobileButton icon={icon3} iconClick={iconClick} onClick={toggleMenu} isClick={isMenuOpen}/></div>
+        {/* mobile  version*/}
+        <div className={styles.mobileMenuButton}>
+          <MobileButton icon={icon3} 
+          iconClick={iconClick} 
+          onClick={toggleMenu} 
+          isClick={isMenuOpen}/></div>
         <div className={styles.mobileLogo}><LogoButton /></div>
         <div className={styles.mobileCart}><Cart /></div>
       </div>
@@ -110,10 +110,18 @@ const Header = () => {
       <div className={styles.rectangle}></div>
 
       <div className={styles.headerMain}>
-         {/* desktop  vesion*/}
+         {/* desktop  and tablet version*/}
         <div className={styles.logo}><LogoButton /></div>
+        {/* desktop button 1 */}
         <div className={styles.button1}>
           <Button text={t('button-1')} icon={icon1} href="/catalog" />
+        </div>
+        {/* tablet button 1*/}
+        <div className={styles.tabletButton1}>
+          <MobileButton text={t('button-1')} 
+          icon={icon1} 
+          href="/catalog" 
+          customStyle={{width: '39px', height: '39px'}}/>
         </div>
         <div className={styles.searchBar}><SearchBar /></div>
         <div className={styles.contactCard}>
@@ -129,17 +137,24 @@ const Header = () => {
               <div className={styles.ellipse}></div>
           </div>
         </div>
-        <div className={styles.divider1}></div>
+        {/* desktop button 2 */}
         <div className={styles.button2}>
           <Button 
           text={t('button-2')} 
           icon={icon2}
           onClick={handleDownload}/>
         </div>
-        <div className={styles.divider2}></div>
+        {/* tablet button 2 */}
+        <div className={styles.tabletButton2}>
+          <MobileButton 
+          text={t('button-2')} 
+          icon={icon2}
+          onClick={handleDownload}
+          customStyle={{width: '39px', height: '39px'}}/>
+        </div>
         <div className={styles.cart}><Cart /></div>
 
-        {/* mobile  vesion*/}
+        {/* mobile  version*/}
         <Link href="/catalog" className={styles.mobileCatalog}>
           <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0.5 2C0.5 1.17157 1.17157 0.5 2 0.5H6C6.27614 0.5 6.5 0.723858 6.5 1V6C6.5 6.27614 6.27614 6.5 6 6.5H1C0.723858 6.5 0.5 6.27614 0.5 6V2Z" stroke="#3F4E65"/>
@@ -149,7 +164,7 @@ const Header = () => {
           </svg>
           <span className={styles.mobileCatalogText}>{t('button-1')}</span>
         </Link>
-        <div className={styles.mobileDevider1}></div>
+        <div className={styles.mobileDivider1}></div>
         <Link href="/" className={styles.mobileSearch}>
           <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M13.125 13.125L10.3212 10.3162L13.125 13.125ZM11.875 6.5625C11.875 7.97146 11.3153 9.32272 10.319 10.319C9.32272 11.3153 7.97146 11.875 6.5625 11.875C5.15354 11.875 3.80228 11.3153 2.806 10.319C1.80971 9.32272 1.25 7.97146 1.25 6.5625C1.25 5.15354 1.80971 3.80228 2.806 2.806C3.80228 1.80971 5.15354 1.25 6.5625 1.25C7.97146 1.25 9.32272 1.80971 10.319 2.806C11.3153 3.80228 11.875 5.15354 11.875 6.5625V6.5625Z" stroke="#3F4E65" strokeLinecap="round"/>

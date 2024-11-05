@@ -65,10 +65,10 @@ export default function LocalSwitcher() {
       onMouseLeave={() => setIsHovered(false)}
       disabled={isPending} 
       style={{ background: 'none', border: 'none', padding: 0 }}
-      className={styles.localeSwitcher}
+      className={styles['locale-switcher']}
     >
       {getFlagSvg(currentLocale)}
-      <span className={styles.languageText}>
+      <span className={styles['language-text']}>
         {currentLocale === 'ru' ? 'English' : 'Русский'}
       </span>
     </button>

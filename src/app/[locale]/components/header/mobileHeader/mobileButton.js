@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from '@/i18n/routing';
 import styles from './mobileButton.module.css';
 
-const MobileButton = ({ customStyle = {}, icon = null, iconClick = null, onClick = null, href = null, isClick = null}) => {
+const MobileButton = ({ customStyle = {}, icon = null, iconClick = null, onClick = null, href = null, isClick = null, text = null}) => {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = (event) => {
@@ -23,11 +23,11 @@ const MobileButton = ({ customStyle = {}, icon = null, iconClick = null, onClick
   );
 
   return href ? (
-    <Link href={href} className={styles.button} style={customStyle} onClick={handleClick}>
+    <Link href={href} className={styles.button} style={customStyle} onClick={handleClick} title={text}>
       {content}
     </Link>
   ) : (
-    <button className={styles.button} style={customStyle} onClick={handleClick}>
+    <button className={styles.button} style={customStyle} onClick={handleClick} title={text}>
       {content}
     </button>
   );
