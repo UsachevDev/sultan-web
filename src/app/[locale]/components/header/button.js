@@ -15,7 +15,7 @@ const Button = ({ text, customStyle = {}, icon = null, onClick = null, href = nu
       {content}
     </Link>
   ) : (
-    <button onClick={onClick} className={styles['button-wrapper']} title={text}>
+    <button onClick={onClick} className={styles['button-wrapper']}>
       {content}
     </button>
   );

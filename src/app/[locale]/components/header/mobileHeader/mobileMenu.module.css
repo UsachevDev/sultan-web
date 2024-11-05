@@ -12,14 +12,13 @@
   
   .mobileMenu {
     width: 100%;
-    width: auto;
     background-color: #ffff;
     overflow-y: auto;
     animation: slideDown 0.3s ease;
     padding: 20px 15px 32px 13px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 50px;
     box-sizing: border-box;
   }
 
@@ -28,6 +27,19 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+    position: relative;
+  }
+
+  .contactInformation::after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    margin-left: 2px;
+    width: calc(100% - 2px);
+    height: 0;
+    border: 1px dashed #3F4E65;
+    opacity: 0.2;
+    box-sizing: border-box
   }
 
   .locationBlock, .emailBlock {
@@ -96,7 +108,18 @@
     text-decoration: underline;
 }
 
-.devider {
+.menu {
+  height: auto;
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.menu::after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
   margin-left: 2px;
   width: calc(100% - 2px);
   height: 0;

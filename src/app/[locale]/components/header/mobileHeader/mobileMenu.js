@@ -70,21 +70,19 @@ const MobileMenu = ({ onClose }) => {
             </div>
         </div>
 
-        <div className={styles.devider}></div>
+        <div className={styles.menu}>
+          <div className={styles.menuText}>{t('siteMenu')}</div>
+          
+          <NavMenu />
 
-        <div className={styles.menuText}>{t('siteMenu')}</div>
-        
-        <NavMenu />
-
-        <div className={styles.button2}>
-        <Button text={t('button-2')} 
-        icon={icon2} 
-        customStyle={{width: '290px', height: '70px'}}
-        onClick={handleDownload}
-        />
+          <div className={styles.button2}>
+          <Button text={t('button-2')} 
+          icon={icon2} 
+          customStyle={{width: '290px', height: '70px'}}
+          onClick={handleDownload}
+          />
+          </div>
         </div>
-
-        <div className={styles.devider}></div>
 
         <LocalSwitcher/>
       

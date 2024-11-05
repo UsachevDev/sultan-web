@@ -279,11 +279,11 @@
 @media (min-width: 1440px) and (max-width: 1674px) {
   .menuHeader {
     padding-left: 3%;
-    padding-right: 1.5%;
+    padding-right: 1%;
   }
   .headerMain {
     padding-left: 3%;
-    padding-right: 5%;
+    padding-right: 5.5%;
   }
   .navigationMenu {
     margin-right: 30px;
@@ -306,7 +306,7 @@
   }
   .headerMain {
     padding-left: 3%;
-    padding-right: 4%;
+    padding-right: 5%;
   }
   .navigationMenu {
     margin-right: 10px;
