@@ -1,4 +1,4 @@
-.cards{
+.cards {
     display: grid;
     grid-auto-flow: row;
     justify-items: start;
@@ -6,28 +6,27 @@
     gap: 21px;
 }
 
-.cards-mobile{
+.cards-mobile {
     display: none;
 }
+
 @media screen and (max-width: 1320px) {
-    .cards{
-        display: none;     
+    .cards {
+        display: none;
     }
 
-    .cards-mobile{
-        display:block;
+    .cards-mobile {
+        display: block;
         height: 490px;
     }
 
-    .cards-mobile .swiper-pagination-bullet-active{
+    .cards-mobile .swiper-pagination-bullet-active {
         background: var(--button-color);
     }
 }
+
 @media screen and (min-width: 1320px) {
-    .cards{
-        grid-template-columns: repeat(4,auto);      
+    .cards {
+        grid-template-columns: repeat(4, auto);
     }
 }
-
-
-

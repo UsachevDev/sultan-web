@@ -1,5 +1,5 @@
 'use client';
-import {Link} from '@/i18n/routing';
+import { Link } from '@/i18n/routing';
 import styles from './componentsStyles.module.css';
 
 const Button = ({ text, customStyle = {}, icon = null, onClick = null, href = null }) => {

@@ -3,7 +3,7 @@
     border: none;
     width: 32px;
     height: 32px;
-    padding: 0; 
+    padding: 0;
     margin: 0;
 }
 
@@ -33,6 +33,6 @@
 }
 
 .iconClicked {
-    transform: rotate(180deg); 
+    transform: rotate(180deg);
     opacity: 0.8;
 }

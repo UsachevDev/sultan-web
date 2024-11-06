@@ -148,6 +148,7 @@
     .contact-map-section {
         padding: 10px;
     }
+
     .contact-info {
         width: 280px;
         max-height: 320px;
@@ -170,7 +171,7 @@
         font-size: 12px;
         line-height: 16px;
     }
-    
+
     .contact-info-container p {
         margin-bottom: 10px;
         font-size: 12px;
@@ -181,7 +182,7 @@
         font-size: 12px;
         line-height: 16px;
     }
-    
+
     .sales-department .phone-number,
     .tax-info p {
         line-height: 18px;
@@ -194,7 +195,7 @@
         gap: 10px;
     }
 
-    .contact-info-container > * {
+    .contact-info-container>* {
         padding: 0;
     }
 

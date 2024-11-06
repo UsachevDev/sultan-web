@@ -1,9 +1,10 @@
 "use client"
+
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
 import ProductCard from "../ProductCard/ProductCard";
 import "./Cards.css";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
-import { useEffect, useState } from "react";
 
 
 

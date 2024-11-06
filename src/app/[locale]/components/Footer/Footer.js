@@ -23,39 +23,39 @@ const Footer = () => {
     return (
         <footer className="page-footer">
             <div className="footer-container">
-                <CompanyInfo 
-                    logo={t("companyInfo.logo")} 
-                    logoAlt={t("companyInfo.logoAlt")} 
-                    description={t("companyInfo.description")} 
-                    subscribeLabel={t("companyInfo.subscribeLabel")} 
-                    subscribePlaceholder={t("companyInfo.subscribePlaceholder")} 
+                <CompanyInfo
+                    logo={t("companyInfo.logo")}
+                    logoAlt={t("companyInfo.logoAlt")}
+                    description={t("companyInfo.description")}
+                    subscribeLabel={t("companyInfo.subscribeLabel")}
+                    subscribePlaceholder={t("companyInfo.subscribePlaceholder")}
                 />
-                <SiteMenu 
-                    title={t("siteMenu.title")} 
+                <SiteMenu
+                    title={t("siteMenu.title")}
                     items={data.siteMenu.items.map(item => ({
-                        name: t(`siteMenu.items.${item.name}`), 
+                        name: t(`siteMenu.items.${item.name}`),
                         link: item.link
-                    }))} 
+                    }))}
                 />
-                <Categories 
-                    title={t("categories.title")} 
+                <Categories
+                    title={t("categories.title")}
                     items={data.categories.items.map(item => ({
-                        name: t(`categories.items.${item.name}`), 
+                        name: t(`categories.items.${item.name}`),
                         link: item.link
-                    }))} 
+                    }))}
                 />
-                <PriceList 
-                    title={t("priceList.title")} 
-                    buttonLabel={t("priceList.buttonLabel")} 
-                    messengersLabel={t("priceList.messengersLabel")} 
+                <PriceList
+                    title={t("priceList.title")}
+                    buttonLabel={t("priceList.buttonLabel")}
+                    messengersLabel={t("priceList.messengersLabel")}
                 />
-                <Contacts 
-                    title={t("contacts.title")} 
-                    phone={t("contacts.phone")} 
-                    workTime={t("contacts.workTime")} 
-                    email={t("contacts.email")} 
-                    orderCallRefLabel={t("contacts.orderCallRefLabel")} 
-                    orderCallRefHref={t("contacts.orderCallRefHref")} 
+                <Contacts
+                    title={t("contacts.title")}
+                    phone={t("contacts.phone")}
+                    workTime={t("contacts.workTime")}
+                    email={t("contacts.email")}
+                    orderCallRefLabel={t("contacts.orderCallRefLabel")}
+                    orderCallRefHref={t("contacts.orderCallRefHref")}
                 />
             </div>
         </footer>

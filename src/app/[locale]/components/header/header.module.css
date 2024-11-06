@@ -74,7 +74,7 @@
   margin-top: 12px;
 }
 
-.logo { 
+.logo {
   margin-right: 0;
   margin-left: 0;
   margin-top: 20px;
@@ -146,14 +146,15 @@
   height: 34px;
 }
 
-.locationBlock, .emailBlock {
+.locationBlock,
+.emailBlock {
   position: relative;
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.locationBlock::after  {
+.locationBlock::after {
   content: "";
   position: absolute;
   right: -20px;
@@ -165,7 +166,8 @@
   opacity: 0.1;
 }
 
-.addressText, .emailText {
+.addressText,
+.emailText {
   display: flex;
   flex-direction: column;
   font-family: 'Inter', sans-serif;
@@ -256,9 +258,15 @@
 
 /* Adaptation */
 
-.mobileCart, .mobileMenuButton, .mobileLogo,
-.mobileCatalog, .mobileCatalogText, .mobileDivider1,
-.mobileSearch, .mobileSearchText, .tabletButton1, 
+.mobileCart,
+.mobileMenuButton,
+.mobileLogo,
+.mobileCatalog,
+.mobileCatalogText,
+.mobileDivider1,
+.mobileSearch,
+.mobileSearchText,
+.tabletButton1,
 .tabletButton2 {
   display: none;
 }
@@ -267,10 +275,12 @@
   .menuHeader {
     padding-left: 8.27%;
   }
+
   .headerMain {
     padding-left: 8.42%;
     padding-right: 10.58%;
   }
+
   .navigationMenu {
     margin-right: 100px;
   }
@@ -281,22 +291,30 @@
     padding-left: 3%;
     padding-right: 1%;
   }
+
   .headerMain {
     padding-left: 3%;
     padding-right: 5.5%;
   }
+
   .navigationMenu {
     margin-right: 30px;
   }
 }
 
 @media (max-width: 1439px) {
-  .button1, .button2, .image, .ellipse,
-  .locationBlock svg, .emailBlock svg {
+
+  .button1,
+  .button2,
+  .image,
+  .ellipse,
+  .locationBlock svg,
+  .emailBlock svg {
     display: none;
   }
 
-  .tabletButton1, .tabletButton2 {
+  .tabletButton1,
+  .tabletButton2 {
     display: inline;
   }
 
@@ -304,10 +322,12 @@
     padding-left: 3%;
     padding-right: 1%;
   }
+
   .headerMain {
     padding-left: 3%;
     padding-right: 5%;
   }
+
   .navigationMenu {
     margin-right: 10px;
   }
@@ -320,7 +340,7 @@
   .locationBlock::after {
     right: -15px;
   }
-  
+
   .tabletButton1 {
     margin-left: 30px;
     margin-right: 0;
@@ -340,11 +360,11 @@
     border: 1px dashed #3F4E65;
     opacity: 0.1;
   }
-  
+
   .searchBar {
     margin-left: 30px;
   }
-  
+
   .contactCard {
     margin-right: 30px;
   }
@@ -364,7 +384,7 @@
   .text-call {
     font-size: 12px;
   }
-  
+
   .tabletButton2 {
     margin-left: 0;
     margin-right: 30px;
@@ -384,7 +404,7 @@
     border: 1px dashed #3F4E65;
     opacity: 0.1;
   }
-  
+
   .tabletCart {
     margin-right: 0;
     margin-left: 0;
@@ -422,6 +442,7 @@
     transform: translateY(-20px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -430,15 +451,28 @@
 
 @media (max-width: 940px) {
 
-  .locationBlockHeader, .navigationMenu, .localSwitcher, .logo, 
-  .button1, .button2, .searchBar, .contactCard, .cart,
-  .tabletButton1, .tabletButton2 {
+  .locationBlockHeader,
+  .navigationMenu,
+  .localSwitcher,
+  .logo,
+  .button1,
+  .button2,
+  .searchBar,
+  .contactCard,
+  .cart,
+  .tabletButton1,
+  .tabletButton2 {
     display: none;
   }
 
-  .mobileCart, .mobileMenuButton, .mobileLogo,
-  .mobileCatalog, .mobileCatalogText, .mobileDivider1,
-  .mobileSearch, .mobileSearchText {
+  .mobileCart,
+  .mobileMenuButton,
+  .mobileLogo,
+  .mobileCatalog,
+  .mobileCatalogText,
+  .mobileDivider1,
+  .mobileSearch,
+  .mobileSearchText {
     display: inline;
   }
 

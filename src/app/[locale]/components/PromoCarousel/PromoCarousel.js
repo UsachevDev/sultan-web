@@ -1,14 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import "./PromoCarousel.css";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 const PromoCarousel = () => {
     const [promoData, setPromoData] = useState(null);

@@ -1,12 +1,13 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay, FreeMode } from 'swiper/modules';
+import Image from 'next/image';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import './CatalogCarousel.css';
-import { Pagination, Autoplay, FreeMode } from 'swiper/modules';
 
 const CatalogCarousel = () => {
     const [mainSlider, setMainSlider] = useState([]);

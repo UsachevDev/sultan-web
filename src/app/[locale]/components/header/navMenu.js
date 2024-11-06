@@ -14,11 +14,11 @@ const NavMenu = () => {
 
     return (
         <nav className={styles.menu}>
-        {menuItems.map((item, index) => (
-            <Link key={index} href={item.href} className={styles.menuItem}>
-                {item.text}
-            </Link>
-        ))}
+            {menuItems.map((item, index) => (
+                <Link key={index} href={item.href} className={styles.menuItem}>
+                    {item.text}
+                </Link>
+            ))}
         </nav>
     )
 }

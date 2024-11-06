@@ -97,6 +97,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
     a {
         font-size: 14px;
         line-height: 21px;
@@ -192,7 +193,7 @@
 }
 
 @media (max-width: 1200px) {
-    
+
 
     .footer-container {
         gap: 25px;
@@ -263,12 +264,10 @@
     }
 }
 
-
 @media (max-width:390px) {
     .price-list {
         width: 110px;
     }
-
 
     .footer-container {
         gap: 15px;

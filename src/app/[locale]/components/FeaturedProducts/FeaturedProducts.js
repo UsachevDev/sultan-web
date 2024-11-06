@@ -1,7 +1,6 @@
 "use client";
-import "./FeaturedProducts.css";
 import Cards from "../Cards/Cards";
-
+import "./FeaturedProducts.css";
 
 export default function FeaturedProducts(){
     return(

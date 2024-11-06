@@ -11,5 +11,4 @@ const handleDownload = () => {
   URL.revokeObjectURL(url);
 };
 
-
 export default handleDownload;
