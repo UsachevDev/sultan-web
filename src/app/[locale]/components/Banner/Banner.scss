@@ -34,7 +34,6 @@
     .banner-content {
         width: 570px;
         height: 100%;
-        word-break: break-all;
         text-align: left;
         color: #FFFFFF;
 
@@ -112,10 +111,19 @@
 
 }
 
-@media (max-width: 1460px) {
-    .banner-content {
-        margin-left: 30px;
+@media  (max-width: 1390px) {
+    .banner{
+        .banner-content{
+            margin-left: 15px;
+    
+        }
+    
+        .banner-blur{
+            width: 600px;
+        }
     }
+
+    
 }
 
 @media (max-width: 675px) {
@@ -141,10 +149,12 @@
             background-color: #8A94AB;
             background: linear-gradient(89.86deg, #8A94AB 0.13%, rgba(138, 148, 171, 0) 99.89%);
             backdrop-filter: blur(4px);
-
+            
             .banner-content {
+                width: 100%;
                 text-align: center;
-
+                margin-left: 10px;
+                margin-right: 10px;
                 h1 {
                     font-size: 18px;
                     word-spacing: 10px;
@@ -196,3 +206,4 @@
 
 
 }
+
