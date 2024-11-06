@@ -1,14 +1,11 @@
-
-import "./Banner.scss";
 import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import ButtonTemplate from "../ButtonTemplate/ButtonTemplate";
 
-
-
-
+import "./Banner.scss";
 
 const Banner = () => {
-
+const t = useTranslations("Banner");
     return (
         <>
         <div className="banner">
@@ -16,17 +13,17 @@ const Banner = () => {
             <div className="banner-container" >
                 <div className="banner-content">
                     <h1>
-                        Бытовая химия, косметика<br /> и хозтовары
+                        {t('h1.firstLine')}<br /> {t('h1.secondLine')}
                     </h1>
-                    <h2>ОПТОМ ПО КОКЧЕТАВУ И ОБЛАСТИ</h2>
-                    <button className="btn-to-products"><Link href={"/products"}>В КАТАЛОГ</Link></button>
+                    <h2>{t('h2')}</h2>
+                    <button className="btn-to-products"><Link href={"/products"}>{t('button')}</Link></button>
 
                     <div className="banner-footer" id="banner-footer-1">
                         <ButtonTemplate width={39} height={39} text={"+"} className="btn-banner-plus"/>
-                        <span>Только самые<br /> выгодные предложения</span>
+                        <span>{t('promo.span1')}<br /> {t('promo.span2')}</span>
                         <ButtonTemplate width={39} height={39} text={"+"} className="btn-banner-plus"/>
-                        <span>Бесплатная доставка<br /> 
-                        по <b>Кокчетаву от 10 тыс ₽</b>
+                        <span>{t('promo.span3')}<br /> 
+                        <b>{t('promo.span4')}</b>
                         </span>
                     </div>
                 </div>

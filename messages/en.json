@@ -62,6 +62,20 @@
         "promoTitleSpan3": "Name",
         "promoDescriptor3": "Terms of the promotion in a couple of lines, Terms of the promotion in a couple of lines"
     },
+    "Banner": {
+        "h1": {
+            "firstLine": "Chemicals, cosmetics",
+            "secondLine": "and goods"
+        },
+        "h2": "WHOLESALE IN KOKCHKETOV AND THE REGION",
+        "button": "CATALOG",
+        "promo": {
+            "span1": "Only the",
+            "span2": "best deals",
+            "span3": "Free delivery",
+            "span4": "in Kokchetov from 10 thousands ₽"
+        }
+    },
     "Contacts": {
         "title": "Contacts",
         "description": "Wholesale supplier «Sultan»",
