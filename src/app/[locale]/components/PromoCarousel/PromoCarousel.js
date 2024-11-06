@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -12,6 +13,7 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 const PromoCarousel = () => {
     const [promoData, setPromoData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    const t = useTranslations("PromoCarousel");
 
     useEffect(() => {
         const fetchPromoData = async () => {
@@ -48,22 +50,22 @@ const PromoCarousel = () => {
                     <SwiperSlide key={index}>
                         <div className="promo-swiper-slide swiper-slide">
                             <div className="promo-content">
-                                {slide.promoDate && (
+                                {t(slide.promoDate) && (
                                     <p className="promo-date">
-                                        {slide.promoDate}
+                                        {t(slide.promoDate)}
                                     </p>
                                 )}
                                 <h2 className="promo-title">
-                                    {slide.promoTitle}{" "}
+                                    {t(slide.promoTitle)}{" "}
                                     {slide.promoTitleSpan && (
                                         <span className="promo-title-span">
-                                            {slide.promoTitleSpan}
+                                            {t(slide.promoTitleSpan)}
                                         </span>
                                     )}
                                 </h2>
                                 {slide.promoDescriptor && (
                                     <p className="promo-description">
-                                        {slide.promoDescriptor}
+                                        {t(slide.promoDescriptor)}
                                     </p>
                                 )}
                                 {slide.promoButton && (
@@ -73,7 +75,7 @@ const PromoCarousel = () => {
                                             console.log("Кнопка нажата!")
                                         }
                                     >
-                                        {slide.promoButton}
+                                        {t(slide.promoButton)}
                                     </button>
                                 )}
                             </div>

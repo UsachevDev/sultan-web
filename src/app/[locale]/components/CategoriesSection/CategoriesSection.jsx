@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
+import { useTranslations } from "next-intl";
 import Image from 'next/image';
 import styles from './CategoriesSection.scss';
 
@@ -7,6 +8,7 @@ const CategoriesSection = () => {
     const [title, setTitle] = useState({});
     const [subtitle, setSubtitle] = useState('');
     const [items, setItems] = useState([]);
+    const t = useTranslations("Categories");
 
     useEffect(() => {
         const fetchCategories = async () => {
@@ -22,20 +24,20 @@ const CategoriesSection = () => {
 
     return (
         <div className="categories-section">
-            <h2>{title.title}<span>{title.titleSpan}</span></h2>
-            <p className="subtitle">{subtitle}</p>
+            <h2>{t("title")}<span>{t("titleSpan")}</span></h2>
+            <p className="subtitle">{t("subtitle")}</p>
             <ul className="categories-list">
                 {items.map((item, index) => (
                     <li key={index} className="category-item">
                         <a href={item.link}>
                             <Image 
                                 src={item.image} 
-                                alt={item.name} 
+                                alt={t(`items.${item.name}`)} 
                                 className="category-image" 
                                 width={250}
                                 height={250}
                             />
-                            <p className="category-name">{item.name}</p>
+                            <p className="category-name">{t(`items.${item.name}`)}</p>
                         </a>
                     </li>
                 ))}

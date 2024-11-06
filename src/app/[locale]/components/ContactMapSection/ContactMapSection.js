@@ -1,7 +1,10 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import "./ContactMapSection.css";
 
 const ContactMapSection = () => {
+    const t = useTranslations("Contacts");
+
     return (
         <section className="contact-map-section">
             <Image
@@ -12,19 +15,19 @@ const ContactMapSection = () => {
                 objectFit="cover"
             />
             <div className="contact-info">
-                <h2>Контакты</h2>
-                <p>Оптовый поставщик «Султан»</p>
+                <h2>{t("title")}</h2>
+                <p>{t("description")}</p>
 
                 <div className="contact-info-container">
                     <div className="contact-info-address">
-                        <h3>Адрес:</h3>
+                        <h3>{t("titleAddress")}</h3>
                         <p className="address">
-                            г. Кокшетау, ул. Ук Ташенова 1296 (Рынок Восточный)
+                        {t("address")}
                         </p>
                     </div>
 
                     <div className="sales-department">
-                        <h3>Отдел продаж:</h3>
+                        <h3>{t("titleSales")}</h3>
                         <a className="phone-number" href={`tel:+7 (777) 490-00-91`}>
                             +7 (777) 490-00-91
                         </a>
@@ -34,10 +37,10 @@ const ContactMapSection = () => {
                     </div>
 
                     <div className="tax-info">
-                        <h3>Данные налогоплательщика:</h3>
+                        <h3>{t("titleTax")}</h3>
                         <div className="tax-info-content">
-                            <p>ИП Катран Д.С.</p>
-                            <p>ИИН: 860113450858</p>
+                            <p>{t("entrepreneur")}</p>
+                            <p>{t("iin")}</p>
                         </div>
                     </div>
                 </div>

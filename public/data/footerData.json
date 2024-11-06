@@ -10,19 +10,19 @@
         "title": "Меню сайта:",
         "items": [
             {
-                "name": "О компании",
+                "name": "about",
                 "link": "#"
             },
             {
-                "name": "Доставка и оплата",
+                "name": "delivery",
                 "link": "#"
             },
             {
-                "name": "Возврат",
+                "name": "refund",
                 "link": "#"
             },
             {
-                "name": "Контакты",
+                "name": "contacts",
                 "link": "#"
             }
         ]
@@ -31,23 +31,23 @@
         "title": "Категории:",
         "items": [
             {
-                "name": "Бытовая химия",
+                "name": "householdChemicals",
                 "link": "#"
             },
             {
-                "name": "Косметика и гигиена",
+                "name": "cosmetics",
                 "link": "#"
             },
             {
-                "name": "Товары для дома",
+                "name": "householdGoods",
                 "link": "#"
             },
             {
-                "name": "Товары для детей и мам",
+                "name": "goodsForChildren",
                 "link": "#"
             },
             {
-                "name": "Посуда",
+                "name": "tableware",
                 "link": "#"
             }
         ]

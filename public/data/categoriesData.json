@@ -1,32 +1,27 @@
 {
-    "title": {
-        "title": "КАТЕГОРИИ",
-        "titleSpan": " ТОВАРОВ"
-    },
-    "subtitle": "10 000+ ходовых позиций по спецмальным ценам",
     "items": [
         {
-            "name": "Бытовая химия",
+            "name": "householdChemicals",
             "link": "#",
             "image": "/image/categories/household-chemicals.png"
         },
         {
-            "name": "Косметика и гигиена",
+            "name": "cosmetics",
             "link": "#",
             "image": "/image/categories/сosmetics.png"
         },
         {
-            "name": "Товары для дома",
+            "name": "householdGoods",
             "link": "#",
             "image": "/image/categories/household-goods.png"
         },
         {
-            "name": "Товары для детей и мам",
+            "name": "goodsForChildren",
             "link": "#",
             "image": "/image/categories/goods-for-children.png"
         },
         {
-            "name": "Посуда",
+            "name": "tableware",
             "link": "#",
             "image": "/image/categories/tableware.png"
         }

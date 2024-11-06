@@ -2,13 +2,13 @@ import Image from "next/image";
 
 const PriceList = ({
     title,
-    buttunLabel,
+    buttonLabel,
     messengersLabel,
 }) => (
     <div className="footer-section price-list">
                     <h3>{title}</h3>
                     <a href="#" className="price-list-button">
-                        {buttunLabel}
+                        {buttonLabel}
                         <span className="price-list-button-icon">
                             <svg
                                 width="12"
