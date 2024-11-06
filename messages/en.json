@@ -62,6 +62,12 @@
         "promoTitleSpan3": "Name",
         "promoDescriptor3": "Terms of the promotion in a couple of lines, Terms of the promotion in a couple of lines"
     },
+    "GoodsForSale": {
+        "h1" : {
+            "firstPart" : "GOODS",
+            "secondPart" : "FOR SALE"
+        }
+    },
     "Banner": {
         "h1": {
             "firstLine": "Chemicals, cosmetics",

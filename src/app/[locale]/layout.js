@@ -1,10 +1,12 @@
 import { Inter } from 'next/font/google'
-import "./globals.css";
-import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
-import {notFound} from 'next/navigation';
+import { getMessages } from 'next-intl/server';
 import {routing} from '@/i18n/routing';
+import {notFound} from 'next/navigation';
 import Header from './components/header/header';
+import Footer from './components/Footer/Footer';
+import "./globals.css";
+
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
@@ -30,7 +32,9 @@ export default async function RootLayout({ children, params }) {
     <html lang={locale}>
       <body className={inter.variable}>
         <NextIntlClientProvider messages={messages}>
+          <Header />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

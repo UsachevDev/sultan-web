@@ -34,10 +34,9 @@ const t = useTranslations("Banner");
         </div>
         <div className="banner-footer-mobile" >
                 <ButtonTemplate width={18} height={18} text={"+"} className="btn-banner-plus"/>
-                <span>Только самые выгодные предложения</span> <br />
+                <span>{t('promo.span1')} {t('promo.span2')}</span> <br />
                 <ButtonTemplate width={18} height={18} text={"+"} className="btn-banner-plus"/>
-                <span>Бесплатная доставка
-                по <b>Кокчетаву от 10 тыс ₽</b>
+                <span>{t('promo.span3')}<b> {t('promo.span4')}</b>
                 </span>         
 
         </div>
