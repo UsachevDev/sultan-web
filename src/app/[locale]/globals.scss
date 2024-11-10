@@ -1,15 +1,13 @@
 @import "reset-css";
-@import "./vars.css";
-
-body {
-    font-family: var(--font-inter), sans-serif;
-}
+@import "./vars.scss";
 
 html,
 body {
     height: 100%;
     flex-direction: column;
     margin: 0; /* Убираем отступы по умолчанию */
+
+    font-family: $font-inter;
 }
 
 .page-main {
@@ -33,4 +31,3 @@ body {
         margin-top: 103px;
     }
 }
-

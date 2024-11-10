@@ -16,6 +16,7 @@
     color: white;
     font-size: 14px;
     background: linear-gradient(0deg, #B7BFCA 0%, #BDC7D0 65.9%, #BDC7D1 100%);
+    box-shadow: 0px 15px 70px -11px #2B1C010A;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -331,7 +332,7 @@
     }
 }
 
-@media (max-width:540px) {
+@media (max-width:480px) {
     .promo-slider-image {
         max-height: 80%;
         max-width: 95%;
@@ -373,7 +374,7 @@
     }
 }
 
-@media (max-width:390px) {
+@media (max-width:375px) {
     .promo-swiper {
         height: 210px;
     }
