@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import "./ContactMapSection.css";
+import "./ContactMapSection.scss";
 
 const ContactMapSection = () => {
     const t = useTranslations("Contacts");
@@ -8,7 +8,7 @@ const ContactMapSection = () => {
     return (
         <section className="contact-map-section">
             <Image
-                className="map-image"
+                className="contact-map-section-image"
                 src="/image/map-image.jpg"
                 alt="Map"
                 layout="fill"
@@ -26,7 +26,7 @@ const ContactMapSection = () => {
                         </p>
                     </div>
 
-                    <div className="sales-department">
+                    <div className="contact-info-sales">
                         <h3>{t("titleSales")}</h3>
                         <a className="phone-number" href={`tel:+7 (777) 490-00-91`}>
                             +7 (777) 490-00-91
@@ -36,9 +36,9 @@ const ContactMapSection = () => {
                         </p>
                     </div>
 
-                    <div className="tax-info">
+                    <div className="contact-info-tax">
                         <h3>{t("titleTax")}</h3>
-                        <div className="tax-info-content">
+                        <div className="contact-info-tax-content">
                             <p>{t("entrepreneur")}</p>
                             <p>{t("iin")}</p>
                         </div>
