@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "vars":["/src/app/[locale]/vars.scss"],
+      "mixins":["/src/app/[locale]/mixins.scss"]
     }
   }
 }
