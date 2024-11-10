@@ -4,14 +4,14 @@
         "about": "Go to the about page"
     },
     "ToBasketButton": {
-        "text": "ADD TO CART"
+        "text": "Add to cart"
     },
     "ProductCard": {
         "brand": "Brand",
         "barcode": "Barcode",
         "manufacturer": "Manufacturer",
         "productName": "en",
-        "popular": "POPULAR",
+        "popular": "Popular",
         "type": "g",
         "liquidType": "ml"
     },
@@ -64,8 +64,8 @@
     },
     "GoodsForSale": {
         "h1" : {
-            "firstPart" : "GOODS",
-            "secondPart" : "FOR SALE"
+            "firstPart" : "Goods",
+            "secondPart" : "For sale"
         }
     },
     "Banner": {
@@ -73,8 +73,8 @@
             "firstLine": "Chemicals, cosmetics",
             "secondLine": "and goods"
         },
-        "h2": "WHOLESALE IN KOKCHKETOV AND THE REGION",
-        "button": "CATALOG",
+        "h2": "Wholesale in Kokchetov and the region",
+        "button": "Catalog",
         "promo": {
             "span1": "Only the",
             "span2": "best deals",

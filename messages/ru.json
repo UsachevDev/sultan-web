@@ -4,14 +4,14 @@
         "about": "Go to the about page"
     },
     "ToBasketButton": {
-        "text": "В КОРЗИНУ"
+        "text": "В корзину"
     },
     "ProductCard": {
         "brand": "Бренд",
         "barcode": "Штрихкод",
         "manufacturer": "Производитель",
         "productName": "ru",
-        "popular": "ПОПУЛЯРНОЕ",
+        "popular": "Популярное",
         "type": "г",
         "liquidType": "мл"
     },
@@ -64,8 +64,8 @@
     },
     "GoodsForSale": {
         "h1" : {
-            "firstPart" : "АКЦИОННЫЕ",
-            "secondPart" : "ТОВАРЫ"
+            "firstPart" : "Акционные",
+            "secondPart" : "Товары"
         }
     },
     "Banner": {
@@ -73,8 +73,8 @@
             "firstLine": "Бытовая химия, косметика",
             "secondLine": "и хозтовары"
         },
-        "h2": "ОПТОМ ПО КОКЧЕТАВУ И ОБЛАСТИ",
-        "button": "В КАТАЛОГ",
+        "h2": "Оптом по Кокчетаву и области",
+        "button": "В каталог",
         "promo": {
             "span1": "Только самые",
             "span2": "выгодные предложения",

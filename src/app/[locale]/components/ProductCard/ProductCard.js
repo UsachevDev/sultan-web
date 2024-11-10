@@ -53,14 +53,15 @@ export default function ProductCard({ card: el, info: filter }) {
                 <ShowInfo info={filter} t={t} />
                 <Image
                     src={"/image/productCards/card" + el.id + ".svg"}
-                    width={el.img.width}
-                    height={el.img.height}
-                    alt={el.img.alt}
+                    fill={true}
+                    alt={t("productName") === "ru" ? el.nameRu : el.nameEn}
                 />
                 <ShowSize card={el} t={t} />
             </div>
             <div className="product">
-                <div className="product-name"><strong style={{ fontWeight: 800 }}>{el.brand.name}</strong> {t("productName") === "ru" ? el.nameRu : el.nameEn}</div>
+                <div className="product-name">
+                    <strong style={{ fontWeight: 800 }}>{el.brand.name} </strong>
+                    {t("productName") === "ru" ? el.nameRu : el.nameEn}</div>
                 <div className="product-desc">
                     <ul>
                         <li><span className="product-desc-name">{t("barcode")}: </span>{el.barcode}</li>
