@@ -60,7 +60,7 @@ export default function ProductCard({ card: el, info: filter }) {
             </div>
             <div className="product">
                 <div className="product-name">
-                    <strong style={{ fontWeight: 800 }}>{el.brand.name}</strong> 
+                    <strong style={{ fontWeight: 800 }}>{el.brand.name} </strong>
                     {t("productName") === "ru" ? el.nameRu : el.nameEn}</div>
                 <div className="product-desc">
                     <ul>

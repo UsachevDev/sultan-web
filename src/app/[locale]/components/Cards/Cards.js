@@ -6,11 +6,9 @@ import { Pagination, Autoplay } from "swiper/modules";
 import ProductCard from "../ProductCard/ProductCard";
 import "./Cards.css";
 
-
-
-const Cards = ({info: filter}) =>{
-    const [isLoading, setIsLoading] = useState(true);
-    const [cards, setCards] = useState(null);
+const Cards = ({ info: filter }) => {
+    const [isLoading, setIsLoading] = useState([true]);
+    const [cards, setCards] = useState([]);
 
     useEffect(() => {
         const fetchCards = async () => {
@@ -28,8 +26,7 @@ const Cards = ({info: filter}) =>{
         fetchCards();
     }, []);
 
-    if(isLoading)
-    {
+    if (isLoading) {
         return <p>Загрузка...</p>
     }
     return (
@@ -37,41 +34,40 @@ const Cards = ({info: filter}) =>{
             {/* desktop */}
             <div className="cards">
                 {cards.map((card) => (
-                    <ProductCard 
-                        card={card} 
-                        info={filter} 
+                    <ProductCard
+                        card={card}
+                        info={filter}
                         key={card.id}
-                    />          
+                    />
                 ))}
             </div>
 
             {/* mobile */}
             <div className="cards-mobile">
                 <Swiper
-                className="cards-slider"
-                slidesPerView="auto"
-                loop={false}
-                pagination={{
-                    clickable: true,
-                }}
-                autoplay={{
-                    delay: 10000,
-                    disableOnInteraction: false,
-                }}
-                modules={[Pagination, Autoplay]}
-            >
+                    className="cards-slider"
+                    slidesPerView="auto"
+                    loop={false}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    autoplay={{
+                        delay: 10000,
+                        disableOnInteraction: false,
+                    }}
+                    modules={[Pagination, Autoplay]}
+                >
                     {cards.map((card) => (
-                        <SwiperSlide key={card.id} style={{width: 326}}>
-                                <ProductCard 
-                                card={card} 
-                                info={filter} 
-                        />  
+                        <SwiperSlide key={card.id} style={{ width: 326 }}>
+                            <ProductCard
+                                card={card}
+                                info={filter}
+                            />
                         </SwiperSlide>
                     ))}
                 </Swiper>
             </div>
         </>
-        
     )
 };
 
