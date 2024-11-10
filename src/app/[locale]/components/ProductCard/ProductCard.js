@@ -48,7 +48,7 @@ export default function ProductCard({ card: el, info: filter }) {
     const t = useTranslations("ProductCard");
 
     return (
-        <div className="product-card">
+        <article className="product-card">
             <div className="product-img">
                 <ShowInfo info={filter} t={t} />
                 <Image
@@ -73,8 +73,7 @@ export default function ProductCard({ card: el, info: filter }) {
                     <span className="product-price" style={{ fontWeight: 800 }}>{el.price}₽</span>
                     <span className="product-tobasket"><ToBasketButton /> </span>
                 </span>
-
             </div>
-        </div>
+        </article>
     )
 };
