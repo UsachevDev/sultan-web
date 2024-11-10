@@ -1,25 +1,32 @@
+@import "vars";
+@import "mixins";
+
 .promo-container {
     overflow: hidden;
 }
 
 .promo-swiper {
     position: relative;
+
     height: 500px;
     width: 100%;
     margin: 0 auto;
+
     overflow: visible;
 }
 
 .promo-swiper-slide {
-    max-width: 1368px;
-    margin: 0 auto;
-    color: white;
-    font-size: 14px;
-    background: linear-gradient(0deg, #B7BFCA 0%, #BDC7D0 65.9%, #BDC7D1 100%);
-    box-shadow: 0px 15px 70px -11px #2B1C010A;
-    border-radius: 10px;
     display: flex;
     align-items: center;
+    max-width: 1368px;
+    margin: 0 auto;
+
+    font-size: 14px;
+
+    color: $text-color-light;
+    background: $linear-gradient;
+    box-shadow: $box-shadow;
+    border-radius: 10px;
     overflow: hidden;
 }
 
@@ -35,6 +42,7 @@
 
 .promo-title {
     margin-top: 10px;
+
     font-size: 70px;
     font-weight: 800;
     line-height: 77px;
@@ -45,6 +53,8 @@
 }
 
 .promo-slider-image {
+    z-index: -1;
+
     margin-left: 374px;
     max-width: 992px;
     max-height: 100%;
@@ -52,33 +62,33 @@
 
 .promo-description {
     max-width: 496px;
+    margin-top: 35px;
+
     font-size: 20px;
     line-height: 30px;
-    margin-top: 35px;
 }
 
 .promo-button {
-    font-family: var(--font-inter), sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 21px;
     height: 90px;
     width: 344px;
     margin-top: 50px;
+
+    font-family: $font-inter;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+
+    color: $text-color-light;
     border-radius: 80px;
     border: none;
-    background-color: var(--button-color);
-    color: white;
-    border: none;
-    border-radius: 80px;
+    background-color: $primary-color;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 
 .promo-button:hover {
-    background-color: darken(var(--button-color), 10%);
-    border: 3px white solid;
+    background-color: $button-hover;
 }
 
 /* Стиль для стрелок навигации*/
@@ -86,14 +96,16 @@
 .swiper-button-prev {
     position: absolute;
     top: 50%;
-    width: 68px;
-    height: 68px;
-    background-color: #fff;
-    border-radius: 50%;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--button-color);
+    width: 68px;
+    height: 68px;
+    
+    color: $primary-color;
+    background-color: $text-color-light;
+    border-radius: 50%;
 }
 
 .swiper-button-next:hover,
@@ -122,27 +134,25 @@
 
 /* Стиль для обычных точек пагинации */
 .swiper-pagination-bullet {
-    background: var(--background-color);
     width: 16px;
     height: 7px;
+
+    background: $second-color;
     border-radius: 10px;
     opacity: 0.5;
 }
 
 /* Стиль для активной точки пагинации */
 .swiper-pagination-bullet-active {
-    background: white;
     opacity: 1;
     width: 26px;
     height: 7px;
+
+    background: $text-color-light;
     border-radius: 10px;
 }
 
-@media (max-width:1440px) {
-    /* .promo-swiper-slide {
-        max-width: 95%;
-    } */
-
+@include laptop {
     .promo-slider-image {
         margin-top: auto;
         margin-left: 18%;
@@ -164,7 +174,7 @@
 
 }
 
-@media (max-width:1200px) {
+@include tabletLarge {
     .promo-swiper {
         height: 400px;
     }
@@ -175,6 +185,7 @@
 
     .promo-description {
         margin-top: 15px;
+
         font-size: 18px;
     }
 
@@ -203,7 +214,7 @@
     }
 }
 
-@media (max-width:1020px) {
+@include tablet {
     .promo-slider-image {
         margin-left: 18%;
         max-width: 85%;
@@ -216,21 +227,24 @@
 
     .promo-title {
         margin-top: 10px;
+
         line-height: 50px;
         font-size: 50px;
     }
 
     .promo-description {
         max-width: 300px;
+        margin-top: 15px;
+
         font-size: 16px;
         line-height: 20px;
-        margin-top: 15px;
     }
 
     .promo-button {
         margin-top: 30px;
         height: 70px;
         width: 266px;
+
         font-size: 16px;
         line-height: 18px;
     }
@@ -257,7 +271,7 @@
     }
 }
 
-@media (max-width:768px) {
+@include tabletSmall {
     .promo-slider-image {
         margin-left: 15%;
         max-width: 100%;
@@ -274,6 +288,7 @@
         bottom: -20px;
         left: 0;
         right: 0;
+
         width: 100%;
     }
 
@@ -282,28 +297,32 @@
     }
 
     .promo-date {
-        font-size: 10px;
         width: 200px;
+
+        font-size: 10px;
         line-height: 14px;
     }
 
     .promo-title {
         margin-top: 10px;
-        line-height: 30px;
+
         font-size: 30px;
+        line-height: 30px;
     }
 
     .promo-description {
         max-width: 220px;
+        margin-top: 15px;
+
         font-size: 12px;
         line-height: 14px;
-        margin-top: 15px;
     }
 
     .promo-button {
         margin-top: 20px;
         height: 56px;
         width: 212px;
+
         font-size: 14px;
         line-height: 16px;
     }
@@ -328,11 +347,11 @@
     }
 
     .swiper-pagination-bullet-active {
-        background: var(--button-color);
+        background: $primary-color;
     }
 }
 
-@media (max-width:480px) {
+@include mobile {
     .promo-slider-image {
         max-height: 80%;
         max-width: 95%;
@@ -347,34 +366,36 @@
     }
 
     .promo-date {
-        font-size: 6px;
         width: 110px;
+
+        font-size: 6px;
         line-height: 12px;
         letter-spacing: 2px;
     }
 
     .promo-title {
         margin-top: 10px;
-        line-height: 20px;
+
         font-size: 22px;
+        line-height: 20px;
     }
 
     .promo-description {
         margin-top: 10px;
         max-width: 140px;
-        margin-top: 15px;
     }
 
     .promo-button {
         margin-top: 15px;
         height: 43px;
         width: 160px;
+
         font-size: 10px;
         line-height: 12px;
     }
 }
 
-@media (max-width:375px) {
+@include mobileSmall {
     .promo-swiper {
         height: 210px;
     }
