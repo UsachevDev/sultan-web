@@ -6,21 +6,32 @@ import styles from "./CategoriesSection.scss";
 
 const CategoriesSection = () => {
     const [title, setTitle] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
     const [subtitle, setSubtitle] = useState("");
     const [items, setItems] = useState([]);
     const t = useTranslations("Categories");
 
     useEffect(() => {
-        const fetchCategories = async () => {
-            const response = await fetch("/data/categoriesData.json");
-            const data = await response.json();
-            setTitle(data.title);
-            setSubtitle(data.subtitle);
-            setItems(data.items);
+        const fetchData = async () => {
+            try {
+                const response = await fetch("/data/categoriesData.json");
+                const data = await response.json();
+                setTitle(data.title);
+                setSubtitle(data.subtitle);
+                setItems(data.items);
+                setIsLoading(false);
+            } catch (error) {
+                console.error("Ошибка загрузки данных:", error);
+                setIsLoading(false);
+            }
         };
 
-        fetchCategories();
+        fetchData();
     }, []);
+
+    if (isLoading) {
+        return <p>Загрузка...</p>;
+    }
 
     return (
         <div className="categories-section">
