@@ -15,6 +15,9 @@
     max-width: 1368px;
     margin: 0 auto;
 }
+.featured-products h2 {
+    text-transform: uppercase;
+}
 
 @media screen and (max-width: 651px) {
     .featured-products-head {
