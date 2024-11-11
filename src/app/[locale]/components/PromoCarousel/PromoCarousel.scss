@@ -1,95 +1,97 @@
 @import "vars";
 @import "mixins";
 
-.promo-container {
-    overflow: hidden;
-}
+.promo {
+    &-container {
+        overflow: hidden;
+    }
 
-.promo-swiper {
-    position: relative;
+    &-swiper {
+        position: relative;
 
-    height: 500px;
-    width: 100%;
-    margin: 0 auto;
+        height: 500px;
+        width: 100%;
+        margin: 0 auto;
 
-    overflow: visible;
-}
+        overflow: visible;
 
-.promo-swiper-slide {
-    display: flex;
-    align-items: center;
-    max-width: 1368px;
-    margin: 0 auto;
+        &-slide {
+            display: flex;
+            align-items: center;
+            max-width: 1368px;
+            margin: 0 auto;
 
-    font-size: 14px;
+            font-size: 14px;
 
-    color: $text-color-light;
-    background: $linear-gradient;
-    box-shadow: $box-shadow;
-    border-radius: 10px;
-    overflow: hidden;
-}
+            color: $text-color-light;
+            background: $linear-gradient;
+            box-shadow: $box-shadow;
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
-.promo-content {
-    margin-left: 110px;
-    width: 576px;
-}
+        &-image {
+            z-index: -1;
 
-.promo-date {
-    line-height: 21px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
+            margin-left: 374px;
+            max-width: 992px;
+            max-height: 100%;
+        }
+    }
 
-.promo-title {
-    margin-top: 10px;
+    &-content {
+        margin-left: 110px;
+        width: 576px;
+    }
 
-    font-size: 70px;
-    font-weight: 800;
-    line-height: 77px;
-}
+    &-date {
+        line-height: 21px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
 
-.promo-title-span {
-    font-weight: 400;
-}
+    &-title {
+        margin-top: 10px;
 
-.promo-slider-image {
-    z-index: -1;
+        font-size: 70px;
+        font-weight: 800;
+        line-height: 77px;
 
-    margin-left: 374px;
-    max-width: 992px;
-    max-height: 100%;
-}
+        &-span {
+            font-weight: 400;
+        }
+    }
 
-.promo-description {
-    max-width: 496px;
-    margin-top: 35px;
+    &-description {
+        max-width: 496px;
+        margin-top: 35px;
 
-    font-size: 20px;
-    line-height: 30px;
-}
+        font-size: 20px;
+        line-height: 30px;
+    }
 
-.promo-button {
-    height: 90px;
-    width: 344px;
-    margin-top: 50px;
+    &-button {
+        height: 90px;
+        width: 344px;
+        margin-top: 50px;
 
-    font-family: $font-inter;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 21px;
+        font-family: $font-inter;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 21px;
 
-    color: $text-color-light;
-    border-radius: 80px;
-    border: none;
-    background-color: $primary-color;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
+        color: $text-color-light;
+        border-radius: 80px;
+        border: none;
+        background-color: $primary-color;
+        cursor: pointer;
 
+        transition: background-color 0.3s;
 
-.promo-button:hover {
-    background-color: $button-hover;
+        &:hover {
+            background-color: $button-hover;
+        }
+    }
 }
 
 /* Стиль для стрелок навигации*/
@@ -103,20 +105,18 @@
     align-items: center;
     width: 68px;
     height: 68px;
-    
+
     color: $primary-color;
     background-color: $text-color-light;
     border-radius: 50%;
-}
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    background-color: #f0f0f0;
-}
+    &:hover {
+        background-color: #f0f0f0;
+    }
 
-.swiper-button-next:after,
-.swiper-button-prev:after {
-    font-size: 16px;
+    &:after {
+        font-size: 16px;
+    }
 }
 
 /* Установка позиции стрелок */
@@ -128,76 +128,76 @@
     left: 0;
 }
 
-/* Стиль для пагинации */
 .swiper-pagination {
     bottom: 10px;
-}
 
-/* Стиль для обычных точек пагинации */
-.swiper-pagination-bullet {
-    width: 16px;
-    height: 7px;
+    &-bullet {
+        width: 16px;
+        height: 7px;
 
-    background: $second-color;
-    border-radius: 10px;
-    opacity: 0.5;
-}
+        background: $second-color;
+        border-radius: 10px;
+        opacity: 0.5;
 
-/* Стиль для активной точки пагинации */
-.swiper-pagination-bullet-active {
-    opacity: 1;
-    width: 26px;
-    height: 7px;
+        &-active {
+            opacity: 1;
+            width: 26px;
+            height: 7px;
 
-    background: $text-color-light;
-    border-radius: 10px;
+            background: $text-color-light;
+            border-radius: 10px;
+        }
+    }
 }
 
 @include laptop {
-    .promo-slider-image {
-        margin-top: auto;
-        margin-left: 18%;
-        max-width: 90%;
-        max-height: 90%;
-    }
+    .promo {
+        &-swiper {
+            width: 95%;
 
-    .promo-swiper-wrapper {
-        overflow: hidden;
-    }
+            &-image {
+                margin-top: auto;
+                margin-left: 18%;
+                max-width: 90%;
+                max-height: 90%;
+            }
 
-    .promo-swiper {
-        width: 95%;
-    }
+            &-wrapper {
+                overflow: hidden;
+            }
+        }
 
-    .promo-content {
-        margin-left: 68px;
+        &-content {
+            margin-left: 68px;
+        }
     }
-
 }
 
 @include tabletLarge {
-    .promo-swiper {
-        height: 400px;
-    }
+    .promo {
+        &-swiper {
+            height: 400px;
+        }
 
-    .promo-title {
-        font-size: 60px;
-    }
+        &-title {
+            font-size: 60px;
+        }
 
-    .promo-description {
-        margin-top: 15px;
+        &-description {
+            margin-top: 15px;
 
-        font-size: 18px;
-    }
+            font-size: 18px;
+        }
 
-    .promo-content {
-        margin-left: 40px;
-    }
+        &-content {
+            margin-left: 40px;
+        }
 
-    .promo-button {
-        margin-top: 40px;
-        height: 80px;
-        width: 305px;
+        &-button {
+            margin-top: 40px;
+            height: 80px;
+            width: 305px;
+        }
     }
 
     .swiper-button-next,
@@ -216,127 +216,127 @@
 }
 
 @include tablet {
-    .promo-slider-image {
-        margin-left: 18%;
-        max-width: 85%;
-        max-height: 85%;
-    }
+    .promo {
+        &-swiper {
+            height: 350px;
 
-    .promo-swiper {
-        height: 350px;
-    }
+            &-image {
+                margin-left: 18%;
+                max-width: 85%;
+                max-height: 85%;
+            }
+        }
 
-    .promo-title {
-        margin-top: 10px;
+        &-title {
+            margin-top: 10px;
 
-        line-height: 50px;
-        font-size: 50px;
-    }
+            line-height: 50px;
+            font-size: 50px;
+        }
 
-    .promo-description {
-        max-width: 300px;
-        margin-top: 15px;
+        &-description {
+            max-width: 300px;
+            margin-top: 15px;
 
-        font-size: 16px;
-        line-height: 20px;
-    }
+            font-size: 16px;
+            line-height: 20px;
+        }
 
-    .promo-button {
-        margin-top: 30px;
-        height: 70px;
-        width: 266px;
+        &-button {
+            margin-top: 30px;
+            height: 70px;
+            width: 266px;
 
-        font-size: 16px;
-        line-height: 18px;
+            font-size: 16px;
+            line-height: 18px;
+        }
     }
 
     .swiper-button-next,
     .swiper-button-prev {
         width: 48px;
         height: 48px;
-    }
 
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-        font-size: 14px;
+        &:after {
+            font-size: 14px;
+        }
     }
 
     .swiper-button-next {
         right: -24px;
-        /* Отступ от правого края */
     }
 
     .swiper-button-prev {
         left: -24px;
-        /* Отступ от левого края */
     }
 }
 
 @include tabletSmall {
-    .promo-slider-image {
-        margin-left: 15%;
-        max-width: 100%;
-        max-height: 90%;
-    }
+    .promo {
+        &-swiper {
+            margin-bottom: 40px;
+            height: 260px;
 
-    .promo-swiper {
-        margin-bottom: 40px;
-        height: 260px;
-    }
+            &-image {
+                margin-left: 15%;
+                max-width: 100%;
+                max-height: 90%;
+            }
 
-    .promo-swiper .swiper-pagination {
-        position: absolute;
-        bottom: -20px;
-        left: 0;
-        right: 0;
+            .swiper-pagination {
+                position: absolute;
+                bottom: -20px;
+                left: 0;
+                right: 0;
+        
+                width: 100%;
+            }
+        }
+        
+        &-content {
+            margin-left: 25px;
+        }
 
-        width: 100%;
-    }
+        &-date {
+            width: 200px;
+    
+            font-size: 10px;
+            line-height: 14px;
+        }
 
-    .promo-content {
-        margin-left: 25px;
-    }
+        &-title {
+            margin-top: 10px;
+    
+            font-size: 30px;
+            line-height: 30px;
+        }
 
-    .promo-date {
-        width: 200px;
+        &-description {
+            max-width: 220px;
+            margin-top: 15px;
+    
+            font-size: 12px;
+            line-height: 14px;
+        }
 
-        font-size: 10px;
-        line-height: 14px;
-    }
-
-    .promo-title {
-        margin-top: 10px;
-
-        font-size: 30px;
-        line-height: 30px;
-    }
-
-    .promo-description {
-        max-width: 220px;
-        margin-top: 15px;
-
-        font-size: 12px;
-        line-height: 14px;
-    }
-
-    .promo-button {
-        margin-top: 20px;
-        height: 56px;
-        width: 212px;
-
-        font-size: 14px;
-        line-height: 16px;
+        &-button {
+            margin-top: 20px;
+            height: 56px;
+            width: 212px;
+    
+            font-size: 14px;
+            line-height: 16px;
+        }
     }
 
     .swiper-button-next,
     .swiper-button-prev {
         width: 38px;
         height: 38px;
-    }
 
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-        font-size: 10px;
+        &:after {
+            font-size: 10px;
+        }
     }
 
     .swiper-button-next {
@@ -353,67 +353,71 @@
 }
 
 @include mobile {
-    .promo-slider-image {
-        max-height: 80%;
-        max-width: 95%;
-    }
+    .promo {
+        &-swiper {
+            height: 220px;
 
-    .promo-swiper {
-        height: 220px;
-    }
+            &-image {
+                max-height: 80%;
+                max-width: 95%;
+            }
+        }
 
-    .promo-content {
-        margin-left: 25px;
-    }
+        &-content {
+            margin-left: 25px;
+        }
 
-    .promo-date {
-        width: 110px;
+        &-date {
+            width: 110px;
+    
+            font-size: 6px;
+            line-height: 12px;
+            letter-spacing: 2px;
+        }
 
-        font-size: 6px;
-        line-height: 12px;
-        letter-spacing: 2px;
-    }
+        &-title {
+            margin-top: 10px;
+    
+            font-size: 22px;
+            line-height: 20px;
+        }
 
-    .promo-title {
-        margin-top: 10px;
+        &-description {
+            margin-top: 10px;
+            max-width: 140px;
+        }
 
-        font-size: 22px;
-        line-height: 20px;
-    }
-
-    .promo-description {
-        margin-top: 10px;
-        max-width: 140px;
-    }
-
-    .promo-button {
-        margin-top: 15px;
-        height: 43px;
-        width: 160px;
-
-        font-size: 10px;
-        line-height: 12px;
+        &-button {
+            margin-top: 15px;
+            height: 43px;
+            width: 160px;
+    
+            font-size: 10px;
+            line-height: 12px;
+        }
     }
 }
 
 @include mobileSmall {
-    .promo-swiper {
-        height: 210px;
-    }
+    .promo {
+        &-swiper {
+            height: 210px;
 
-    .promo-slider-image {
-        max-width: 95%;
-        max-height: 70%;
-    }
+            &-image {
+                max-width: 95%;
+                max-height: 70%;
+            }
+        }
 
-    .promo-description {
-        margin-top: 10px;
-        max-width: 120px;
-    }
+        &-description {
+            margin-top: 10px;
+            max-width: 120px;
+        }
 
-    .promo-button {
-        margin-top: 8px;
-        height: 36px;
-        width: 132px;
+        &-button {
+            margin-top: 8px;
+            height: 36px;
+            width: 132px;
+        }
     }
 }

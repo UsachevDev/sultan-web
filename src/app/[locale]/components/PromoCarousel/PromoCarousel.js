@@ -11,7 +11,7 @@ import "swiper/css/autoplay";
 import "./PromoCarousel.scss";
 
 const PromoCarousel = () => {
-    const [promoData, setPromoData] = useState(null);
+    const [promoData, setPromoData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const t = useTranslations("PromoCarousel");
 
@@ -46,8 +46,8 @@ const PromoCarousel = () => {
                 modules={[Pagination, Navigation, Autoplay]}
                 className="promo-swiper"
             >
-                {promoData.slides.map((slide, index) => (
-                    <SwiperSlide key={index}>
+                {promoData.slides.map((slide) => (
+                    <SwiperSlide key={slide.id}>
                         <div className="promo-swiper-slide swiper-slide">
                             <div className="promo-content">
                                 {t(slide.promoDate) && (
@@ -80,7 +80,7 @@ const PromoCarousel = () => {
                                 )}
                             </div>
                             <Image
-                                className="promo-slider-image"
+                                className="promo-swiper-image"
                                 src={slide.imageSrc}
                                 alt={slide.title}
                                 layout="fill"
