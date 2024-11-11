@@ -29,7 +29,7 @@ const Contacts = ({
                 {contactsEmailContainerSpan}
             </p>
         </div>
-        <div className="payment-methods">
+        <div className="contacts-payment-methods">
             <Image
                 src="/image/visa-icon.png"
                 alt="Visa"

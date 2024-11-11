@@ -36,8 +36,8 @@
         "siteMenu": "Site menu:"
     },
     "Categories": {
-        "title": "PRODUCT",
-        "titleSpan": " CATEGORIES",
+        "title": "Product",
+        "titleSpan": " Categories",
         "subtitle": "10 000+ running positions at special prices",
         "items": {
             "householdChemicals": "Household chemicals",
@@ -49,15 +49,15 @@
     },
     "PromoCarousel": {
         "promoButton": "Take part",
-        "promoDate1":"*THE PROMOTION IS VALID UNTIL 12/14/24",
+        "promoDate1":"*the promotion is valid until 12/14/24",
         "promoTitle1": "Promotion ",
         "promoTitleSpan1": "Name",
         "promoDescriptor1": "Terms of the promotion in a couple of lines, Terms of the promotion in a couple of lines",
-        "promoDate2":"*THE PROMOTION IS VALID UNTIL 12/14/24",
+        "promoDate2":"*the promotion is valid until 12/14/24",
         "promoTitle2": "Promotion ",
         "promoTitleSpan2": "Name",
         "promoDescriptor2": "Terms of the promotion in a couple of lines, Terms of the promotion in a couple of lines",
-        "promoDate3":"*THE PROMOTION IS VALID UNTIL 12/14/24",
+        "promoDate3":"*the promotion is valid until 12/14/24",
         "promoTitle3": "Promotion ",
         "promoTitleSpan3": "Name",
         "promoDescriptor3": "Terms of the promotion in a couple of lines, Terms of the promotion in a couple of lines"
