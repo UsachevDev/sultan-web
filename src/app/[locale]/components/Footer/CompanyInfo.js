@@ -11,13 +11,13 @@ const CompanyInfo = ({
         <Image
             src={logo}
             alt={logoAlt}
-            className="company-logo"
+            className="company-info-logo"
             width={156}
             height={66}
         />
         <p className="company-info-description">{description}</p>
-        <form action="#" method="post" className="subscribe-form">
-            <label className="subscribe-form-label" htmlFor="email">
+        <form action="#" method="post" className="company-info-subscribe-form">
+            <label className="company-info-subscribe-form-label" htmlFor="email">
                 {subscribeLabel}
             </label>
             <div className="email-input">
@@ -27,7 +27,7 @@ const CompanyInfo = ({
                     placeholder={subscribePlaceholder}
                     required
                 />
-                <button type="submit" className="subscribe-button">
+                <button type="submit" className="company-info-subscribe-button">
                     <svg
                         width="8"
                         height="15"

@@ -3,273 +3,293 @@
 
 .page-footer {
     flex: 0 0 auto;
-    background-color: $second-color;
     min-height: 500px;
     padding-top: 70px;
-}
 
-.page-footer a {
-    color: $text-color-light;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.page-footer a:hover {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.page-footer h3 {
-    margin-bottom: 25px;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.footer-container {
-    max-width: 1368px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    color: $text-color-light;
-}
-
-.company-info-description {
-    width: 320px;
-    margin-top: 15px;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-}
-
-.subscribe-form {
-    margin-top: 45px;
-}
-
-.subscribe-form-label {
-    margin-bottom: 14px;
-    font-size: 12px;
-    line-height: 18px;
-    display: block;
-}
-
-.email-input {
-    position: relative;
-    width: 282px;
-}
-
-.email-input input {
-    width: calc(100% - 70px);
-    height: 59px;
-    border-radius: 36px;
-    border: none;
-    padding: 0;
-    padding-left: 20px;
-    padding-right: 50px;
-    font-family: $font-inter;
-    font-size: 12px;
-    line-height: 18px;
-}
-
-.subscribe-button {
-    padding: 0;
-    padding-left: 2px;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: $primary-color;
-    color: $text-color-light;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s;
-}
-
-.subscribe-button:hover {
-    background-color: $button-hover;
-}
-
-.site-menu ul,
-.categories ul {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    background-color: $second-color;
 
     a {
-        font-size: 14px;
-        line-height: 21px;
+        color: $text-color-light;
+        text-decoration: none;
+
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.6);
+        }
     }
-}
 
-.price-list-button {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $primary-color;
-    width: 214px;
-    height: 60px;
-    border-radius: 80px;
-    font-size: 14px;
-    line-height: 17px;
-    font-weight: 700;
-}
+    h3 {
+        margin-bottom: 25px;
 
-.price-list-button:hover {
-    transition: background-color 0.3s;
-    background-color: $button-hover;
-}
+        font-size: 20px;
+        font-weight: 600;
+    }
 
-.price-list-button-icon {
-    margin-left: 12px;
-}
-
-.messengers-label {
-    font-size: 14px;
-    line-height: 21px;
-}
-
-.messengers {
-    margin-top: 15px;
-    gap: 10px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.contacts-phone-container {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.phone-number {
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 21px;
-}
-
-.work-time {
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 18px;
-}
-
-.contacts-phone-container .order-call-ref {
-    font-size: 10px;
-    line-height: 15px;
-    text-decoration: underline;
-}
-
-.contacts-email-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 25px;
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 600;
-}
-
-.contacts-email-container-span {
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 16px;
-}
-
-.payment-methods {
-    display: flex;
-    gap: 5px;
-    margin-top: 25px;
-}
-
-@include laptop {
-    .page-footer {
+    @include laptop {
         padding: 15px;
         padding-top: 40px;
     }
 }
 
-@include tabletLarge {
-    .footer-container {
-        gap: 25px;
-    }
-}
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1368px;
+    margin: 0 auto;
 
-@include mobile {
-    .footer-container {
-        position: relative;
-    }
+    color: $text-color-light;
 
-    .company-logo {
-        width: 97px;
-        height: 41px;
-    }
+    .company-info {
+        &-description {
+            width: 320px;
+            margin-top: 15px;
 
-    .company-info-description {
-        width: 100%;
-        font-size: 12px;
-        line-height: 18px;
-        margin-top: 15px;
-    }
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+        }
 
-    .contacts {
-        order: 1;
-    }
+        &-subscribe-form {
+            margin-top: 45px;
 
-    .price-list {
-        order: 2;
-        width: 160px;
-    }
+            &-label {
+                display: block;
+                margin-bottom: 14px;
 
-    .price-list h3 {
-        visibility: hidden;
-        height: 45px;
-        margin: 0;
-    }
+                font-size: 12px;
+                line-height: 18px;
+            }
+        }
 
-    .price-list-button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 149px;
-        height: 40px;
-        font-size: 12px;
-        line-height: 15px;
-    }
+        .email-input {
+            position: relative;
 
-    .price-list-button-icon {
-        width: 13px;
-        height: 13px;
-    }
+            width: 282px;
 
-    .subscribe-form {
-        margin-top: 15px;
-    }
+            input {
+                width: calc(100% - 70px);
+                height: 59px;
+                padding: 0;
+                padding-left: 20px;
+                padding-right: 50px;
 
-    .email-input {
-        width: 100%;
+                font-family: $font-inter;
+                font-size: 12px;
+                line-height: 18px;
+
+                border-radius: 36px;
+                border: none;
+            }
+        }
+
+        &-subscribe-button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            padding: 0;
+            padding-left: 2px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+            background-color: $primary-color;
+            color: $text-color-light;
+            border: none;
+            cursor: pointer;
+
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: $button-hover;
+            }
+        }
     }
 
     .site-menu ul,
     .categories ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
         a {
-            font-size: 12px;
-            line-height: 18px;
+            font-size: 14px;
+            line-height: 21px;
         }
     }
-}
 
-@include mobileSmall {
-    .price-list {
-        width: 110px;
+    .price-list-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        width: 214px;
+        height: 60px;
+
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 700;
+
+        background-color: $primary-color;
+        border-radius: 80px;
+
+        &:hover {
+            background-color: $button-hover;
+
+            transition: background-color 0.3s;
+        }
+
+        &-icon {
+            margin-left: 12px;
+        }
     }
 
-    .footer-container {
+    .messengers {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        gap: 10px;
+
+        &-label {
+            font-size: 14px;
+            line-height: 21px;
+        }
+    }
+
+    .contacts {
+        &-phone-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .phone-number {
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 21px;
+            }
+
+            .work-time {
+                font-size: 12px;
+                font-weight: 300;
+                line-height: 18px;
+            }
+
+            .order-call-ref {
+                font-size: 10px;
+                line-height: 15px;
+
+                text-decoration: underline;
+            }
+        }
+
+        &-email-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 25px;
+            font-size: 14px;
+
+            line-height: 18px;
+            font-weight: 600;
+
+            &-span {
+                font-size: 12px;
+                font-weight: 300;
+                line-height: 16px;
+            }
+        }
+
+        &-payment-methods {
+            display: flex;
+            margin-top: 25px;
+            gap: 5px;
+        }
+    }
+
+    @include tabletLarge {
+        gap: 25px;
+    }
+
+    @include mobile {
+        position: relative;
+
+        .company-info {
+            &-logo {
+                width: 97px;
+                height: 41px;
+            }
+
+            &-description {
+                width: 100%;
+                margin-top: 15px;
+
+                font-size: 12px;
+                line-height: 18px;
+            }
+
+            &-subscribe-form {
+                margin-top: 15px;
+
+                .email-input {
+                    width: 100%;
+                }
+            }
+        }
+
+        .contacts {
+            order: 1;
+        }
+
+        .price-list {
+            order: 2;
+            width: 160px;
+
+            h3 {
+                height: 45px;
+                margin: 0;
+
+                visibility: hidden;
+            }
+
+            &-button {
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                width: 149px;
+                height: 40px;
+
+                font-size: 12px;
+                line-height: 15px;
+
+                &-icon {
+                    width: 13px;
+                    height: 13px;
+                }
+            }
+        }
+
+        .site-menu ul,
+        .categories ul {
+            a {
+                font-size: 12px;
+                line-height: 18px;
+            }
+        }
+    }
+
+    @include mobileSmall {
         gap: 15px;
+
+        .price-list {
+            width: 110px;
+        }
     }
 }
