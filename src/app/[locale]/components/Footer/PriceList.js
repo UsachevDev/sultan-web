@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ButtonUI from "/src/app/[locale]/components/UI/ButtonUI/ButtonUI.jsx";
+import ButtonUI from "UI/ButtonUI/ButtonUI.jsx";
 
 const PriceList = ({ title, buttonLabel, messengersLabel }) => (
     <div className="footer-section price-list">
