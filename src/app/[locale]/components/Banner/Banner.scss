@@ -31,6 +31,8 @@
         max-width: 1366px;
         margin: 0 auto;
         padding-top: 98px;
+
+
     }
 
 
@@ -54,31 +56,18 @@
 
         }
 
-        .btn-to-products {
-            width: 300px;
-            height: 95px;
-            margin-top: 40px;
-            background-color: $primary-color;
-            border-radius: 80px;
-            border: 0;
+        .btn-catalog {
+            padding: 36px 88px;
+            margin-top: 60px;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            cursor: pointer;
 
-            &:hover {
-                background-color: $button-hover;
-            }
-
-            a {
-                font-size: 18px;
-                font-weight: 700;
-                color: #FFFFFF;
-                line-height: 22px;
-                letter-spacing: 0.15em;
-                text-decoration: none;
-            }
 
         }
 
+        a {
+            text-decoration: none;
+        }
 
     }
 
@@ -86,15 +75,13 @@
         display: inline-flex;
         margin-top: 92px;
 
-        .btn-banner-plus {
-            border-radius: 100px;
-            border: 0;
-            background-color: $primary-color;
-            margin-right: 8px;
-            color: #FFFFFF;
+        .ui-button {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
         }
 
-        span {
+        &-promo {
             font-size: 14px;
             margin-right: 36px;
             font-weight: 400;
@@ -125,21 +112,22 @@
 
 }
 
-@include  tabletSmall{
+@include tabletSmall {
     .banner-content {
-        h1{
+        h1 {
             font-size: 56px;
         }
+
         h2 {
             font-size: 26px;
         }
-        
+
     }
 }
 
 @include mobile {
 
-    .btn-to-products,
+    .btn-catalog,
     #banner-footer-1 {
         display: none;
     }
@@ -147,6 +135,7 @@
     .banner {
         height: 300px;
         padding-top: 50px;
+
         &-blur {
             display: none;
         }
@@ -186,17 +175,17 @@
         display: block;
         padding-left: 15px;
 
-        .btn-banner-plus {
-            margin-right: 4px;
+        .ui-button {
+            width: 18px;
+            height: 18px;
             font-size: 10px;
-            border-radius: 100px;
-            border: 0;
-            background-color: $primary-color;
-            color: #FFFFFF;
+            margin-right: 5px;
         }
 
-
-        span {
+        & > span {
+            display: flex;
+            margin-top: 16px;
+            align-items: center;
             font-size: 10px;
             font-weight: 400;
             line-height: 15px;
@@ -208,10 +197,6 @@
             font-weight: 700;
         }
 
-        * {
-            margin-top: 16px;
-
-        }
     }
 
 }

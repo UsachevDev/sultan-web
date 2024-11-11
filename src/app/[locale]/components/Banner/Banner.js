@@ -1,6 +1,7 @@
+"use client";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import ButtonTemplate from "../ButtonTemplate/ButtonTemplate";
+import ButtonUI from "../UI/ButtonUI/ButtonUI";
 
 import "./Banner.scss";
 
@@ -16,14 +17,12 @@ const Banner = () => {
                             {t('h1.firstLine')}<br /> {t('h1.secondLine')}
                         </h1>
                         <h2>{t('h2')}</h2>
-                        <button className="btn-to-products"><Link href={"/products"}>{t('button')}</Link></button>
-
+                        <Link href={"/products"}><ButtonUI label={t('button')} size="lg" className="btn-catalog"></ButtonUI></Link>
                         <div className="banner-footer" id="banner-footer-1">
-                            <ButtonTemplate width={39} height={39} text={"+"} className="btn-banner-plus" />
-                            <span>{t('promo.span1')}<br /> {t('promo.span2')}</span>
-                            <ButtonTemplate width={39} height={39} text={"+"} className="btn-banner-plus" />
-                            <span>{t('promo.span3')}<br />
-                                <b>{t('promo.span4')}</b>
+                            <ButtonUI label="+" size="xs" />
+                            <span className="banner-footer-promo">{t('promo.span1')}<br /> {t('promo.span2')}</span>
+                            <ButtonUI label="+" size="xs" />
+                            <span className="banner-footer-promo">{t('promo.span3')}<br /> <b>{t('promo.span4')}</b>
                             </span>
                         </div>
                     </div>
@@ -33,12 +32,14 @@ const Banner = () => {
 
             </div>
             <div className="banner-footer-mobile" >
-                <ButtonTemplate width={18} height={18} text={"+"} className="btn-banner-plus" />
-                <span>{t('promo.span1')} {t('promo.span2')}</span> <br />
-                <ButtonTemplate width={18} height={18} text={"+"} className="btn-banner-plus" />
-                <span>{t('promo.span3')}<b> {t('promo.span4')}</b>
+                <span>
+                    <ButtonUI label="+" size="xs" />
+                    {t('promo.span1')} {t('promo.span2')} <br />             
                 </span>
-
+                <span>
+                    <ButtonUI label="+" size="xs" /> 
+                    {t('promo.span3')} <b>{t('promo.span4')}</b>
+                </span>
             </div>
         </>
     )

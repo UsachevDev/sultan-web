@@ -14,6 +14,7 @@ import "./ButtonUI.scss";
 
 const ButtonUI = ({
     children,
+    className,
     type = "button",
     label = "",
     icon = "",
@@ -27,7 +28,7 @@ const ButtonUI = ({
     return (
         <button
             ref={buttonRef}
-            className={`ui-button ui-button--${size} ui-button--${theme}`}
+            className={`ui-button ui-button--${size} ui-button--${theme} ${className}`}
             type={type}
             disabled={disabled}
             onClick={onClick}
