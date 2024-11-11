@@ -59,8 +59,12 @@
 
 .product-footer {
     position: absolute;
+    display: flex;
     bottom: 0px;
-    display: block;
+
+    .ui-button{
+        margin-left: 40px;
+    }
 }
 
 .product-price {

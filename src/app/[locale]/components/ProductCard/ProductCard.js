@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { ToBasketButton } from "../ToBasketButton/ToBasketButton";
+import ButtonUI from "../UI/ButtonUI/ButtonUI";
 import "./ProductCard.scss";
 
 function ShowInfo({ info: filter, t: t }) {
@@ -71,7 +71,7 @@ export default function ProductCard({ card: el, info: filter }) {
                 </div>
                 <span className="product-footer">
                     <span className="product-price" style={{ fontWeight: 800 }}>{el.price}₽</span>
-                    <span className="product-tobasket"><ToBasketButton /> </span>
+                    <ButtonUI icon="basket" size="xs" label="В КОРЗИНУ" />
                 </span>
             </div>
         </article>
