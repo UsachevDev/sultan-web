@@ -18,7 +18,10 @@ const CompanyInfo = ({
         />
         <p className="company-info-description">{description}</p>
         <form action="#" method="post" className="company-info-subscribe-form">
-            <label className="company-info-subscribe-form-label" htmlFor="email">
+            <label
+                className="company-info-subscribe-form-label"
+                htmlFor="email"
+            >
                 {subscribeLabel}
             </label>
             <div className="email-input">

@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import "./PromoCarousel.scss";
+import ButtonUI from "UI/ButtonUI/ButtonUI.jsx";
 
 const PromoCarousel = () => {
     const [promoData, setPromoData] = useState([]);
@@ -68,15 +69,15 @@ const PromoCarousel = () => {
                                         {t(slide.promoDescriptor)}
                                     </p>
                                 )}
+
                                 {slide.promoButton && (
-                                    <button
-                                        className="promo-button"
+                                    <ButtonUI
+                                        label={t(slide.promoButton)}
+                                        size="lg"
                                         onClick={() =>
                                             console.log("Кнопка нажата!")
                                         }
-                                    >
-                                        {t(slide.promoButton)}
-                                    </button>
+                                    />
                                 )}
                             </div>
                             <Image
