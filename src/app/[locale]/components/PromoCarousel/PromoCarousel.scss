@@ -42,6 +42,11 @@
     &-content {
         margin-left: 110px;
         width: 576px;
+
+        button {
+            height: 90px;
+            margin-top: 50px;
+        }
     }
 
     &-date {
@@ -68,29 +73,6 @@
 
         font-size: 20px;
         line-height: 30px;
-    }
-
-    &-button {
-        height: 90px;
-        width: 344px;
-        margin-top: 50px;
-
-        font-family: $font-inter;
-        font-size: 18px;
-        font-weight: 700;
-        line-height: 21px;
-
-        color: $text-color-light;
-        border-radius: 80px;
-        border: none;
-        background-color: $primary-color;
-        cursor: pointer;
-
-        transition: background-color 0.3s;
-
-        &:hover {
-            background-color: $button-hover;
-        }
     }
 }
 
@@ -191,12 +173,12 @@
 
         &-content {
             margin-left: 40px;
-        }
 
-        &-button {
-            margin-top: 40px;
-            height: 80px;
-            width: 305px;
+            button {
+                margin-top: 40px;
+                height: 80px;
+                width: 305px;
+            }
         }
     }
 
@@ -242,13 +224,15 @@
             line-height: 20px;
         }
 
-        &-button {
-            margin-top: 30px;
-            height: 70px;
-            width: 266px;
+        &-content {
+            button {
+                margin-top: 30px;
+                height: 70px;
+                width: 266px;
 
-            font-size: 16px;
-            line-height: 18px;
+                font-size: 16px;
+                line-height: 18px;
+            }
         }
     }
 
@@ -288,25 +272,34 @@
                 bottom: -20px;
                 left: 0;
                 right: 0;
-        
+
                 width: 100%;
             }
         }
-        
+
         &-content {
             margin-left: 25px;
+
+            button {
+                margin-top: 20px;
+                height: 56px;
+                width: 212px;
+
+                font-size: 14px;
+                line-height: 16px;
+            }
         }
 
         &-date {
             width: 200px;
-    
+
             font-size: 10px;
             line-height: 14px;
         }
 
         &-title {
             margin-top: 10px;
-    
+
             font-size: 30px;
             line-height: 30px;
         }
@@ -314,18 +307,9 @@
         &-description {
             max-width: 220px;
             margin-top: 15px;
-    
+
             font-size: 12px;
             line-height: 14px;
-        }
-
-        &-button {
-            margin-top: 20px;
-            height: 56px;
-            width: 212px;
-    
-            font-size: 14px;
-            line-height: 16px;
         }
     }
 
@@ -365,11 +349,20 @@
 
         &-content {
             margin-left: 25px;
+
+            button {
+                margin-top: 15px;
+                height: 43px;
+                width: 160px;
+
+                font-size: 10px;
+                line-height: 12px;
+            }
         }
 
         &-date {
             width: 110px;
-    
+
             font-size: 6px;
             line-height: 12px;
             letter-spacing: 2px;
@@ -377,7 +370,7 @@
 
         &-title {
             margin-top: 10px;
-    
+
             font-size: 22px;
             line-height: 20px;
         }
@@ -385,15 +378,6 @@
         &-description {
             margin-top: 10px;
             max-width: 140px;
-        }
-
-        &-button {
-            margin-top: 15px;
-            height: 43px;
-            width: 160px;
-    
-            font-size: 10px;
-            line-height: 12px;
         }
     }
 }
@@ -414,10 +398,12 @@
             max-width: 120px;
         }
 
-        &-button {
-            margin-top: 8px;
-            height: 36px;
-            width: 132px;
+        &-content {
+            button {
+                margin-top: 8px;
+                height: 36px;
+                width: 132px;
+            }
         }
     }
 }
