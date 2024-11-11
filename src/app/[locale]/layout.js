@@ -6,7 +6,7 @@ import {notFound} from 'next/navigation';
 import Header from './components/header/header';
 import Footer from './components/Footer/Footer';
 import "./globals.scss";
-
+import "./vars.scss";
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
