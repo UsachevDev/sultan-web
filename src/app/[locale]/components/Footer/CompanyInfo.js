@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ButtonUI from "/src/app/[locale]/components/UI/ButtonUI/ButtonUI.jsx";
 
 const CompanyInfo = ({
     logo,
@@ -27,20 +28,7 @@ const CompanyInfo = ({
                     placeholder={subscribePlaceholder}
                     required
                 />
-                <button type="submit" className="company-info-subscribe-button">
-                    <svg
-                        width="8"
-                        height="15"
-                        viewBox="0 0 8 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M0 12.8571L5 7.5L0 2.14286L1 0L8 7.5L1 15L0 12.8571Z"
-                            fill="white"
-                        />
-                    </svg>
-                </button>
+                <ButtonUI icon="pointer" size="xs" />
             </div>
         </form>
     </div>

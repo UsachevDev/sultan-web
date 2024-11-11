@@ -13,4 +13,10 @@
 
         background-image: url("/icon/download.svg");
     }
+
+    &--pointer {
+        background-image: url("/icon/pointer.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 }
