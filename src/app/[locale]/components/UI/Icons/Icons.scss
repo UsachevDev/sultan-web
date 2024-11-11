@@ -5,7 +5,8 @@
     display: inline-block;
     width: 1em;
     height: 1em;
-
+    background-repeat: no-repeat;
+    background-position: center;
     &--download {
         width: 17px;
         height: 17px;
@@ -14,9 +15,15 @@
         background-image: url("/icon/download.svg");
     }
 
+    &--basket {
+        width: 26px;
+        height: 26px;
+        margin-left: 6px;
+        background-image: url("/icon/basket-icon.svg");
+    }
+
     &--pointer {
         background-image: url("/icon/pointer.svg");
-        background-repeat: no-repeat;
-        background-position: center;
+
     }
 }

@@ -60,7 +60,11 @@
 .product-footer {
     position: absolute;
     bottom: 0px;
-    display: block;
+    display: flex;
+
+    .ui-button{
+        margin-left: 40px;
+    }
 }
 
 .product-price {
