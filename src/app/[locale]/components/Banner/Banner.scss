@@ -1,36 +1,40 @@
+@import "vars";
+@import "mixins";
+
 .banner-footer-mobile {
     display: none;
 }
 
 .banner {
+    position: relative;
     height: 790px;
     background-image: url("/image/banner.png");
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    position: relative;
 
-    .banner-blur {
+    &-blur {
         position: absolute;
+        top: 0;
         width: 47%;
         height: 100%;
-        top: 0;
         background-color: #8A94AB;
-        background: linear-gradient(89.86deg, #8A94AB 0.13%, rgba(138, 148, 171, 0) 99.89%);
+        background: linear-gradient(89deg, #8A94AB 0.13%, rgba(138, 148, 171, 0));
         backdrop-filter: blur(4px);
 
     }
 
-    .banner-container {
+    &-container {
         position: relative;
         display: block;
         height: 692px;
-        padding-top: 98px;
         max-width: 1366px;
         margin: 0 auto;
+        padding-top: 98px;
     }
 
-    .banner-content {
+
+    &-content {
         width: 570px;
         height: 100%;
         text-align: left;
@@ -38,68 +42,69 @@
 
         h1 {
             font-size: 70px;
-            line-height: 77px;
+            line-height: 1.1;
         }
 
         h2 {
             margin-top: 40px;
             font-size: 30px;
-            text-transform: uppercase;
             font-weight: 700;
             line-height: 45px;
+            text-transform: uppercase;
 
         }
 
         .btn-to-products {
             width: 300px;
             height: 95px;
+            margin-top: 40px;
+            background-color: $primary-color;
             border-radius: 80px;
             border: 0;
-            background-color: var(--button-color);
-            margin-top: 40px;
             text-transform: uppercase;
             cursor: pointer;
+
+            &:hover {
+                background-color: $button-hover;
+            }
 
             a {
                 font-size: 18px;
                 font-weight: 700;
                 color: #FFFFFF;
-                line-height: 21.78px;
+                line-height: 22px;
                 letter-spacing: 0.15em;
                 text-decoration: none;
             }
 
         }
 
-        .btn-to-products:hover {
-            background-color: #e8b75b;
+
+    }
+
+    &-footer {
+        display: inline-flex;
+        margin-top: 92px;
+
+        .btn-banner-plus {
+            border-radius: 100px;
+            border: 0;
+            background-color: $primary-color;
+            margin-right: 8px;
+            color: #FFFFFF;
+        }
+
+        span {
+            font-size: 14px;
+            margin-right: 36px;
+            font-weight: 400;
+            line-height: 21px;
+            text-align: left;
 
         }
 
-        .banner-footer {
-            display: inline-flex;
-            margin-top: 91px;
-
-            .btn-banner-plus {
-                border-radius: 100px;
-                border: 0;
-                background-color: var(--button-color);
-                margin-right: 8px;
-                color: #FFFFFF;
-            }
-
-            span {
-                font-size: 14px;
-                margin-right: 35px;
-                font-weight: 400;
-                line-height: 21px;
-                text-align: left;
-
-            }
-
-            b {
-                font-weight: 700;
-            }
+        b {
+            font-weight: 700;
         }
     }
 
@@ -108,7 +113,7 @@
 @media (max-width: 1390px) {
     .banner {
         .banner-content {
-            margin-left: 15px;
+            margin-left: 16px;
 
         }
 
@@ -120,7 +125,19 @@
 
 }
 
-@media (max-width: 675px) {
+@include  tabletSmall{
+    .banner-content {
+        h1{
+            font-size: 56px;
+        }
+        h2 {
+            font-size: 26px;
+        }
+        
+    }
+}
+
+@include mobile {
 
     .btn-to-products,
     #banner-footer-1 {
@@ -130,12 +147,11 @@
     .banner {
         height: 300px;
         padding-top: 50px;
-
-        .banner-blur {
+        &-blur {
             display: none;
         }
 
-        .banner-container {
+        &-container {
             width: 82%;
             height: 40%;
             padding-top: 50px;
@@ -153,7 +169,6 @@
                 h1 {
                     font-size: 18px;
                     word-spacing: 10px;
-
                     line-height: 19.8px;
                 }
 
@@ -167,21 +182,17 @@
         }
     }
 
-    .banner-footer-mobile>* {
-        margin-top: 15px;
-    }
-
     .banner-footer-mobile {
-        padding-left: 15px;
         display: block;
+        padding-left: 15px;
 
         .btn-banner-plus {
+            margin-right: 4px;
+            font-size: 10px;
             border-radius: 100px;
             border: 0;
-            background-color: var(--button-color);
-            margin-right: 5px;
+            background-color: $primary-color;
             color: #FFFFFF;
-            font-size: 10px;
         }
 
 
@@ -197,6 +208,10 @@
             font-weight: 700;
         }
 
+        * {
+            margin-top: 16px;
+
+        }
     }
 
 }

@@ -1,16 +1,21 @@
+@import "vars";
+@import "mixins";
+
 .cards {
     display: grid;
     grid-auto-flow: row;
+    grid-template-columns: repeat(4, auto);
     justify-items: start;
     justify-content: space-between;
     gap: 21px;
+
 }
 
 .cards-mobile {
     display: none;
 }
 
-@media screen and (max-width: 1320px) {
+@include tabletLarge {
     .cards {
         display: none;
     }
@@ -21,12 +26,6 @@
     }
 
     .cards-mobile .swiper-pagination-bullet-active {
-        background: var(--button-color);
-    }
-}
-
-@media screen and (min-width: 1320px) {
-    .cards {
-        grid-template-columns: repeat(4, auto);
+        background: $primary-color;
     }
 }

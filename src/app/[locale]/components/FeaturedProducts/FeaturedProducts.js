@@ -1,7 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
 import Cards from "../Cards/Cards";
-import "./FeaturedProducts.css";
+import "./FeaturedProducts.scss";
 
 export default function FeaturedProducts() {
     const t = useTranslations("GoodsForSale");

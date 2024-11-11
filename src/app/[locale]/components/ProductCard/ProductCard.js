@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ToBasketButton } from "../ToBasketButton/ToBasketButton";
-import "./ProductCard.css";
+import "./ProductCard.scss";
 
 function ShowInfo({ info: filter, t: t }) {
     let text;

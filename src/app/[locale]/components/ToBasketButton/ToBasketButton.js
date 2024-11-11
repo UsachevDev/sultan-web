@@ -1,7 +1,7 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import "./ToBasketButton.css";
+import "./ToBasketButton.scss";
 
 export function ToBasketButton() {
     const t = useTranslations("ToBasketButton");
