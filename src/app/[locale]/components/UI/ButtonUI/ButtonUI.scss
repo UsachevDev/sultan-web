@@ -1,0 +1,36 @@
+@import "vars";
+@import "mixins";
+
+.ui-button {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 700;
+    color: $text-color-light;
+
+    background-color: $primary-color;
+    border-radius: 80px;
+    border: none;
+
+    &:hover {
+        background-color: $button-hover;
+
+        transition: background-color 0.3s;
+    }
+
+    &--xs {
+        padding: 15px;
+    }
+
+    &--md {
+        padding: 21px;
+    }
+
+    &--lg {
+        padding: 34px;
+    }
+}

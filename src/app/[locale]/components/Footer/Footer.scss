@@ -126,29 +126,10 @@
         }
     }
 
-    .price-list-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-        width: 214px;
-        height: 60px;
-
-        font-size: 14px;
-        line-height: 17px;
-        font-weight: 700;
-
-        background-color: $primary-color;
-        border-radius: 80px;
-
-        &:hover {
-            background-color: $button-hover;
-
-            transition: background-color 0.3s;
-        }
-
-        &-icon {
-            margin-left: 12px;
+    .price-list {
+        button {
+            margin-bottom: 20px;
+            width: 214px;
         }
     }
 
