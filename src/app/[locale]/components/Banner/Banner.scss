@@ -14,7 +14,7 @@
         top: 0;
         width: 47%;
         height: 100%;
-        background-color: #8A94AB;
+        background-color: $gradient-color;
         background: linear-gradient(89deg, #8A94AB 0.13%, rgba(138, 148, 171, 0));
         backdrop-filter: blur(4px);
 
@@ -36,7 +36,7 @@
         width: 570px;
         height: 100%;
         text-align: left;
-        color: #FFFFFF;
+        color: $background-color;
 
         h1 {
             font-size: 70px;
@@ -83,7 +83,6 @@
             font-weight: 400;
             line-height: 21px;
             text-align: left;
-
         }
 
         b {
@@ -93,18 +92,16 @@
 
 }
 
-@media (max-width: 1390px) {
+@include laptop {
     .banner {
         .banner-content {
             margin-left: 16px;
-
         }
 
         .banner-blur {
             width: 600px;
         }
     }
-
 
 }
 
@@ -131,7 +128,7 @@
             height: 40%;
             padding-top: 50px;
             display: flex;
-            background-color: #8A94AB;
+            background-color: $gradient-color;
             background: linear-gradient(89.86deg, #8A94AB 0.13%, rgba(138, 148, 171, 0) 99.89%);
             backdrop-filter: blur(4px);
 
@@ -168,7 +165,7 @@
             margin-right: 5px;
         }
 
-        & > span {
+        &>span {
             display: flex;
             margin-top: 16px;
             align-items: center;
