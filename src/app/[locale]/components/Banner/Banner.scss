@@ -1,10 +1,6 @@
 @import "vars";
 @import "mixins";
 
-.banner-footer-mobile {
-    display: none;
-}
-
 .banner {
     position: relative;
     height: 790px;
@@ -126,19 +122,9 @@
 }
 
 @include mobile {
-
-    .btn-catalog,
-    #banner-footer-1 {
-        display: none;
-    }
-
     .banner {
         height: 300px;
         padding-top: 50px;
-
-        &-blur {
-            display: none;
-        }
 
         &-container {
             width: 82%;
