@@ -7,7 +7,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import "./Cards.scss";
 
 const Cards = ({ info: filter }) => {
-    const [isLoading, setIsLoading] = useState([true]);
+    const [isLoaded, setIsLoaded] = useState(false);
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
@@ -16,17 +16,17 @@ const Cards = ({ info: filter }) => {
                 const response = await fetch("/data/productDTOs_main.json");
                 const data = await response.json();
                 setCards(data);
-                setIsLoading(false);
+                setIsLoaded(true);
             } catch (error) {
                 console.error("Ошибка загрузки данных товаров:", error);
-                setIsLoading(false);
+                setIsLoaded(false);
             }
         };
 
         fetchCards();
     }, []);
 
-    if (isLoading) {
+    if (!isLoaded) {
         return <p>Загрузка...</p>
     }
     return (

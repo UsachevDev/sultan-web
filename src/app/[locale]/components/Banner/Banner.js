@@ -6,6 +6,13 @@ import ButtonUI from "../UI/ButtonUI/ButtonUI";
 import "./Banner.scss";
 
 const Banner = () => {
+
+    const btnPlus = <ButtonUI
+        label="+"
+        size="xs"
+        className="btn-banner-plus"
+    />
+
     const t = useTranslations("Banner");
     return (
         <>
@@ -24,24 +31,23 @@ const Banner = () => {
                                 className="btn-catalog"></ButtonUI>
                         </Link>
                         <div className="banner-footer" id="banner-footer-1">
-                            <ButtonUI label="+" size="xs" className="btn-banner-plus" />
+                            {btnPlus}
                             <span className="banner-footer-promo">{t('promo.span1')}<br /> {t('promo.span2')}</span>
-                            <ButtonUI label="+" size="xs" className="btn-banner-plus" />
+                            {btnPlus}
                             <span className="banner-footer-promo">{t('promo.span3')}<br /> <b>{t('promo.span4')}</b>
                             </span>
                         </div>
                     </div>
-
                 </div>
 
             </div>
             <div className="banner-footer-mobile" >
                 <span>
-                    <ButtonUI label="+" size="xs" className="btn-banner-plus" />
+                    {btnPlus}
                     {t('promo.span1')} {t('promo.span2')} <br />
                 </span>
                 <span>
-                    <ButtonUI label="+" size="xs" className="btn-banner-plus" />
+                    {btnPlus}
                     {t('promo.span3')} <b>{t('promo.span4')}</b>
                 </span>
             </div>
