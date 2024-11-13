@@ -17,11 +17,16 @@ const Banner = () => {
                             {t('h1.firstLine')}<br /> {t('h1.secondLine')}
                         </h1>
                         <h2>{t('h2')}</h2>
-                        <Link href={"/products"}><ButtonUI label={t('button')} size="lg" className="btn-catalog"></ButtonUI></Link>
+                        <Link href={"/products"}>
+                            <ButtonUI
+                                label={t('button')}
+                                size="lg"
+                                className="btn-catalog"></ButtonUI>
+                        </Link>
                         <div className="banner-footer" id="banner-footer-1">
-                            <ButtonUI label="+" size="xs" />
+                            <ButtonUI label="+" size="xs" className="btn-banner-plus" />
                             <span className="banner-footer-promo">{t('promo.span1')}<br /> {t('promo.span2')}</span>
-                            <ButtonUI label="+" size="xs" />
+                            <ButtonUI label="+" size="xs" className="btn-banner-plus" />
                             <span className="banner-footer-promo">{t('promo.span3')}<br /> <b>{t('promo.span4')}</b>
                             </span>
                         </div>
@@ -29,15 +34,14 @@ const Banner = () => {
 
                 </div>
 
-
             </div>
             <div className="banner-footer-mobile" >
                 <span>
-                    <ButtonUI label="+" size="xs" />
-                    {t('promo.span1')} {t('promo.span2')} <br />             
+                    <ButtonUI label="+" size="xs" className="btn-banner-plus" />
+                    {t('promo.span1')} {t('promo.span2')} <br />
                 </span>
                 <span>
-                    <ButtonUI label="+" size="xs" /> 
+                    <ButtonUI label="+" size="xs" className="btn-banner-plus" />
                     {t('promo.span3')} <b>{t('promo.span4')}</b>
                 </span>
             </div>

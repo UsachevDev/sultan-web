@@ -71,7 +71,7 @@ export default function ProductCard({ card: el, info: filter }) {
                 </div>
                 <span className="product-footer">
                     <span className="product-price" style={{ fontWeight: 800 }}>{el.price}₽</span>
-                    <ButtonUI icon="basket" size="sm" label="В КОРЗИНУ" />
+                    <ButtonUI icon="basket" size="sm" label="В КОРЗИНУ" className="btn-tocart" />
                 </span>
             </div>
         </article>

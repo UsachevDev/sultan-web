@@ -60,9 +60,10 @@
 .product-footer {
     position: absolute;
     display: flex;
+    align-items: center;
     bottom: 0px;
 
-    .ui-button {
+    .btn-tocart {
         margin-left: 40px;
     }
 }
