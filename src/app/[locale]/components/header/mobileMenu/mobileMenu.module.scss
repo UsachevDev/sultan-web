@@ -1,0 +1,159 @@
+@import '../../../vars.scss';
+
+.overlay {
+    position: fixed;
+    top: 103px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    background-color: $menu-overlay-color;
+}
+
+.mobileMenu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 15px 32px 13px;
+    gap: 50px;
+    box-sizing: border-box;
+    background-color: $background-color;
+    overflow-y: auto;
+    animation: slideDown 0.3s ease;
+    overflow-x: hidden;
+}
+
+.contactInformation {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+
+    &::after {
+        position: absolute;
+        bottom: -25px;
+        right: 0;
+        margin-left: 2px;
+        width: calc(100% - 2px);
+        height: 0;
+        box-sizing: border-box;
+        border: 1px dashed $second-color;
+        opacity: 0.2;
+        content: "";
+    }
+}
+
+.locationBlock, .emailBlock {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.phoneBlock {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.phoneBlockInner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.phoneBlockText2 {
+    margin-left: 34px;
+    margin-top: 5px;
+    font-family: $font-inter;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    color: $second-color;
+}
+
+.addressText, .emailText, .phoneBlockInnerText1 {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-inter;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    color: $second-color;
+}
+
+.addressText span:first-child,
+.emailLink, .phoneBlockInner span:first-child {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+    color: $second-color;
+}
+
+.phoneBlockReqCall {
+    margin-top: 13px;
+    margin-left: 1px;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 7px;
+    font-family: $font-inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    text-decoration: underline;
+    color: $second-color;
+}
+
+.menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 25px;
+
+    &::after {
+        position: absolute;
+        bottom: -25px;
+        margin-left: 2px;
+        width: calc(100% - 2px);
+        height: 0;
+        box-sizing: border-box;
+        border: 1px dashed $second-color;
+        opacity: 0.2;
+        content: "";
+    }
+}
+
+.menuText {
+    margin-left: 2px;
+    font-family: $font-inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: $second-color;
+}
+
+.button2 {
+    margin-left: 2px;
+    margin-top: -3px;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
