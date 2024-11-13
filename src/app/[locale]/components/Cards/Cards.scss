@@ -11,15 +11,7 @@
 
 }
 
-.cards-mobile {
-    display: none;
-}
-
 @include tabletLarge {
-    .cards {
-        display: none;
-    }
-
     .cards-mobile {
         display: block;
         height: 490px;
