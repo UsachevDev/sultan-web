@@ -5,7 +5,7 @@ import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import LocalSwitcher from '../LocalSwitcher';
 import LogoButton from './logo-button';
-import Button from '../UI/button';
+import ButtonUI from '../UI/ButtonUI/ButtonUI';
 import SearchBar from './searchBar';
 import Cart from './cart';
 import handleDownload from './handleDownload';
@@ -113,13 +113,11 @@ const Header = () => {
           <div className={styles.block3}>
           <div className={styles.logo}><LogoButton /></div>
           <div className={styles.button1}>
-            <Link href="/catalog" >
-            <Button text={t('button-1')} 
-            customClassStyle={styles.customStyleButton}
-            icon={<Image src="/icon/header-catalog-icon.svg" 
-            height={16} 
-            width={16} 
-            alt="catalog icon"/>}/>
+            <Link href="/catalog" className={styles.linkStyle}>
+            <ButtonUI label={t('button-1')}
+            icon='catalog'
+            className={styles.customStyleButton}
+            />
             </Link>
           </div>
           <div className={styles.tabletButton1}>
@@ -163,18 +161,16 @@ const Header = () => {
             </div>
           </div>
           <div className={styles.button2}>
-            <Button 
-            text={t('button-2')} 
-            icon={<Image src="/icon/header-download-icon.svg" 
-              height={17} 
-              width={18} 
-              alt="download icon"/>}
+            <ButtonUI
+            label={t('button-2')}
+            icon='download'
             onClick={handleDownload}
-            customClassStyle={styles.customStyleButton}/>
+            className={styles.customStyleButton}
+            />
           </div>
           <div className={styles.tabletButton3}>
             <MobileButton 
-            icon={<Image src="/icon/header-download-icon.svg" 
+            icon={<Image src="/icon/download.svg" 
               height={17} 
               width={18} 
               alt="download icon"/>}

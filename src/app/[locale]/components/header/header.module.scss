@@ -160,6 +160,16 @@
   margin-top: 32px;
 }
 
+.linkStyle {
+  text-decoration: none;
+}
+
+.customStyleButton {
+  width: 192px;
+  height: 59px;
+  cursor: pointer;
+}
+
 /* Location and email block */
 .wrapper {
   display: flex;

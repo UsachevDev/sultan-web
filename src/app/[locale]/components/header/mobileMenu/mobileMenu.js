@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import MobileButton from '../../UI/mobileButton';
-import Button from '../../UI/button';
+import ButtonUI from '../../UI/ButtonUI/ButtonUI';
 import handleDownload from '../handleDownload';
 import LocalSwitcher from '../../LocalSwitcher';
 import NavMenu from '../navMenu';
@@ -61,12 +61,11 @@ const MobileMenu = () => {
           <div className={styles.menuText}>{t('siteMenu')}</div>
           <NavMenu />
           <div className={styles.button2}>
-          <Button text={t('button-2')} 
-          icon={<Image src="/icon/header-download-icon.svg" 
-            height={17} width={18} 
-            alt="download icon"/>} 
-          customStyle={{width: '290px', height: '70px'}}
-          onClick={handleDownload}
+          <ButtonUI
+            label={t('button-2')}
+            icon='download'
+            onClick={handleDownload}
+            className={styles.customStyleButton}
           />
           </div>
         </div>
