@@ -1,5 +1,11 @@
 @import 'vars';
 
+@mixin desktop {
+    @media screen and (max-width: $breakpoint-xxxl) {
+        @content;
+    }
+}
+
 @mixin laptop {
     @media screen and (max-width: $breakpoint-xxl) {
         @content;

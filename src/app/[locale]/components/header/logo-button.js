@@ -1,6 +1,6 @@
 'use client'
-import { Link } from '@/i18n/routing';
-import styles from './componentsStyles.module.css'
+import {Link} from '@/i18n/routing';
+import styles from './componentsStyles.module.scss'
 
 const LogoButton = () => {
     return (
