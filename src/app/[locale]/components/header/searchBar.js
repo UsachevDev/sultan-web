@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import styles from './componentsStyles.module.css';
+import styles from './componentsStyles.module.scss';
 
 const SearchBar = ({ customStyles = {}}) => {
   const t = useTranslations('Header');

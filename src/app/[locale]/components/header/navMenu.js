@@ -1,16 +1,15 @@
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import styles from "./componentsStyles.module.css";
+import { MENU_ITEMS } from "../constants";
+import styles from "./componentsStyles.module.scss";
 
 const NavMenu = () => {
     const t = useTranslations('Header.menu');
 
-    const menuItems = [
-        { text: t('1'), href: '' },
-        { text: t('2'), href: '' },
-        { text: t('3'), href: '' },
-        { text: t('4'), href: '' },
-    ];
+    const menuItems = MENU_ITEMS.map((item) => ({
+        ...item,
+        text: t(item.key),
+    }));
 
     return (
         <nav className={styles.menu}>
