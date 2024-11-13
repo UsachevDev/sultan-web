@@ -1,3 +1,4 @@
+"use client";
 import FeaturedProducts from './components/FeaturedProducts';
 import PromoCarousel from './components/PromoCarousel/PromoCarousel';
 import CatalogCarousel from './components/CatalogCarousel/CatalogCarousel';
