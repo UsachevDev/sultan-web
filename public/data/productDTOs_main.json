@@ -11,7 +11,8 @@
     "isLiquid": true,
     "size": 450,
     "amount": 1,
-    "manufacturer": "Prismatic"
+    "manufacturer": "Prismatic",
+    "isPopular" : true
   },
   {
     "id": 1,
@@ -25,7 +26,8 @@
     "isLiquid": true,
     "size": 450,
     "amount": 1,
-    "manufacturer": "Inventure"
+    "manufacturer": "Inventure",
+    "isPopular" : true
   },
   {
     "id": 2,
@@ -39,7 +41,8 @@
     "isLiquid": false,
     "size": 432,
     "amount": 15,
-    "manufacturer": "Sensate"
+    "manufacturer": "Sensate",
+    "isPopular" : true
   },
   {
     "id": 3,
@@ -53,7 +56,8 @@
     "isLiquid": false,
     "size": 1500,
     "amount": 1,
-    "manufacturer": "Martgo"
+    "manufacturer": "Martgo",
+    "isPopular" : true
   },
   {
     "id": 4,
@@ -67,7 +71,8 @@
     "isLiquid": true,
     "size": 450,
     "amount": 1,
-    "manufacturer": "Prismatic"
+    "manufacturer": "Prismatic",
+    "isPopular" : true
   },
   {
     "id": 5,
@@ -81,7 +86,8 @@
     "isLiquid": true,
     "size": 450,
     "amount": 1,
-    "manufacturer": "Inventure"
+    "manufacturer": "Inventure",
+    "isPopular" : true
   },
   {
     "id": 6,
@@ -95,7 +101,8 @@
     "isLiquid": false,
     "size": 434,
     "amount": 15,
-    "manufacturer": "Sensate"
+    "manufacturer": "Sensate",
+    "isPopular" : true
   },
   {
     "id": 7,
@@ -109,6 +116,7 @@
     "isLiquid": false,
     "size": 1500,
     "amount": 1,
-    "manufacturer": "Martgo"
+    "manufacturer": "Martgo",
+    "isPopular" : true
   }
 ]
