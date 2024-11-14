@@ -46,7 +46,7 @@ function ShowSize({ card: card, t: t }) {
 
 export default function ProductCard({ card: el, info: filter }) {
     const t = useTranslations("ProductCard");
-
+    const productName = t("productName") === "ru" ? el.nameRu : el.nameEn;
     return (
         <article className="product-card">
             <div className="product-img">
@@ -54,14 +54,14 @@ export default function ProductCard({ card: el, info: filter }) {
                 <Image
                     src={"/image/productCards/card" + el.id + ".svg"}
                     fill={true}
-                    alt={t("productName") === "ru" ? el.nameRu : el.nameEn}
+                    alt={productName}
                 />
                 <ShowSize card={el} t={t} />
             </div>
             <div className="product">
                 <div className="product-name">
                     <strong style={{ fontWeight: 800 }}>{el.brand.name} </strong>
-                    {t("productName") === "ru" ? el.nameRu : el.nameEn}</div>
+                    {productName}</div>
                 <div className="product-desc">
                     <ul>
                         <li><span className="product-desc-name">{t("barcode")}: </span>{el.barcode}</li>

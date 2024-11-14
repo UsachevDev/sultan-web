@@ -8,7 +8,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import "./Cards.scss";
 
 const Cards = ({ info: filter }) => {
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [cards, setCards] = useState([]);
     const { isDesktop, isLaptop } = useWidth();
 
@@ -18,7 +18,7 @@ const Cards = ({ info: filter }) => {
                 const response = await fetch("/data/productDTOs_main.json");
                 const data = await response.json();
                 setCards(data);
-                setIsLoaded(true);
+                setIsLoading(false);
             } catch (error) {
                 console.error("Ошибка загрузки данных товаров:", error);
                 setIsLoaded(false);
@@ -28,7 +28,7 @@ const Cards = ({ info: filter }) => {
         fetchCards();
     }, []);
 
-    if (!isLoaded) {
+    if (isLoading) {
         return <p>Загрузка...</p>
     }
 
