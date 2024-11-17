@@ -4,12 +4,12 @@
 .locale-switcher {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
 
     @include tabletLarge {
         img {
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
         }
     }
 
