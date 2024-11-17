@@ -5,17 +5,12 @@ import styles from "./componentsStyles.module.scss";
 
 const NavMenu = () => {
     const t = useTranslations('Header.menu');
-
-    const menuItems = MENU_ITEMS.map((item) => ({
-        ...item,
-        text: t(item.key),
-    }));
-
+    
     return (
         <nav className={styles.menu}>
-            {menuItems.map((item, index) => (
-                <Link key={index} href={item.href} className={styles.menuItem}>
-                    {item.text}
+            {MENU_ITEMS.map((item, index) => (
+                <Link key={index} href={item.href} className={styles['menu__item']}>
+                    {t(item.title)}
                 </Link>
             ))}
         </nav>

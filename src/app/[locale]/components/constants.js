@@ -4,8 +4,8 @@ export const LOCALES = {
   };
 
   export const MENU_ITEMS = [
-    { key: '1', href: '' },
-    { key: '2', href: '' },
-    { key: '3', href: '' },
-    { key: '4', href: '' },
+    { title: 'about', href: '' },
+    { title: 'delivery', href: '' },
+    { title: 'returns', href: '' },
+    { title: 'contacts', href: '' },
 ];
