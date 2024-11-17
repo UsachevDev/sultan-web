@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useTransition } from 'react';
 import { useState } from 'react';
 import Image from 'next/image';
+import useNextLocale from '../../core/hooks/useNextLocale';
 import { LOCALES } from '../constants.js';
 import styles from './localSwitcher.module.scss';
 
@@ -13,7 +14,7 @@ export default function LocalSwitcher() {
   const currentLocale = useLocale();
   const [isHovered, setIsHovered] = useState(false);
   
-  const getNextLocale = (locale) => (locale === LOCALES.RU ? LOCALES.EN : LOCALES.RU);
+  const getNextLocale = useNextLocale(currentLocale);
   
   const getFlagSvg = (locale) => {
     const flagStyle = isHovered ? { filter: 'brightness(0.9)' } : {};
