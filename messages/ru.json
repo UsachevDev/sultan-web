@@ -130,5 +130,8 @@
             "orderCallRefLable": "Заказать звонок",
             "orderCallRefHref": "#"
         }
+    },
+    "LocalSwitcher": {
+        "locale": "Английский"
     }
 }

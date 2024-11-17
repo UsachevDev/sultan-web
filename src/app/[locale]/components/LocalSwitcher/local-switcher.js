@@ -1,5 +1,6 @@
 'use client';
 import { useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { useTransition } from 'react';
 import { useState } from 'react';
@@ -20,22 +21,20 @@ export default function LocalSwitcher() {
     const flagStyle = isHovered ? { filter: 'brightness(0.9)' } : {};
     if (locale === LOCALES.RU) {
       return (
-        <Image 
-          src='/icon/header-flag-gb.svg' 
+        <Image src='/icon/header-flag-gb.svg' 
           width={36} 
           height={36} 
           style={flagStyle} 
-          alt='british flag' 
+          alt='british flag'
         />
       );
     }
     return (
-      <Image 
-        src='/icon/header-flag-ru.svg' 
+      <Image src='/icon/header-flag-ru.svg' 
         width={36} 
         height={36} 
         style={flagStyle} 
-        alt='russian flag' 
+        alt='russian flag'
       />
     );
   };
@@ -52,6 +51,8 @@ export default function LocalSwitcher() {
     });
   };
 
+  const t = useTranslations('LocalSwitcher');
+
   return (
     <button
       onClick={onButtonClick}
@@ -63,7 +64,7 @@ export default function LocalSwitcher() {
     >
       {getFlagSvg(currentLocale)}
       <span className={styles['language-text']}>
-        {currentLocale === LOCALES.RU ? 'English' : 'Русский'}
+        {t('locale')}
       </span>
     </button>
   );
