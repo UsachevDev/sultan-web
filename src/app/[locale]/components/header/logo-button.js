@@ -5,7 +5,7 @@ import styles from './componentsStyles.module.scss'
 const LogoButton = () => {
     return (
         <Link href={'/'}>
-            <svg className={styles['logo-icon']}
+            <svg className={styles.logo}
                 viewBox="0 0 156 66"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_88_2755)">

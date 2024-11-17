@@ -4,15 +4,15 @@ import styles from './componentsStyles.module.scss';
 const SearchBar = ({ customStyles = {} }) => {
   const t = useTranslations('Header');
   return (
-    <div className={styles["search-bar"]} style={customStyles}>
+    <div className={styles.searchBar} style={customStyles}>
       <input
         type="text"
-        className={styles["search-input"]}
+        className={styles["searchBar__input"]}
         placeholder={t('search')}
       />
-      <button className={styles["search-button"]}>
-        <div className={styles["search-icon-circle"]}>
-          <svg className={styles["search-icon"]}
+      <button className={styles["searchBar__button"]}>
+        <div className={styles["searchBar__button__iconCircle"]}>
+          <svg className={styles["searchBar__button__iconCircle__icon"]}
             width="19"
             height="19"
             viewBox="0 0 19 19"
