@@ -20,10 +20,10 @@
         "address-2": "(Vostochny Market)",
         "email-text": "Available at any time",
         "menu": {
-            "1": "About Us",
-            "2": "Delivery and Payment",
-            "3": "Returns",
-            "4": "Contacts"
+            "about": "About Us",
+            "delivery": "Delivery and Payment",
+            "returns": "Returns",
+            "contacts": "Contacts"
         },
         "button-1": "Catalog",
         "button-2": "Price List",
