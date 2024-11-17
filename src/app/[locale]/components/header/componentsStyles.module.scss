@@ -148,7 +148,7 @@
     transition: background 0.3s;
 
     &:hover {
-        background: mix($search-color-hover, transparent, 50%);
+        background: mix($search-color, transparent, 50%);
     }
 
     @include laptop {
