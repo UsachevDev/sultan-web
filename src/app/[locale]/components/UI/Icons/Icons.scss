@@ -24,7 +24,6 @@
 
     &--pointer {
         background-image: url("/icon/pointer.svg");
-
     }
 
     &--catalog {
@@ -32,5 +31,17 @@
         height: 16px;
         margin-left: 12px;
         background-image: url("/icon/header-catalog-icon.svg");
+    }
+
+    &--bottle{
+        width: 9px;
+        height: 15px;
+        background-image: url("/icon/bottle-icon.svg");
+    }
+
+    &--box{
+        width: 20px;
+        height: 14px;
+        background-image: url("/icon/box-icon.svg");
     }
 }

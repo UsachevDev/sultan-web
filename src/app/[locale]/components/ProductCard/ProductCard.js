@@ -2,66 +2,47 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import ButtonUI from "../UI/ButtonUI/ButtonUI";
 import "./ProductCard.scss";
-
-function ShowInfo({ info: filter, t: t }) {
-    let text;
-    switch (filter) {
-        case "discount": {
-            text = "СКИДКА";
-            break;
-        }
-        case "popular": {
-            text = t('popular');
-            break;
-        }
-        default:
-            text = "";
-    }
-    if (filter != null) {
-        return <span className={filter}>{text}</span>
-    };
-}
+import Icon from "../UI/Icons/Icons";
 
 function ShowSize({ card: card, t: t }) {
-    let size;
-    let type;
+    let size = +(card.size / card.amount).toFixed(2);
     if (card.amount > 1) {
-        size = card.amount + "x" + +(card.size / card.amount).toFixed(2);
-    }
-    else {
-        size = card.size;
-    }
-    let icon;
-    if (card.isLiquid) {
-        icon = <Image src="/icon/bottle-icon.svg" width={9} height={15} />;
-        type = t("liquidType")
-    }
-    else {
-        icon = <Image src="/icon/box-icon.svg" width={20} height={14} />;
-        type = t("type")
+        size = card.amount + "x" + size;
     }
 
-    return <span className="product-size">{icon} {size} {type}</span>
+    let icon, type;
+    card.isLiquid 
+        ? (icon = <Icon name="bottle"/>, type = t('liquidType'))
+        : (icon = <Icon name="box"/>, type = t('type'))
+
+    return (
+        <span className="product-size">
+            {icon}
+            {size}
+            {type}
+        </span>);
 }
 
-export default function ProductCard({ card: el, info: filter }) {
+export default function ProductCard({ card: el }) {
     const t = useTranslations("ProductCard");
-
+    const productName = t("productName") === "ru" ? el.nameRu : el.nameEn;
     return (
         <article className="product-card">
             <div className="product-img">
-                <ShowInfo info={filter} t={t} />
+                {el.isPopular && (
+                    <span className="popular">{t("popular")}</span>
+                )}
                 <Image
                     src={"/image/productCards/card" + el.id + ".svg"}
                     fill={true}
-                    alt={t("productName") === "ru" ? el.nameRu : el.nameEn}
+                    alt={productName}
                 />
-                <ShowSize card={el} t={t} />
+                <ShowSize card={el} t={t}/>
             </div>
             <div className="product">
                 <div className="product-name">
                     <strong style={{ fontWeight: 800 }}>{el.brand.name} </strong>
-                    {t("productName") === "ru" ? el.nameRu : el.nameEn}</div>
+                    {productName}</div>
                 <div className="product-desc">
                     <ul>
                         <li><span className="product-desc-name">{t("barcode")}: </span>{el.barcode}</li>

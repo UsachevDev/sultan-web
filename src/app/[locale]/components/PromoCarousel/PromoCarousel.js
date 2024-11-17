@@ -4,12 +4,12 @@ import { useTranslations } from "next-intl";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import Image from "next/image";
+import ButtonUI from "UI/ButtonUI/ButtonUI.jsx";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import "./PromoCarousel.scss";
-import ButtonUI from "UI/ButtonUI/ButtonUI.jsx";
 
 const PromoCarousel = () => {
     const [promoData, setPromoData] = useState([]);

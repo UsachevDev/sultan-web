@@ -20,11 +20,23 @@ export default function LocalSwitcher() {
     const flagStyle = isHovered ? { filter: 'brightness(0.9)' } : {};
     if (locale === LOCALES.RU) {
       return (
-        <Image src='/icon/header-flag-gb.svg' width={36} height={36} style={flagStyle} alt='british flag'/>
+        <Image 
+          src='/icon/header-flag-gb.svg' 
+          width={36} 
+          height={36} 
+          style={flagStyle} 
+          alt='british flag' 
+        />
       );
     }
     return (
-      <Image src='/icon/header-flag-ru.svg' width={36} height={36} style={flagStyle} alt='russian flag'/>
+      <Image 
+        src='/icon/header-flag-ru.svg' 
+        width={36} 
+        height={36} 
+        style={flagStyle} 
+        alt='russian flag' 
+      />
     );
   };
 
@@ -41,11 +53,11 @@ export default function LocalSwitcher() {
   };
 
   return (
-    <button 
-      onClick={onButtonClick} 
-      onMouseEnter={() => setIsHovered(true)} 
+    <button
+      onClick={onButtonClick}
+      onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      disabled={isPending} 
+      disabled={isPending}
       style={{ background: 'none', border: 'none', padding: 0 }}
       className={styles['locale-switcher']}
     >

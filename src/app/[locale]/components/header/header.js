@@ -38,7 +38,7 @@ const Header = () => {
   }, [isMenuOpen]);
 
   useEffect(() => {
-      const handleResize = () => {
+    const handleResize = () => {
       const width = window.innerWidth;
       setIsMobile(width <= 768);
       setIsDesktop(width > 768);
@@ -52,7 +52,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.menuHeader}>
-        {isDesktop &&  (
+        {isDesktop && (
           <>
             <div className={styles.block1}>
               <div className={styles.locationBlockHeader}>
@@ -163,7 +163,7 @@ const Header = () => {
         )}
       </div>
       <div className={styles.rectangleBottom}></div>
-      {isMenuOpen && <MobileMenu/>}
+      {isMenuOpen && <MobileMenu />}
     </header>
   );
 };
