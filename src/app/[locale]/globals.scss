@@ -23,6 +23,12 @@ body {
     margin-bottom: 100px; /* Отступ между элементами внутри .page-main */
 }
 
+.page-product-card {
+    max-width: 1367px;
+    margin: 0 auto;
+    margin-bottom: auto;
+}
+
 @media (max-width: 1440px) {
     .page-main {
         padding: 0 15px; /* Отступы для меньших экранов */
