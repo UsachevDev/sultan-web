@@ -10,6 +10,7 @@ import styles from './mobileMenu.module.scss';
 
 const MobileMenu = () => {
   const t = useTranslations('Header');
+  
   return (
     <div className={styles.overlay}>
       <div className={styles.mobileMenu}>

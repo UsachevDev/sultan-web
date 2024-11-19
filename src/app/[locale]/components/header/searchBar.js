@@ -3,6 +3,7 @@ import styles from './componentsStyles.module.scss';
 
 const SearchBar = ({ customStyles = {} }) => {
   const t = useTranslations('Header');
+  
   return (
     <div className={styles.searchBar} style={customStyles}>
       <input
