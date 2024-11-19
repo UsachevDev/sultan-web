@@ -5,6 +5,7 @@ import "./FeaturedProducts.scss";
 
 export default function FeaturedProducts() {
     const t = useTranslations("GoodsForSale");
+    
     return (
         <div className="featured-products">
             <div>
