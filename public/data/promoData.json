@@ -1,0 +1,31 @@
+{
+    "slides": [
+        {
+            "imageSrc": "/image/carousel-image.png",
+            "title": "Рекламное изображение 1",
+            "promoDate": "promoDate1",
+            "promoTitle": "promoTitle1",
+            "promoTitleSpan": "promoTitleSpan1",
+            "promoDescriptor": "promoDescriptor1",
+            "promoButton": "promoButton"
+        },
+        {
+            "imageSrc": "/image/carousel-image.png",
+            "title": "Рекламное изображение 2",
+            "promoDate": "promoDate2",
+            "promoTitle": "promoTitle2",
+            "promoTitleSpan": "promoTitleSpan2",
+            "promoDescriptor": "promoDescriptor2",
+            "promoButton": "promoButton"
+        },
+        {
+            "imageSrc": "/image/carousel-image.png",
+            "title": "Рекламное изображение 3",
+            "promoDate": "promoDate3",
+            "promoTitle": "promoTitle3",
+            "promoTitleSpan": "promoTitleSpan3",
+            "promoDescriptor": "promoDescriptor3",
+            "promoButton": "promoButton"
+        }
+    ]
+}

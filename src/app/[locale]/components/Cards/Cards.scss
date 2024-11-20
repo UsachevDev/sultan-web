@@ -1,0 +1,23 @@
+@import "vars";
+@import "mixins";
+
+.cards {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(4, auto);
+    justify-items: start;
+    justify-content: space-between;
+    gap: 21px;
+
+}
+
+@include tabletLarge {
+    .cards-mobile {
+        display: block;
+        height: 490px;
+    }
+
+    .cards-mobile .swiper-pagination-bullet-active {
+        background: $primary-color;
+    }
+}

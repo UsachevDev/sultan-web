@@ -1,0 +1,29 @@
+{
+    "items": [
+        {
+            "name": "householdChemicals",
+            "link": "#",
+            "image": "/image/categories/household-chemicals.png"
+        },
+        {
+            "name": "cosmetics",
+            "link": "#",
+            "image": "/image/categories/сosmetics.png"
+        },
+        {
+            "name": "householdGoods",
+            "link": "#",
+            "image": "/image/categories/household-goods.png"
+        },
+        {
+            "name": "goodsForChildren",
+            "link": "#",
+            "image": "/image/categories/goods-for-children.png"
+        },
+        {
+            "name": "tableware",
+            "link": "#",
+            "image": "/image/categories/tableware.png"
+        }
+    ]
+}

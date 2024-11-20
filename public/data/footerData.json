@@ -1,0 +1,46 @@
+{
+    "siteMenu": {
+        "items": [
+            {
+                "name": "about",
+                "link": "#"
+            },
+            {
+                "name": "delivery",
+                "link": "#"
+            },
+            {
+                "name": "refund",
+                "link": "#"
+            },
+            {
+                "name": "contacts",
+                "link": "#"
+            }
+        ]
+    },
+    "categories": {
+        "items": [
+            {
+                "name": "householdChemicals",
+                "link": "#"
+            },
+            {
+                "name": "cosmetics",
+                "link": "#"
+            },
+            {
+                "name": "householdGoods",
+                "link": "#"
+            },
+            {
+                "name": "goodsForChildren",
+                "link": "#"
+            },
+            {
+                "name": "tableware",
+                "link": "#"
+            }
+        ]
+    }
+}
