@@ -32,8 +32,8 @@ const Banner = () => {
                                 </ButtonUI>
                             </Link>
                             <div className="banner-footer">
-                                {promoData.map((el) => (
-                                    <span className="banner-footer-promo">
+                                {promoData.map((el, index) => (
+                                    <span className="banner-footer-promo" key={"promo" + index}>
                                         {elemPlus}
                                         <p>{el.span}</p>
                                     </span>
@@ -57,8 +57,8 @@ const Banner = () => {
                         </div>
                     </div>
                     <div className="banner-footer-mobile" >
-                        {promoData.map((el) => (
-                            <span className="banner-footer-promo">
+                        {promoData.map((el, index) => (
+                            <span className="banner-footer-promo" key={"promo" + index}>
                                 {elemPlus}
                                 <p>{el.span}</p>
                             </span>
