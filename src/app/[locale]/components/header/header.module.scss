@@ -1,0 +1,601 @@
+@import "vars";
+@import "mixins";
+
+.header {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 168px;
+  background-color: $background-color;
+}
+
+.menuHeader {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 108px;
+  display: flex;
+  flex-direction: row;
+  height: 62px;
+}
+
+.block1 {
+  height: auto;
+  width: 1368px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.locationBlockHeader {
+  margin-left: 0;
+  margin-right: auto;
+  margin-top: 16px;
+}
+
+.navigationMenu {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 16px;
+}
+
+.localSwitcher {
+  position: absolute;
+  right: 3%;
+  left: auto;
+  margin-top: 12px;
+}
+
+.rectangle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
+  width: 100%;
+  height: 1px;
+  background-color: $second-color;
+  opacity: 0.2;
+}
+
+.headerMain {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
+  bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  height: 108px;
+}
+
+.block2 {
+  height: auto;
+  width: 1362px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.block3, .block4 {
+  height: auto;
+  width: auto;
+  display: flex;
+}
+
+.rectangleBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 166px;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: $second-color;
+  opacity: 0.2;
+}
+
+.logo { 
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 20px;
+}
+
+.button1 {
+  margin-left: 40px;
+  margin-right: 0;
+  margin-top: 24px;
+}
+
+.searchBar {
+  margin-left: 16px;
+  margin-right: auto;
+  margin-top: 24px;
+}
+
+.contactCard {
+  position: relative;
+  margin-left: auto;
+  margin-right: 48px;
+  margin-top: 4px;
+
+  &::after {
+    position: absolute;
+    right: -24px;
+    left: auto;
+    top: 45%;
+    transform: translateY(-45%);
+    width: 0;
+    height: 48px;
+    border: 1px dashed $second-color;
+    opacity: 0.1;
+    content: "";
+  }
+}
+
+.button2 {
+  position: relative;
+  height: 60px;
+  margin-left: 0;
+  margin-right: 48px;
+  margin-top: 24px;
+
+  &::after {
+    position: absolute;
+    right: -24px;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 48px;
+    border: 1px dashed $second-color;
+    opacity: 0.1;
+    content: "";
+  }
+}
+
+.cart {
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 32px;
+}
+
+.linkStyle {
+  text-decoration: none;
+}
+
+.customStyleButton {
+  width: 192px;
+  height: 60px;
+  cursor: pointer;
+}
+
+/* Location and email block */
+.wrapper {
+  display: flex;
+  align-items: center;
+  width: 492px;
+  height: 34px;
+  gap: 40px;
+}
+
+.locationBlock, .emailBlock {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.locationBlock::after  {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 28px;
+  border: 1px dashed $second-color;
+  opacity: 0.1;
+  content: "";
+}
+
+.addressText, .emailText {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-inter;
+  font-style: normal;
+  color: $text-color;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.addressText span:first-child,
+.emailLink {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration: none;
+  color: $text-color;
+}
+
+/* Contact Card */
+
+.contactWrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 236px;
+  max-width: 270px;
+  height: 92px;
+  gap: 16px;
+  background: none;
+  border: none;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  margin-top: 20px;
+  font-family: $font-inter;
+  font-style: normal;
+
+  span:nth-child(1) {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: $text-color;
+  }
+
+  span:nth-child(2) {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    color: $second-color;
+  }
+
+  a {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    text-decoration: underline;
+    color: $second-color;
+  }
+}
+
+.image {
+  width: 70px;
+  height: 92px;
+
+  img {
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 50% 50%;
+  }
+}
+
+.ellipse {
+  position: absolute;
+  top: 28px;
+  right: 4px;
+  width: 8px;
+  height: 8px;
+  background: $green-color;
+  border: 2px solid $ellipse-color;
+  border-radius: 50%;
+}
+
+/* Adaptation */
+
+.tabletButton1, .tabletButton2, .tabletButton3 {
+  display: none;
+}
+
+@include desktop {
+  .block1 {
+    width: 1320px;
+  }
+
+  .localSwitcher {
+    right: 1.5%;
+  }
+
+  .block2 {
+    width: 1330px;
+  }
+
+  .contactCard {
+    margin-right: 28px;
+
+    &::after {
+      right: -14px;
+    }
+  }
+
+  .button2 {
+    margin-right: 28px;
+
+    &::after {
+      right: -14px;
+    }
+  }
+}
+
+@include laptop {
+  .block1 {
+    width: 1130px;
+  }
+
+  .localSwitcher {
+    right: 1%;
+  }
+
+  .block2 {
+    width: 1130px;
+  }
+
+  .image, .ellipse {
+    display: none;
+  }
+
+  .contactWrapper {
+    min-width: auto;
+  }
+
+  .button1 {
+    margin-left: 20px;
+  }
+
+  .customStyleButton {
+    width: 172px;
+  }
+  
+}
+
+@include tabletLarge {
+  .button1, .button2, .searchBar {
+    display: none;
+  }
+
+  .header {
+    height: 150px;
+  }
+
+  .block1 {
+    width: 800px;
+  }
+
+  .wrapper {
+    width: 358px;
+    gap: 20px;
+  }
+
+  .locationBlock {
+    img {
+      display: none;
+    }
+
+    &::after  { 
+      right: -10px;
+    }
+  }
+
+  .emailBlock {
+    img {
+      display: none;
+    }
+  }
+
+  .addressText span:first-child,
+  .emailLink { 
+    font-size: 12px;
+  }
+
+  .localSwitcher {
+    right: 3%;
+    margin-top: 14px;
+  }
+
+  .headerMain {
+    height: 88px;
+  }
+
+  .block2 {
+    width: 800px;
+  }
+
+  .logo {
+    margin-top: 14px;
+  }
+
+  .tabletButton1 {
+    position: relative;
+    margin-left: 40px;
+    margin-right: 0;
+    margin-top: 24px;
+    display: inline;
+    
+    &::after {
+      position: absolute;
+      right: -20px;
+      left: auto;
+      top: 30%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 30px;
+      border: 1px dashed $second-color;
+      opacity: 0.1;
+      content: "";
+    }
+  }
+
+  .tabletButton2 {
+    margin-left: 40px;
+    margin-right: 0;
+    margin-top: 24px;
+    display: inline;
+  }
+
+  .contactCard {
+    margin-right: 40px;
+
+    &::after {
+      height: 30px;
+    }
+  }
+
+  .text {
+    margin-top: 12px;
+
+    a {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  .tabletButton3 {
+    position: relative;
+    margin-right: 40px;
+    margin-left: 0;
+    margin-top: 24px;
+    display: inline;
+
+    &::after {
+      position: absolute;
+      right: -20px;
+      left: auto;
+      top: 30%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 30px;
+      border: 1px dashed $second-color;
+      opacity: 0.1;
+      content: "";
+    }
+  }
+
+  .cart {
+    margin-top: 22px;
+  }
+
+  .rectangleBottom {
+    top: 148px;
+    bottom: 0;
+  }
+
+}
+
+@include tablet {
+  .block1, .block2 {
+    width: 700px;
+  }
+
+  .localSwitcher {
+    right: 1%;
+  }
+}
+
+@include tabletSmall {
+  .header {
+    width: 100%;
+    height: 104px;
+  }
+
+  .rectangleBottom {
+    top: 102px;
+    bottom: 0;
+  }
+
+  .rectangle {
+    top: 60px;
+    bottom: 42px;
+  }
+
+  .menuHeader {
+    top: 10px;
+    bottom: 42px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .headerMain {
+    top: 62px;
+    bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .mobileMenuButton {
+    margin-left: 4.68%;
+    margin-top: 4px;
+  }
+
+  .mobileLogo {
+    position: absolute;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    margin-top: 0px;
+  }
+
+  .mobileCart {
+    margin-right: 4.68%;
+    margin-top: 8px;
+  }
+
+  .mobileCatalog {
+    display: flex;
+    width: 70px;
+    height: 16px;
+    margin-left: 14.06%;
+    margin-top: 12px;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .mobileCatalogText {
+    font-family: $font-inter;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+    text-align: left;
+    color: $second-color;
+  }
+
+  .mobileDivider1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 30px;
+    margin-top: 5px;
+    border: 1px dashed $second-color;
+    opacity: 0.1;
+  }
+
+  .mobileSearch {
+    display: flex;
+    width: 60px;
+    height: 16px;
+    margin-right: 16.56%;
+    margin-top: 12px;
+    gap: 8px;
+    text-decoration: none;
+  }
+
+  .mobileSearchText {
+    font-family: $font-inter;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+    text-align: left;
+    color: $second-color;
+  }
+
+}

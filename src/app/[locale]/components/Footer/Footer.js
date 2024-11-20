@@ -6,19 +6,32 @@ import SiteMenu from "./SiteMenu";
 import Categories from "./Categories";
 import Contacts from "./Contacts";
 import PriceList from "./PriceList";
-import "./Footer.css";
+import "./Footer.scss";
 
 const Footer = () => {
-    const [data, setData] = useState(null);
-    const t = useTranslations("Footer"); // Используем "Footer" для получения переводов
+    const [items, setItems] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const t = useTranslations("Footer");
 
     useEffect(() => {
-        fetch("/data/footerData.json")
-            .then((res) => res.json())
-            .then(setData);
+        const fetchData = async () => {
+            try {
+                const response = await fetch("/data/footerData.json");
+                const data = await response.json();
+                setItems(data);
+                setIsLoading(false);
+            } catch (error) {
+                console.error("Ошибка загрузки данных:", error);
+                setIsLoading(false);
+            }
+        };
+
+        fetchData();
     }, []);
 
-    if (!data) return null;
+    if (isLoading) {
+        return <p>Загрузка...</p>;
+    }
 
     return (
         <footer className="page-footer">
@@ -32,16 +45,16 @@ const Footer = () => {
                 />
                 <SiteMenu
                     title={t("siteMenu.title")}
-                    items={data.siteMenu.items.map(item => ({
+                    items={items.siteMenu.items.map((item) => ({
                         name: t(`siteMenu.items.${item.name}`),
-                        link: item.link
+                        link: item.link,
                     }))}
                 />
                 <Categories
                     title={t("categories.title")}
-                    items={data.categories.items.map(item => ({
+                    items={items.categories.items.map((item) => ({
                         name: t(`categories.items.${item.name}`),
-                        link: item.link
+                        link: item.link,
                     }))}
                 />
                 <PriceList

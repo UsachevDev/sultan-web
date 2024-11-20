@@ -1,7 +1,8 @@
-import FeaturedProducts from './components/FeaturedProducts/FeaturedProducts';
+"use client";
+import FeaturedProducts from './components/FeaturedProducts';
 import PromoCarousel from './components/PromoCarousel/PromoCarousel';
 import CatalogCarousel from './components/CatalogCarousel/CatalogCarousel';
-import Banner from './components/Banner/Banner';
+import Banner from "./components/Banner";
 import ContactMapSection from './components/ContactMapSection/ContactMapSection';
 import CategoriesSection from './components/CategoriesSection/CategoriesSection';
 

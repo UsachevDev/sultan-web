@@ -1,49 +1,72 @@
+"use client";
+
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import ButtonTemplate from "../ButtonTemplate/ButtonTemplate";
+import useWidth from "../../core/hooks/useWidth";
+import { elemPlus, PromoContent } from "./BannerPromo";
+import ButtonUI from "../UI/ButtonUI/ButtonUI";
 
 import "./Banner.scss";
 
 const Banner = () => {
-const t = useTranslations("Banner");
+    const { isMobile, isMobileSmall } = useWidth();
+    const promoData = PromoContent();
+    const t = useTranslations("Banner");
     return (
         <>
-        <div className="banner">
-            <div className="banner-blur" />
-            <div className="banner-container" >
-                <div className="banner-content">
-                    <h1>
-                        {t('h1.firstLine')}<br /> {t('h1.secondLine')}
-                    </h1>
-                    <h2>{t('h2')}</h2>
-                    <button className="btn-to-products"><Link href={"/products"}>{t('button')}</Link></button>
-
-                    <div className="banner-footer" id="banner-footer-1">
-                        <ButtonTemplate width={39} height={39} text={"+"} className="btn-banner-plus"/>
-                        <span>{t('promo.span1')}<br /> {t('promo.span2')}</span>
-                        <ButtonTemplate width={39} height={39} text={"+"} className="btn-banner-plus"/>
-                        <span>{t('promo.span3')}<br /> 
-                        <b>{t('promo.span4')}</b>
-                        </span>
+            {!isMobile && !isMobileSmall
+                ?
+                <div className="banner">
+                    <div className="banner-blur" />
+                    <div className="banner-container" >
+                        <div className="banner-content">
+                            <h1>
+                                {t('h1.firstLine')}<br /> {t('h1.secondLine')}
+                            </h1>
+                            <h2>{t('h2')}</h2>
+                            <Link href={"/products"}>
+                                <ButtonUI
+                                    label={t('button')}
+                                    size="lg"
+                                    className="btn-catalog">
+                                </ButtonUI>
+                            </Link>
+                            <div className="banner-footer">
+                                {promoData.map((el) => (
+                                    <span className="banner-footer-promo">
+                                        {elemPlus}
+                                        <p>{el.span}</p>
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
+                :
+                <section className="banner-mobile">
+                    <div className="banner">
+                        <div className="banner-blur" />
+                        <div className="banner-container" >
+                            <div className="banner-content">
+                                <h1>
+                                    {t('h1.firstLine')}<br /> {t('h1.secondLine')}
+                                </h1>
+                                <h2>{t('h2')}</h2>
 
-            </div>
-
-      
-        </div>
-        <div className="banner-footer-mobile" >
-                <ButtonTemplate width={18} height={18} text={"+"} className="btn-banner-plus"/>
-                <span>{t('promo.span1')} {t('promo.span2')}</span> <br />
-                <ButtonTemplate width={18} height={18} text={"+"} className="btn-banner-plus"/>
-                <span>{t('promo.span3')}<b> {t('promo.span4')}</b>
-                </span>         
-
-        </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="banner-footer-mobile" >
+                        {promoData.map((el) => (
+                            <span className="banner-footer-promo">
+                                {elemPlus}
+                                <p>{el.span}</p>
+                            </span>
+                        ))}
+                    </div>
+                </section>
+            }
         </>
-       
-
-
     )
 }
 

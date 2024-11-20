@@ -4,14 +4,15 @@ import { useTranslations } from "next-intl";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import Image from "next/image";
+import ButtonUI from "UI/ButtonUI/ButtonUI.jsx";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
-import "./PromoCarousel.css";
+import "./PromoCarousel.scss";
 
 const PromoCarousel = () => {
-    const [promoData, setPromoData] = useState(null);
+    const [promoData, setPromoData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const t = useTranslations("PromoCarousel");
 
@@ -46,8 +47,8 @@ const PromoCarousel = () => {
                 modules={[Pagination, Navigation, Autoplay]}
                 className="promo-swiper"
             >
-                {promoData.slides.map((slide, index) => (
-                    <SwiperSlide key={index}>
+                {promoData.slides.map((slide) => (
+                    <SwiperSlide key={slide.id}>
                         <div className="promo-swiper-slide swiper-slide">
                             <div className="promo-content">
                                 {t(slide.promoDate) && (
@@ -68,19 +69,19 @@ const PromoCarousel = () => {
                                         {t(slide.promoDescriptor)}
                                     </p>
                                 )}
+
                                 {slide.promoButton && (
-                                    <button
-                                        className="promo-button"
+                                    <ButtonUI
+                                        label={t(slide.promoButton)}
+                                        size="lg"
                                         onClick={() =>
                                             console.log("Кнопка нажата!")
                                         }
-                                    >
-                                        {t(slide.promoButton)}
-                                    </button>
+                                    />
                                 )}
                             </div>
                             <Image
-                                className="promo-slider-image"
+                                className="promo-swiper-image"
                                 src={slide.imageSrc}
                                 alt={slide.title}
                                 layout="fill"

@@ -1,155 +1,122 @@
 [
-    {
-      "id": 0,
-      "barcode": 25896624085,
-      "nameRu": "Ср-во для мытья посуды Апельсин+мята",
-      "nameEn": "aliqua nulla excepteur",
-      "img":{
-        "alt":"sorti",
-        "width":92,
-        "height":194
-      },
-      "brand": {
-        "name" : "AOS"
-      },
-      "price": 387.49,
-      "isLiquid":true,
-      "size": 450,
-      "amount":1,
-      "manufacturer": "Prismatic"
+  {
+    "id": 0,
+    "barcode": 25896624085,
+    "nameRu": "Ср-во для мытья посуды Апельсин+мята",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "AOS"
     },
-    {
-      "id": 1,
-      "barcode": 15154295058,
-      "nameRu": "aliqua nulla excepteur",
-      "nameEn": "aliqua nulla excepteur",
-      "img":{
-        "alt":"aos",
-        "width":92,
-        "height":194
-      },
-      "brand": {
-        "name":"AOS"
-      },
-      "price": 125.53,
-      "isLiquid":true,
-      "size": 450,
-      "amount":1,
-      "manufacturer": "Inventure"
+    "price": 387.49,
+    "isLiquid": true,
+    "size": 450,
+    "amount": 1,
+    "manufacturer": "Prismatic",
+    "isPopular" : true
+  },
+  {
+    "id": 1,
+    "barcode": 15154295058,
+    "nameRu": "aliqua nulla excepteur",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "AOS"
     },
-    {
-      "id": 2,
-      "barcode": 10038069659,
-      "nameRu": "aliqua nulla excepteur",
-      "nameEn": "aliqua nulla excepteur",
-      "img":{
-        "alt":"ariel",
-        "width":202,
-        "height":194
-      },
-      "brand": {
-        "name":"Ariel"
-      },
-      "price": 869.18,
-      "isLiquid":false,
-      "size": 432,
-      "amount":15,
-      "manufacturer": "Sensate"
+    "price": 125.53,
+    "isLiquid": true,
+    "size": 450,
+    "amount": 1,
+    "manufacturer": "Inventure",
+    "isPopular" : true
+  },
+  {
+    "id": 2,
+    "barcode": 10038069659,
+    "nameRu": "aliqua nulla excepteur",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "Ariel"
     },
-    {
-      "id": 3,
-      "barcode": 22652956126,
-      "nameRu": "aliqua nulla excepteur",
-      "nameEn": "aliqua nulla excepteur",
-      "img":{
-        "alt":"biMax",
-        "width":178,
-        "height":218
-      },
-      "brand": {
-        "name":"BiMax"
-      },
-      "price": 786.52,
-      "isLiquid":false,
-      "size": 1500,
-      "amount":1,
-      "manufacturer": "Martgo"
+    "price": 869.18,
+    "isLiquid": false,
+    "size": 432,
+    "amount": 15,
+    "manufacturer": "Sensate",
+    "isPopular" : true
+  },
+  {
+    "id": 3,
+    "barcode": 22652956126,
+    "nameRu": "aliqua nulla excepteur",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "BiMax"
     },
-    {
-      "id": 4,
-      "barcode": 17720663897,
-      "nameRu": "Ср-во для мытья посуды Апельсин+мята",
-      "nameEn": "aliqua nulla excepteur",
-      "img":{
-        "alt":"sorti",
-        "width":92,
-        "height":194
-      },
-      "brand": {
-        "name" : "Sorti"
-      },
-      "price": 426.77,
-      "isLiquid":true,
-      "size": 450,
-      "amount":1,
-      "manufacturer": "Prismatic"
+    "price": 786.52,
+    "isLiquid": false,
+    "size": 1500,
+    "amount": 1,
+    "manufacturer": "Martgo",
+    "isPopular" : true
+  },
+  {
+    "id": 4,
+    "barcode": 17720663897,
+    "nameRu": "Ср-во для мытья посуды Апельсин+мята",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "Sorti"
     },
-    {
-      "id": 5,
-      "barcode": 16959869517,
-      "nameRu": "aliqua nulla excepteur",
-      "nameEn": "aliqua nulla excepteur",
-      "img":{
-        "alt":"aos",
-        "width":92,
-        "height":194
-      },
-      "brand": {
-        "name":"AOS"
-      },
-      "price": 125.53,
-      "isLiquid":true,
-      "size": 450,
-      "amount":1,
-      "manufacturer": "Inventure"
+    "price": 426.77,
+    "isLiquid": true,
+    "size": 450,
+    "amount": 1,
+    "manufacturer": "Prismatic",
+    "isPopular" : true
+  },
+  {
+    "id": 5,
+    "barcode": 16959869517,
+    "nameRu": "aliqua nulla excepteur",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "AOS"
     },
-    {
-      "id": 6,
-      "barcode": 80525533803,
-      "nameRu": "aliqua nulla excepteur",
-      "nameEn": "aliqua nulla excepteur",
-      "img":{
-        "alt":"ariel",
-        "width":202,
-        "height":194
-      },
-      "brand": {
-        "name":"Ariel"
-      },
-      "price": 869.18,
-      "isLiquid":false,
-      "size": 434,
-      "amount":15,
-      "manufacturer": "Sensate"
+    "price": 125.53,
+    "isLiquid": true,
+    "size": 450,
+    "amount": 1,
+    "manufacturer": "Inventure",
+    "isPopular" : true
+  },
+  {
+    "id": 6,
+    "barcode": 80525533803,
+    "nameRu": "aliqua nulla excepteur",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "Ariel"
     },
-    {
-      "id": 7,
-      "barcode": 26680964822,
-      "nameRu": "aliqua nulla excepteur",
-      "nameEn": "aliqua nulla excepteur",
-      "img":{
-        "alt":"biMax",
-        "width":178,
-        "height":218
-      },
-      "brand": {
-        "name":"BiMax"
-      },
-      "price": 786.52,
-      "isLiquid":false,
-      "size": 1500,
-      "amount":1,
-      "manufacturer": "Martgo"
-    }
-    
-  ]
+    "price": 869.18,
+    "isLiquid": false,
+    "size": 434,
+    "amount": 15,
+    "manufacturer": "Sensate",
+    "isPopular" : true
+  },
+  {
+    "id": 7,
+    "barcode": 26680964822,
+    "nameRu": "aliqua nulla excepteur",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "BiMax"
+    },
+    "price": 786.52,
+    "isLiquid": false,
+    "size": 1500,
+    "amount": 1,
+    "manufacturer": "Martgo",
+    "isPopular" : true
+  }
+]

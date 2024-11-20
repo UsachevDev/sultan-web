@@ -1,0 +1,30 @@
+@import "vars";
+@import "mixins";
+
+.featured-products {
+    max-width: 1368px;
+    margin: 0 auto;
+    justify-content: center;
+
+    &-head {
+        margin-bottom: 50px;
+        font-size: 40px;
+        line-height: 48px;
+        font-weight: 500;
+
+        span {
+            color: $primary-color;
+            font-weight: 800;
+        }
+    }
+
+    h2{
+        text-transform: uppercase;
+    }
+}
+
+@include mobile {
+    .featured-products-head {
+        font-size: 20px;
+    }
+}
