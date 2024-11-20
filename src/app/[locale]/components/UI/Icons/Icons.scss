@@ -1,0 +1,47 @@
+@import "vars";
+@import "mixins";
+
+.ui-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-repeat: no-repeat;
+    background-position: center;
+    &--download {
+        width: 17px;
+        height: 17px;
+        margin-left: 12px;
+
+        background-image: url("/icon/download.svg");
+    }
+
+    &--basket {
+        width: 26px;
+        height: 26px;
+        margin-left: 6px;
+        background-image: url("/icon/basket-icon.svg");
+    }
+
+    &--pointer {
+        background-image: url("/icon/pointer.svg");
+    }
+
+    &--catalog {
+        width: 16px;
+        height: 16px;
+        margin-left: 12px;
+        background-image: url("/icon/header-catalog-icon.svg");
+    }
+
+    &--bottle{
+        width: 9px;
+        height: 15px;
+        background-image: url("/icon/bottle-icon.svg");
+    }
+
+    &--box{
+        width: 20px;
+        height: 14px;
+        background-image: url("/icon/box-icon.svg");
+    }
+}

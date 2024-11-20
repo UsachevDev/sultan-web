@@ -4,14 +4,14 @@
         "about": "Go to the about page"
     },
     "ToBasketButton": {
-        "text": "ADD TO CART"
+        "text": "Add to cart"
     },
     "ProductCard": {
         "brand": "Brand",
         "barcode": "Barcode",
         "manufacturer": "Manufacturer",
         "productName": "en",
-        "popular": "POPULAR",
+        "popular": "Popular",
         "type": "g",
         "liquidType": "ml"
     },
@@ -20,10 +20,10 @@
         "address-2": "(Vostochny Market)",
         "email-text": "Available at any time",
         "menu": {
-            "1": "About Us",
-            "2": "Delivery and Payment",
-            "3": "Returns",
-            "4": "Contacts"
+            "about": "About Us",
+            "delivery": "Delivery and Payment",
+            "returns": "Returns",
+            "contacts": "Contacts"
         },
         "button-1": "Catalog",
         "button-2": "Price List",
@@ -36,8 +36,8 @@
         "siteMenu": "Site menu:"
     },
     "Categories": {
-        "title": "PRODUCT",
-        "titleSpan": " CATEGORIES",
+        "title": "Product",
+        "titleSpan": " Categories",
         "subtitle": "10 000+ running positions at special prices",
         "items": {
             "householdChemicals": "Household chemicals",
@@ -49,23 +49,23 @@
     },
     "PromoCarousel": {
         "promoButton": "Take part",
-        "promoDate1":"*THE PROMOTION IS VALID UNTIL 12/14/24",
+        "promoDate1":"*the promotion is valid until 12/14/24",
         "promoTitle1": "Promotion ",
         "promoTitleSpan1": "Name",
         "promoDescriptor1": "Terms of the promotion in a couple of lines, Terms of the promotion in a couple of lines",
-        "promoDate2":"*THE PROMOTION IS VALID UNTIL 12/14/24",
+        "promoDate2":"*the promotion is valid until 12/14/24",
         "promoTitle2": "Promotion ",
         "promoTitleSpan2": "Name",
         "promoDescriptor2": "Terms of the promotion in a couple of lines, Terms of the promotion in a couple of lines",
-        "promoDate3":"*THE PROMOTION IS VALID UNTIL 12/14/24",
+        "promoDate3":"*the promotion is valid until 12/14/24",
         "promoTitle3": "Promotion ",
         "promoTitleSpan3": "Name",
         "promoDescriptor3": "Terms of the promotion in a couple of lines, Terms of the promotion in a couple of lines"
     },
     "GoodsForSale": {
         "h1" : {
-            "firstPart" : "GOODS",
-            "secondPart" : "FOR SALE"
+            "firstPart" : "Goods",
+            "secondPart" : "For sale"
         }
     },
     "Banner": {
@@ -73,13 +73,11 @@
             "firstLine": "Chemicals, cosmetics",
             "secondLine": "and goods"
         },
-        "h2": "WHOLESALE IN KOKCHKETOV AND THE REGION",
-        "button": "CATALOG",
+        "h2": "Wholesale in Kokchetov and the region",
+        "button": "Catalog",
         "promo": {
-            "span1": "Only the",
-            "span2": "best deals",
-            "span3": "Free delivery",
-            "span4": "in Kokchetov from 10 thousands ₽"
+            "span1": "Only the best deals",
+            "span2": "Free delivery in Kokchetov from 10 thousands ₽"
         }
     },
     "Contacts": {
@@ -132,5 +130,8 @@
             "orderCallRefLable": "Order a call",
             "orderCallRefHref": "#"
         }
+    },
+    "LocalSwitcher": {
+        "locale": "Russian"
     }
 }

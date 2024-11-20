@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ButtonUI from "UI/ButtonUI/ButtonUI.jsx";
 
 const CompanyInfo = ({
     logo,
@@ -11,13 +12,16 @@ const CompanyInfo = ({
         <Image
             src={logo}
             alt={logoAlt}
-            className="company-logo"
+            className="company-info-logo"
             width={156}
             height={66}
         />
         <p className="company-info-description">{description}</p>
-        <form action="#" method="post" className="subscribe-form">
-            <label className="subscribe-form-label" htmlFor="email">
+        <form action="#" method="post" className="company-info-subscribe-form">
+            <label
+                className="company-info-subscribe-form-label"
+                htmlFor="email"
+            >
                 {subscribeLabel}
             </label>
             <div className="email-input">
@@ -27,20 +31,7 @@ const CompanyInfo = ({
                     placeholder={subscribePlaceholder}
                     required
                 />
-                <button type="submit" className="subscribe-button">
-                    <svg
-                        width="8"
-                        height="15"
-                        viewBox="0 0 8 15"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M0 12.8571L5 7.5L0 2.14286L1 0L8 7.5L1 15L0 12.8571Z"
-                            fill="white"
-                        />
-                    </svg>
-                </button>
+                <ButtonUI icon="pointer" size="xs" />
             </div>
         </form>
     </div>

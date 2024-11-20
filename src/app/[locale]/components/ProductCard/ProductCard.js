@@ -1,66 +1,48 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { ToBasketButton } from "../ToBasketButton/ToBasketButton";
-import "./ProductCard.css";
-
-function ShowInfo({ info: filter, t: t }) {
-    let text;
-    switch (filter) {
-        case "discount": {
-            text = "СКИДКА";
-            break;
-        }
-        case "popular": {
-            text = t('popular');
-            break;
-        }
-        default:
-            text = "";
-    }
-    if (filter != null) {
-        return <span className={filter}>{text}</span>
-    };
-}
+import ButtonUI from "../UI/ButtonUI/ButtonUI";
+import "./ProductCard.scss";
+import Icon from "../UI/Icons/Icons";
 
 function ShowSize({ card: card, t: t }) {
-    let size;
-    let type;
+    let size = +(card.size / card.amount).toFixed(2);
     if (card.amount > 1) {
-        size = card.amount + "x" + +(card.size / card.amount).toFixed(2);
-    }
-    else {
-        size = card.size;
-    }
-    let icon;
-    if (card.isLiquid) {
-        icon = <Image src="/icon/bottle-icon.svg" width={9} height={15} />;
-        type = t("liquidType")
-    }
-    else {
-        icon = <Image src="/icon/box-icon.svg" width={20} height={14} />;
-        type = t("type")
+        size = card.amount + "x" + size;
     }
 
-    return <span className="product-size">{icon} {size} {type}</span>
-}
-
-export default function ProductCard({ card: el, info: filter }) {
-    const t = useTranslations("ProductCard");
+    let icon, type;
+    card.isLiquid 
+        ? (icon = <Icon name="bottle"/>, type = t('liquidType'))
+        : (icon = <Icon name="box"/>, type = t('type'))
 
     return (
-        <div className="product-card">
+        <span className="product-size">
+            {icon}
+            {size}
+            {type}
+        </span>);
+}
+
+export default function ProductCard({ card: el }) {
+    const t = useTranslations("ProductCard");
+    const productName = t("productName") === "ru" ? el.nameRu : el.nameEn;
+    return (
+        <article className="product-card">
             <div className="product-img">
-                <ShowInfo info={filter} t={t} />
+                {el.isPopular && (
+                    <span className="popular">{t("popular")}</span>
+                )}
                 <Image
                     src={"/image/productCards/card" + el.id + ".svg"}
-                    width={el.img.width}
-                    height={el.img.height}
-                    alt={el.img.alt}
+                    fill={true}
+                    alt={productName}
                 />
-                <ShowSize card={el} t={t} />
+                <ShowSize card={el} t={t}/>
             </div>
             <div className="product">
-                <div className="product-name"><strong style={{ fontWeight: 800 }}>{el.brand.name}</strong> {t("productName") === "ru" ? el.nameRu : el.nameEn}</div>
+                <div className="product-name">
+                    <strong style={{ fontWeight: 800 }}>{el.brand.name} </strong>
+                    {productName}</div>
                 <div className="product-desc">
                     <ul>
                         <li><span className="product-desc-name">{t("barcode")}: </span>{el.barcode}</li>
@@ -70,10 +52,9 @@ export default function ProductCard({ card: el, info: filter }) {
                 </div>
                 <span className="product-footer">
                     <span className="product-price" style={{ fontWeight: 800 }}>{el.price}₽</span>
-                    <span className="product-tobasket"><ToBasketButton /> </span>
+                    <ButtonUI icon="basket" size="sm" label="В КОРЗИНУ" className="btn-tocart" />
                 </span>
-
             </div>
-        </div>
+        </article>
     )
 };

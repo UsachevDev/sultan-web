@@ -1,0 +1,28 @@
+@import "vars";
+@import "mixins";
+
+.catalog-swiper {
+    max-width: 1368px;
+    height: 100px;
+    margin: 0 auto;
+
+    &-slide {
+        padding: 0 auto;
+        
+        border-radius: 10px;
+        background-color: $text-color-light;
+    }
+
+    .swiper-wrapper {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: $primary-color;
+    }
+
+    @include laptop {
+        width: 95%;
+    }
+}

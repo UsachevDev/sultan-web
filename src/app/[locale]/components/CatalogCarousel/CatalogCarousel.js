@@ -1,13 +1,13 @@
-'use client'
-import React, { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay, FreeMode } from 'swiper/modules';
-import Image from 'next/image';
+"use client";
+import React, { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay, FreeMode } from "swiper/modules";
+import Image from "next/image";
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
-import './CatalogCarousel.css';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import "./CatalogCarousel.scss";
 
 const CatalogCarousel = () => {
     const [mainSlider, setMainSlider] = useState([]);
@@ -48,8 +48,8 @@ const CatalogCarousel = () => {
             modules={[Pagination, Autoplay]}
             className="catalog-swiper"
         >
-            {mainSlider.map((slideGroup, groupIndex) => (
-                <SwiperSlide key={groupIndex}>
+            {mainSlider.map((slideGroup) => (
+                <SwiperSlide key={slideGroup.id}>
                     <Swiper
                         slidesPerView="auto"
                         spaceBetween={10}
@@ -60,10 +60,13 @@ const CatalogCarousel = () => {
                         modules={[FreeMode]}
                         className="catalog-swiper-slide"
                     >
-                        {slideGroup.slides.map((image, imgIndex) => (
-                            <SwiperSlide key={imgIndex} style={{ width: `${image.width}px` }}>
+                        {slideGroup.slides.map((image) => (
+                            <SwiperSlide
+                                key={image.id}
+                                style={{ width: `${image.width}px` }}
+                            >
                                 <Image
-                                    className="catalog-slider-image"
+                                    className="catalog-swiper-slide-image"
                                     src={image.imageSrc}
                                     alt={image.title}
                                     width={image.width}

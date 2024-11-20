@@ -5,13 +5,11 @@ import {routing} from '@/i18n/routing';
 import {notFound} from 'next/navigation';
 import Header from './components/header/header';
 import Footer from './components/Footer/Footer';
-import "./globals.css";
-
+import "./globals.scss";
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
   weight: ['300','400', '600', '700', '800'],
-  variable: '--font-inter',
 });
 
 export const metadata = {
@@ -30,7 +28,7 @@ export default async function RootLayout({ children, params }) {
 
   return (
     <html lang={locale}>
-      <body className={inter.variable}>
+      <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
           <Header />
           {children}

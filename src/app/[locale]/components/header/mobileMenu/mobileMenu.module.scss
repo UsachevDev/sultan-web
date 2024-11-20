@@ -1,0 +1,169 @@
+@import "vars";
+
+.overlay {
+    position: fixed;
+    top: 104px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    background-color: mix($menu-overlay-color, transparent, 50%);
+}
+
+.mobileMenu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 16px 32px 12px;
+    gap: 48px;
+    box-sizing: border-box;
+    background-color: $background-color;
+    overflow-y: auto;
+    animation: slideDown 0.3s ease;
+    overflow-x: hidden;
+}
+
+.contactInformation {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 16px;
+
+    &::after {
+        position: absolute;
+        bottom: -24px;
+        right: 0;
+        margin-left: 2px;
+        width: calc(100% - 2px);
+        height: 0;
+        box-sizing: border-box;
+        border: 1px dashed $second-color;
+        opacity: 0.2;
+        content: "";
+    }
+}
+
+.locationBlock, .emailBlock {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.phoneBlock {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.phoneBlockInner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.phoneBlockText2 {
+    margin-left: 36px;
+    margin-top: 4px;
+    font-family: $font-inter;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    color: $second-color;
+}
+
+.addressText, .emailText, .phoneBlockInnerText1 {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-inter;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    color: $second-color;
+
+    & a {
+        text-decoration: none;
+        color: $second-color;
+    }
+}
+
+.addressText span:first-child,
+.emailLink, .phoneBlockInner span:first-child {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none;
+    color: $second-color;
+}
+
+.phoneBlockReqCall {
+    margin-top: 12px;
+    margin-left: 2px;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 8px;
+    font-family: $font-inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 15px;
+    text-decoration: underline;
+    color: $second-color;
+}
+
+.menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 24px;
+
+    &::after {
+        position: absolute;
+        bottom: -24px;
+        margin-left: 2px;
+        width: calc(100% - 2px);
+        height: 0;
+        box-sizing: border-box;
+        border: 1px dashed $second-color;
+        opacity: 0.2;
+        content: "";
+    }
+}
+
+.menuText {
+    margin-left: 2px;
+    font-family: $font-inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: $second-color;
+}
+
+.customStyleButton {
+    width: 292px;
+    height: 68px;
+}
+
+.button2 {
+    margin-left: 2px;
+    margin-top: -4px;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
