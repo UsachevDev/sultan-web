@@ -3,98 +3,144 @@
     "id": 0,
     "barcode": 25896624085,
     "article": 299320,
-    "nameRu": "aliqua nulla excepteur",
+    "nameRu": "Ср-во для мытья посуды Апельсин+мята",
     "nameEn": "aliqua nulla excepteur",
-    "brandName": "Aquazure",
+    "brand": {
+      "name": "AOS"
+    },
     "descriptionRu": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
     "descriptionEn": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
     "price": 387.49,
     "manufacturer": "Prismatic",
-    "inBox": 1,
-    "boxWeight": 916
+    "size": 450,
+    "amount": 1,
+    "isLiquid": true,
+    "isPopular" : true
   },
   {
     "id": 1,
     "barcode": 15154295058,
     "article": 652325,
-    "productName": "eu proident ut",
-    "brandName": "Apexia",
-    "description": "Culpa labore cupidatat proident officia nulla consectetur. Sint in eu excepteur sunt duis amet excepteur esse tempor mollit incididunt qui adipisicing. Sint cupidatat magna et consectetur ad veniam est incididunt ea velit pariatur. Proident ea sint deserunt amet anim dolore officia amet sint esse cillum.\r\nVeniam elit commodo incididunt aliquip aliqua ut pariatur quis amet. Incididunt in velit qui Lorem. Adipisicing anim id culpa culpa ad ut in fugiat laborum eu.\r\n",
+    "nameRu": "aliqua nulla excepteur",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "AOS"
+    },
+    "descriptionRu": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
+    "descriptionEn": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
     "price": 125.53,
+    "size": 450,
+    "amount": 1,
     "manufacturer": "Inventure",
-    "inBox": 2,
-    "boxWeight": 714
+    "isLiquid": true,
+    "isPopular" : true
   },
   {
     "id": 2,
     "barcode": 10038069659,
     "article": 621497,
-    "productName": "est sit laboris",
-    "brandName": "Dogspa",
-    "description": "Cupidatat et dolore fugiat pariatur commodo quis reprehenderit laboris minim nulla aliqua quis voluptate. Anim reprehenderit veniam ipsum eiusmod proident id deserunt minim dolore. Laboris occaecat ipsum laboris sint nulla anim aute irure minim adipisicing. Voluptate laborum voluptate ipsum esse commodo enim nostrud dolor laboris duis commodo anim.\r\nReprehenderit minim esse ut tempor voluptate amet non qui incididunt nisi elit occaecat minim. Tempor in pariatur esse magna cillum exercitation dolor in velit sit aliquip. Ullamco dolor reprehenderit esse eiusmod quis in ullamco nisi tempor voluptate voluptate et occaecat. Enim consectetur exercitation magna dolor sunt labore sint nostrud ut enim elit. Sint qui Lorem dolore ut labore ut in laboris mollit laborum non.\r\n",
+    "nameRu": "aliqua nulla excepteur",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "Ariel"
+    },
+    "descriptionRu": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
+    "descriptionEn": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
     "price": 869.18,
+    "size": 432,
+    "amount": 15,
     "manufacturer": "Sensate",
-    "inBox": 6,
-    "boxWeight": 961
+    "isLiquid": false,
+    "isPopular" : true
   },
   {
     "id": 3,
     "barcode": 22652956126,
     "article": 367569,
-    "productName": "cupidatat proident fugiat",
-    "brandName": "Acrodance",
-    "description": "Et non occaecat cupidatat consequat aliquip quis elit reprehenderit ut Lorem elit. Nostrud amet mollit culpa duis esse adipisicing ullamco et anim ipsum. Commodo pariatur quis nostrud anim magna occaecat proident ea velit magna. Aliqua commodo labore laborum veniam reprehenderit et nisi consectetur voluptate nisi in. Magna veniam adipisicing ipsum ipsum id cupidatat proident minim amet fugiat reprehenderit. Commodo aliqua proident ipsum commodo qui. Ut do elit in elit eiusmod laborum.\r\nAnim ut tempor in mollit. Qui adipisicing irure aute dolore excepteur et do veniam voluptate. Sint ex elit qui duis ullamco tempor laboris cillum excepteur id consequat irure nisi.\r\n",
+    "nameRu": "aliqua nulla excepteur",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "BiMax"
+    },
+    "descriptionRu": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
+    "descriptionEn": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
     "price": 786.52,
+    "size": 1500,
+    "amount": 1,
     "manufacturer": "Martgo",
-    "inBox": 3,
-    "boxWeight": 808
+    "isLiquid": false,
+    "isPopular" : true
   },
   {
     "id": 4,
     "barcode": 17720663897,
     "article": 593996,
-    "productName": "irure pariatur nulla",
-    "brandName": "Daycore",
-    "description": "In anim sunt non magna et sint magna sint. Non consectetur irure eiusmod voluptate ut qui occaecat non veniam. Culpa est id adipisicing eu minim qui voluptate. Non laborum sint quis cupidatat sunt sit ut proident occaecat commodo. Non est nulla aliqua labore eiusmod minim mollit tempor eu qui.\r\nNisi anim excepteur dolor exercitation mollit magna mollit ut non in ut. Ipsum mollit duis Lorem eu irure. Cillum est quis cupidatat irure et ullamco minim irure aute incididunt excepteur proident voluptate. Adipisicing sunt magna officia laboris dolore cupidatat mollit adipisicing non eiusmod eiusmod occaecat. Occaecat cupidatat exercitation ad nulla consectetur ex et ullamco aute cupidatat est.\r\n",
+    "nameRu": "Ср-во для мытья посуды Апельсин+мята",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "Sorti"
+    },
+    "descriptionRu": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
+    "descriptionEn": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
     "price": 426.77,
-    "manufacturer": "Virva",
-    "inBox": 8,
-    "boxWeight": 831
+    "size": 450,
+    "amount": 1,
+    "manufacturer": "Prismatic",
+    "isLiquid": true,
+    "isPopular" : true
   },
   {
     "id": 5,
     "barcode": 16959869517,
     "article": 747899,
-    "productName": "est ipsum veniam",
-    "brandName": "Geekosis",
-    "description": "Deserunt proident duis deserunt laboris duis tempor in proident minim reprehenderit eu mollit. Lorem ea velit ullamco dolore amet occaecat nulla ex laboris veniam. Fugiat nostrud incididunt labore magna laboris incididunt minim adipisicing adipisicing ex occaecat sunt voluptate. Do sit ex proident laborum id incididunt velit amet irure commodo Lorem esse.\r\nConsequat duis sunt veniam incididunt mollit culpa nisi non cillum qui. Magna magna fugiat sunt enim exercitation ea in in commodo magna Lorem sit labore elit. Amet laborum laborum sunt qui dolore et adipisicing mollit. Dolor minim ea ipsum nostrud ad magna occaecat labore aliquip eiusmod.\r\n",
-    "price": 188.35,
-    "manufacturer": "Dancity",
-    "inBox": 1,
-    "boxWeight": 892
+    "nameRu": "aliqua nulla excepteur",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "AOS"
+    },
+    "descriptionRu": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
+    "descriptionEn": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
+    "price": 125.53,
+    "size": 450,
+    "amount": 1,
+    "manufacturer": "Inventure",
+    "isLiquid": true,
+    "isPopular" : true
   },
   {
     "id": 6,
     "barcode": 80525533803,
     "article": 801936,
-    "productName": "sit cupidatat consequat",
-    "brandName": "Pulze",
-    "description": "Labore elit ut qui anim ad aliqua eiusmod tempor pariatur nostrud et. Amet minim Lorem ipsum quis laborum anim consequat reprehenderit nostrud excepteur officia in culpa. Labore adipisicing dolore amet aliquip nostrud incididunt consequat aliquip. Irure magna sunt cupidatat tempor Lorem consequat magna nulla. Ut sunt eu aute labore duis ea dolor qui amet ad laborum Lorem cupidatat et. Laborum ullamco Lorem anim laboris veniam fugiat velit deserunt commodo minim sint adipisicing.\r\nDolor occaecat Lorem ad exercitation dolore anim occaecat cupidatat sint. Mollit aute cupidatat labore cupidatat ipsum. Magna consectetur et cupidatat cupidatat occaecat ad ea nisi fugiat quis pariatur aliqua culpa.\r\n",
-    "price": 271.99,
-    "manufacturer": "Gynk",
-    "inBox": 8,
-    "boxWeight": 456
+    "nameRu": "aliqua nulla excepteur",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "Ariel"
+    },
+    "descriptionRu": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
+    "descriptionEn": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
+    "price": 869.18,
+    "size": 434,
+    "amount": 15,
+    "manufacturer": "Sensate",
+    "isLiquid": false,
+    "isPopular" : true
   },
   {
     "id": 7,
     "barcode": 26680964822,
     "article": 425369,
-    "productName": "tempor culpa sit",
-    "brandName": "Atomica",
-    "description": "Aliquip consectetur pariatur ea culpa incididunt consectetur nisi commodo. Irure pariatur Lorem consectetur officia dolor dolore occaecat mollit officia anim ex excepteur tempor velit. Excepteur voluptate enim velit tempor minim consequat adipisicing fugiat adipisicing id incididunt quis. Sunt elit pariatur ex veniam consectetur. Occaecat aute exercitation aliquip tempor.\r\nCommodo enim ex proident sunt consectetur Lorem irure exercitation. In elit proident consequat sunt labore do aute duis nisi sit. Nisi anim minim incididunt ad dolore proident ad ut anim officia sint tempor ea. Nulla duis adipisicing velit nisi dolore esse mollit ut ea exercitation officia.\r\n",
-    "price": 480.48,
-    "manufacturer": "Telepark",
-    "inBox": 10,
-    "boxWeight": 36
+    "nameRu": "aliqua nulla excepteur",
+    "nameEn": "aliqua nulla excepteur",
+    "brand": {
+      "name": "BiMax"
+    },
+    "descriptionRu": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
+    "descriptionEn": "Qui excepteur minim ad qui in adipisicing tempor aliquip. Quis commodo ullamco aliquip duis exercitation laborum elit nulla et. Cillum ex nulla cupidatat et qui irure aute proident tempor non velit reprehenderit enim anim. Ea sit labore ex proident. Commodo labore duis reprehenderit dolor. Amet ad deserunt Lorem voluptate laboris laboris do ut incididunt.\r\nDeserunt Lorem do minim deserunt officia aute commodo dolore quis esse in eu. Exercitation cillum ipsum ex aliqua elit tempor nisi laboris cupidatat consequat esse. Deserunt et elit esse laboris consequat do magna qui.\r\n",
+    "price": 786.52,
+    "size": 1500,
+    "amount": 1,
+    "manufacturer": "Martgo",
+    "isLiquid": false,
+    "isPopular" : true
   }
 ]
