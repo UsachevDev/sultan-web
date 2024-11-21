@@ -4,7 +4,8 @@
       "@/*": ["./src/*"],
       "vars":["/src/app/[locale]/vars.scss"],
       "mixins":["/src/app/[locale]/mixins.scss"],
-      "UI/*": ["./src/app/[locale]/components/UI/*"]
+      "UI/*": ["./src/app/[locale]/components/UI/*"],
+      "components/*": ["./src/app/[locale]/components/*"]
     }
   }
 }
