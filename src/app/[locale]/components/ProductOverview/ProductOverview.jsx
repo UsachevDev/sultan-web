@@ -1,9 +1,19 @@
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { ShowProductSize } from "../ProductCard/ProductCard";
 import "./ProductOverview.scss";
+import ButtonUI from "../UI/ButtonUI/ButtonUI";
 
 const ProductOverview = ({ card }) => {
     const t = useTranslations("ProductCard");
+
+    // Состояние для видимости контента
+    const [isDescriptionVisible, setDescriptionVisible] = useState(false);
+    const [isSpecificationsVisible, setSpecificationsVisible] = useState(false);
+
+    // Переключение видимости
+    const toggleDescription = () => setDescriptionVisible(!isDescriptionVisible);
+    const toggleSpecifications = () => setSpecificationsVisible(!isSpecificationsVisible);
 
     return (
         <article className="product-overview">
@@ -29,7 +39,7 @@ const ProductOverview = ({ card }) => {
                             <span className="product-overview__quantity-value" aria-live="polite">1</span>
                             <button className="product-overview__quantity-increase" aria-label="Увеличить количество">+</button>
                         </div>
-                        <button className="product-overview__add-to-cart" aria-label="Добавить в корзину">В корзину</button>
+                        <ButtonUI icon="basket" size="sm" label="В корзину" className="product-overview__add-to-cart" />
                     </div>
 
                     <div className="product-overview__extras">
@@ -64,45 +74,59 @@ const ProductOverview = ({ card }) => {
                         </dl>
                     </section>
                     <section className="product-overview__description">
-                        <h2 class="product-overview__description-title">{t("desc")}</h2>
-                        <p>{t("locale") == "ru" ? card.descriptionRu : card.descriptionEn}</p>
+                        <h2
+                            className={`product-overview__description-title ${isDescriptionVisible ? "open" : ""
+                                }`}
+                            onClick={toggleDescription}
+                        >
+                            {t("desc")}
+                        </h2>
+                        {isDescriptionVisible && (
+                            <p>{t("locale") === "ru" ? card.descriptionRu : card.descriptionEn}</p>
+                        )}
                     </section>
+
                     <section className="product-overview__specifications">
-                        <h2 class="product-overview__specifications-title">Характеристики</h2>
-                        <dl>
-                            {/* <div>
-                                <dt>Назначение:</dt>
-                                <dd>BioMio</dd>
-                            </div>
-                            <div>
-                                <dt>Тип:</dt>
-                                <dd>BioMio</dd>
-                            </div> */}
-                            <div>
-                                <dt>{t("manufacturer")}:</dt>
-                                <dd>{card.manufacturer}</dd>
-                            </div>
-                            <div>
-                                <dt>{t("brand")}:</dt>
-                                <dd>{card.brand.name}</dd>
-                            </div>
-                            <div>
-                                <dt>{t("article")}:</dt>
-                                <dd>{card.article}</dd>
-                            </div>
-                            <div>
-                                <dt>{t("barcode")}:</dt>
-                                <dd>{card.barcode}</dd>
-                            </div>
-                            <div>
-                                <dt>{card.isLiquid ? t("volume") : t("weight")}:</dt>
-                                <dd><ShowProductSize card={card} t={t} disableIcon={true} /></dd>
-                            </div>
-                            <div>
-                                <dt>{t("amount")}:</dt>
-                                <dd>{card.amount}</dd>
-                            </div>
-                        </dl>
+                        <div className="product-overview__specifications-title-container">
+                            <h2
+                                className={`product-overview__specifications-title ${isSpecificationsVisible ? "open" : ""
+                                    }`}
+                                onClick={toggleSpecifications}
+                            >
+                                Характеристики
+                            </h2>
+                        </div>
+
+                        {isSpecificationsVisible && (
+                            <dl>
+                                <div>
+                                    <dt>{t("manufacturer")}:</dt>
+                                    <dd>{card.manufacturer}</dd>
+                                </div>
+                                <div>
+                                    <dt>{t("brand")}:</dt>
+                                    <dd>{card.brand.name}</dd>
+                                </div>
+                                <div>
+                                    <dt>{t("article")}:</dt>
+                                    <dd>{card.article}</dd>
+                                </div>
+                                <div>
+                                    <dt>{t("barcode")}:</dt>
+                                    <dd>{card.barcode}</dd>
+                                </div>
+                                <div>
+                                    <dt>{card.isLiquid ? t("volume") : t("weight")}:</dt>
+                                    <dd>
+                                        <ShowProductSize card={card} t={t} disableIcon={true} />
+                                    </dd>
+                                </div>
+                                <div>
+                                    <dt>{t("amount")}:</dt>
+                                    <dd>{card.amount}</dd>
+                                </div>
+                            </dl>
+                        )}
                     </section>
 
                 </footer>

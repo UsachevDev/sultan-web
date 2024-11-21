@@ -89,7 +89,11 @@
     }
 
     &__add-to-cart {
+        width: 184px;
         margin-left: 38px;
+        padding-top: 21px;
+        padding-bottom: 21px;
+        font-size: 14px;
     }
 
     &__extras {
@@ -131,16 +135,41 @@
         margin-top: 20px;
 
         &-title {
-            max-width: 270px;
-            margin-top: 20px;
-            padding-top: 20px;
+            display: inline-block;
+            position: relative;
+
 
             font-size: 16px;
             font-weight: 500;
             line-height: 24px;
             color: $text-color;
 
-            border-top: 1px rgba($second-color, 0.3) dashed;
+            cursor: pointer;
+
+            &-container {
+                max-width: 270px;
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 1px rgba($second-color, 0.3) dashed;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 60%;
+                left: 100%;
+                margin-left: 5px;
+                transform: translateY(-50%) rotate(0deg);
+                transform-origin: top;
+                border: solid transparent;
+                border-width: 4px;
+                border-top-color: $second-color;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            &.open::after {
+                transform: rotate(180deg);
+            }
         }
 
         dl {
@@ -171,12 +200,34 @@
 
     &__description {
         margin-top: 30px;
-        
+
         &-title {
+            display: inline-block;
+            position: relative;
+            max-width: 100px;
             font-size: 16px;
             font-weight: 500;
             line-height: 24px;
             color: $text-color;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 60%;
+                left: 100%;
+                margin-left: 5px;
+                transform: translateY(-50%) rotate(0deg);
+                transform-origin: top;
+                border: solid transparent;
+                border-width: 4px;
+                border-top-color: $second-color;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            &.open::after {
+                transform: rotate(180deg);
+            }
         }
 
         p {

@@ -44,8 +44,9 @@ export default function Product({ params }) {
             <div className="page-product-card">
                 <Breadcrumbs current={t("locale") == "ru" ? card.nameRu : card.nameEn} />
                 <ProductOverview card={card} />
+                <ProductsSwiper cards={similar} />
             </div>
-            <ProductsSwiper cards={similar} />
+            
         </>
 
     )
