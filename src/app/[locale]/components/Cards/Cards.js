@@ -7,7 +7,48 @@ import useWidth from "../../core/hooks/useWidth";
 import ProductCard from "../ProductCard/ProductCard";
 import "./Cards.scss";
 
-const Cards = ({ info: filter }) => {
+export const ProductsInARow = ({ cards }) => {
+    return (
+        <div className="cards">
+            {cards.map((card) => (
+                <ProductCard
+                    card={card}
+                    key={card.id}
+                />
+            ))}
+        </div>
+    );
+};
+
+export const ProductsSwiper = ({ cards }) => {
+    return (
+        <div className="cards-mobile">
+            <Swiper
+                className="cards-slider"
+                slidesPerView="auto"
+                loop={false}
+                pagination={{
+                    clickable: true,
+                }}
+                autoplay={{
+                    delay: 10000,
+                    disableOnInteraction: false,
+                }}
+                modules={[Pagination, Autoplay]}
+            >
+                {cards.map((card) => (
+                    <SwiperSlide key={card.id} style={{ width: 326 }}>
+                        <ProductCard
+                            card={card}
+                        />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
+    );
+}
+
+const Cards = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [cards, setCards] = useState([]);
     const { isDesktop, isLaptop } = useWidth();
@@ -32,46 +73,11 @@ const Cards = ({ info: filter }) => {
         return <p>Загрузка...</p>
     }
 
-
-
     return (
         <>
-            {isDesktop || isLaptop
-                ?
-                <div className="cards">
-                    {cards.map((card) => (
-                        <ProductCard
-                            card={card}
-                            info={filter}
-                            key={card.id}
-                        />
-                    ))}
-                </div>
-                :
-                <div className="cards-mobile">
-                    <Swiper
-                        className="cards-slider"
-                        slidesPerView="auto"
-                        loop={false}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        autoplay={{
-                            delay: 10000,
-                            disableOnInteraction: false,
-                        }}
-                        modules={[Pagination, Autoplay]}
-                    >
-                        {cards.map((card) => (
-                            <SwiperSlide key={card.id} style={{ width: 326 }}>
-                                <ProductCard
-                                    card={card}
-                                    info={filter}
-                                />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
+            {isDesktop || isLaptop 
+            ? <ProductsInARow cards={cards} />
+            : <ProductsSwiper cards={cards} />
             }
         </>
     )
