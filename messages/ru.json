@@ -139,5 +139,9 @@
     },
     "LocalSwitcher": {
         "locale": "Английский"
+    },
+    "Breadcrumbs": {
+        "HomePage": "Главная",
+        "Catalog": "Каталог"
     }
 }

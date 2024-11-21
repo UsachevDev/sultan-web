@@ -1,11 +1,13 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+import { useState, useEffect} from "react";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
-import { useState, useEffect } from "react";
 import ProductOverview from "../../components/ProductOverview/ProductOverview";
 import "./productCardPage.scss";
 
 export default function Product({ params }) {
+    const t = useTranslations("ProductCard");
     const [isLoading, setIsLoading] = useState(true);
     const [card, setCard] = useState([]);
     useEffect(() => {
@@ -30,9 +32,8 @@ export default function Product({ params }) {
 
     return (
         <div className="page-product-card">
-            <h1>WW card</h1>
-            <Breadcrumbs />
-            <ProductOverview card={card}/>
+            <Breadcrumbs current={t("locale") == "ru" ? card.nameRu : card.nameEn}/>
+            <ProductOverview card={card} />
         </div>
     )
 }

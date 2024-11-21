@@ -7,12 +7,12 @@
         "text": "Add to cart"
     },
     "ProductCard": {
-        "locale" : "en",
+        "locale": "en",
         "article": "Article",
         "weight": "Weight",
         "volume": "Volume",
         "desc": "Description",
-        "amount" : "Amount in the box",
+        "amount": "Amount in the box",
         "brand": "Brand",
         "barcode": "Barcode",
         "manufacturer": "Manufacturer",
@@ -55,23 +55,23 @@
     },
     "PromoCarousel": {
         "promoButton": "Take part",
-        "promoDate1":"*the promotion is valid until 12/14/24",
+        "promoDate1": "*the promotion is valid until 12/14/24",
         "promoTitle1": "Promotion ",
         "promoTitleSpan1": "Name",
         "promoDescriptor1": "Terms of the promotion in a couple of lines, Terms of the promotion in a couple of lines",
-        "promoDate2":"*the promotion is valid until 12/14/24",
+        "promoDate2": "*the promotion is valid until 12/14/24",
         "promoTitle2": "Promotion ",
         "promoTitleSpan2": "Name",
         "promoDescriptor2": "Terms of the promotion in a couple of lines, Terms of the promotion in a couple of lines",
-        "promoDate3":"*the promotion is valid until 12/14/24",
+        "promoDate3": "*the promotion is valid until 12/14/24",
         "promoTitle3": "Promotion ",
         "promoTitleSpan3": "Name",
         "promoDescriptor3": "Terms of the promotion in a couple of lines, Terms of the promotion in a couple of lines"
     },
     "GoodsForSale": {
-        "h1" : {
-            "firstPart" : "Goods",
-            "secondPart" : "For sale"
+        "h1": {
+            "firstPart": "Goods",
+            "secondPart": "For sale"
         }
     },
     "Banner": {
@@ -139,5 +139,9 @@
     },
     "LocalSwitcher": {
         "locale": "Russian"
+    },
+    "Breadcrumbs": {
+        "HomePage": "Home page",
+        "Catalog": "Catalog"
     }
 }

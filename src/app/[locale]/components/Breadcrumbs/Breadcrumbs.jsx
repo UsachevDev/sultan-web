@@ -1,18 +1,20 @@
 import { useTranslations } from "next-intl";
 import "./Breadcrumbs.scss";
 
-const Breadcrumbs = () => {
+const Breadcrumbs = ({current}) => {
+    const t = useTranslations("Breadcrumbs");
+
     return (
         <nav className="breadcrumbs">
             <ul className="breadcrumbs__list">
                 <li className="breadcrumbs__item">
-                    <a href="/" className="breadcrumbs__link">Главная</a>
+                    <a href="/" className="breadcrumbs__link">{t("HomePage")}</a>
                 </li>
                 <li className="breadcrumbs__item">
-                    <a href="/category" className="breadcrumbs__link">Каталог</a>
+                    <a href="/category" className="breadcrumbs__link">{t("Catalog")}</a>
                 </li>
                 <li className="breadcrumbs__item">
-                    Продукт
+                    {current}
                 </li>
             </ul>
         </nav>
