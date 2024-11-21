@@ -1,8 +1,9 @@
 import { useTranslations } from "next-intl";
+import { ShowProductSize } from "../ProductCard/ProductCard";
 import "./ProductOverview.scss";
 
-const ProductOverview = () => {
-    const t = useTranslations("123");
+const ProductOverview = ({ card }) => {
+    const t = useTranslations("ProductCard");
 
     return (
         <article className="product-overview">
@@ -12,14 +13,14 @@ const ProductOverview = () => {
             <div className="product-overview__content">
                 <header className="product-overview__header">
                     <h1 className="product-overview__title">
-                        <span className="product-overview__title-span">BioMio BIO-SOAP</span> Экологичное туалетное мыло. Литсея и бергамот
+                        <span className="product-overview__title-span">{card.brand.name}</span> {t("locale") == "ru" ? card.nameRu : card.nameEn}
                     </h1>
-                    <p className="product-overview__subtitle">90 г</p>
+                    <ShowProductSize card={card} t={t} className={"product-overview__subtitle"} />
                 </header>
 
                 <section className="product-overview__details">
                     <p className="product-overview__price">
-                        <strong>48,76 ₸</strong>
+                        <strong>{card.price} ₸</strong>
                     </p>
 
                     <div className="product-overview__actions">
@@ -45,73 +46,61 @@ const ProductOverview = () => {
                     <section className="product-overview__specifications">
                         <dl>
                             <div>
-                                <dt>Производитель:</dt>
-                                <dd>BioMio</dd>
+                                <dt>{t("manufacturer")}:</dt>
+                                <dd>{card.manufacturer}</dd>
                             </div>
                             <div>
-                                <dt>Бренд:</dt>
-                                <dd>BioMio</dd>
+                                <dt>{t("brand")}:</dt>
+                                <dd>{card.brand.name}</dd>
                             </div>
                             <div>
-                                <dt>Артикул:</dt>
-                                <dd>460404</dd>
+                                <dt>{t("article")}:</dt>
+                                <dd>{card.article}</dd>
                             </div>
                             <div>
-                                <dt>Штрихкод:</dt>
-                                <dd>4604049097548</dd>
-                            </div>
-                            <div>
-                                <dt>Размеры коробки:</dt>
-                                <dd>10x10x10</dd>
-                            </div>
-                            <div>
-                                <dt>Вес коробки:</dt>
-                                <dd>1020 г</dd>
+                                <dt>{t("barcode")}:</dt>
+                                <dd>{card.barcode}</dd>
                             </div>
                         </dl>
                     </section>
                     <section className="product-overview__description">
-                        <h2 class="product-overview__description-title">Описание</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, omnis autem similique iste natus beatae, esse vero aspernatur magni asperiores reiciendis laboriosam deserunt! Vitae hic qui assumenda, eveniet quaerat dicta.</p>
+                        <h2 class="product-overview__description-title">{t("desc")}</h2>
+                        <p>{t("locale") == "ru" ? card.descriptionRu : card.descriptionEn}</p>
                     </section>
                     <section className="product-overview__specifications">
                         <h2 class="product-overview__specifications-title">Характеристики</h2>
                         <dl>
-                            <div>
+                            {/* <div>
                                 <dt>Назначение:</dt>
                                 <dd>BioMio</dd>
                             </div>
                             <div>
                                 <dt>Тип:</dt>
                                 <dd>BioMio</dd>
+                            </div> */}
+                            <div>
+                                <dt>{t("manufacturer")}:</dt>
+                                <dd>{card.manufacturer}</dd>
                             </div>
                             <div>
-                                <dt>Производитель:</dt>
-                                <dd>460404</dd>
+                                <dt>{t("brand")}:</dt>
+                                <dd>{card.brand.name}</dd>
                             </div>
                             <div>
-                                <dt>Бренд:</dt>
-                                <dd>4604049097548</dd>
+                                <dt>{t("article")}:</dt>
+                                <dd>{card.article}</dd>
                             </div>
                             <div>
-                                <dt>Артикул:</dt>
-                                <dd>4604049097548</dd>
+                                <dt>{t("barcode")}:</dt>
+                                <dd>{card.barcode}</dd>
                             </div>
                             <div>
-                                <dt>Штрихкод:</dt>
-                                <dd>4604049097548</dd>
+                                <dt>{card.isLiquid ? t("volume") : t("weight")}:</dt>
+                                <dd><ShowProductSize card={card} t={t} disableIcon={true} /></dd>
                             </div>
                             <div>
-                                <dt>Вес:</dt>
-                                <dd>90 г</dd>
-                            </div>
-                            <div>
-                                <dt>Объем:</dt>
-                                <dd>90 г</dd>
-                            </div>
-                            <div>
-                                <dt>Кол-во в коробке:</dt>
-                                <dd>90 г</dd>
+                                <dt>{t("amount")}:</dt>
+                                <dd>{card.amount}</dd>
                             </div>
                         </dl>
                     </section>

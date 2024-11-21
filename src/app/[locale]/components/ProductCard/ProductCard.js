@@ -4,7 +4,7 @@ import ButtonUI from "../UI/ButtonUI/ButtonUI";
 import "./ProductCard.scss";
 import Icon from "../UI/Icons/Icons";
 
-function ShowSize({ card: card, t: t }) {
+export function ShowProductSize({ card: card, t: t, className: name, disableIcon = false}) {
     let size = +(card.size / card.amount).toFixed(2);
     if (card.amount > 1) {
         size = card.amount + "x" + size;
@@ -16,10 +16,10 @@ function ShowSize({ card: card, t: t }) {
         : (icon = <Icon name="box"/>, type = t('type'))
 
     return (
-        <span className="product-size">
-            {icon}
+        <span className={name}>
+            {!disableIcon && icon}
             {size}
-            {type}
+            <b>{type}</b>
         </span>);
 }
 
@@ -37,7 +37,7 @@ export default function ProductCard({ card: el }) {
                     fill={true}
                     alt={productName}
                 />
-                <ShowSize card={el} t={t}/>
+                <ShowProductSize card={el} t={t} className="product-size"/>
             </div>
             <div className="product">
                 <div className="product-name">

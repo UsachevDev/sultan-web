@@ -7,6 +7,12 @@
         "text": "Add to cart"
     },
     "ProductCard": {
+        "locale" : "en",
+        "article": "Article",
+        "weight": "Weight",
+        "volume": "Volume",
+        "desc": "Description",
+        "amount" : "Amount in the box",
         "brand": "Brand",
         "barcode": "Barcode",
         "manufacturer": "Manufacturer",

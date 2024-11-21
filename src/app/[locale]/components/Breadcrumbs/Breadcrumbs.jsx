@@ -2,18 +2,16 @@ import { useTranslations } from "next-intl";
 import "./Breadcrumbs.scss";
 
 const Breadcrumbs = () => {
-    const t = useTranslations("123");
-
     return (
-        <nav class="breadcrumbs">
-            <ul class="breadcrumbs__list">
-                <li class="breadcrumbs__item">
-                    <a href="/" class="breadcrumbs__link">Главная</a>
+        <nav className="breadcrumbs">
+            <ul className="breadcrumbs__list">
+                <li className="breadcrumbs__item">
+                    <a href="/" className="breadcrumbs__link">Главная</a>
                 </li>
-                <li class="breadcrumbs__item">
-                    <a href="/category" class="breadcrumbs__link">Каталог</a>
+                <li className="breadcrumbs__item">
+                    <a href="/category" className="breadcrumbs__link">Каталог</a>
                 </li>
-                <li class="breadcrumbs__item">
+                <li className="breadcrumbs__item">
                     Продукт
                 </li>
             </ul>

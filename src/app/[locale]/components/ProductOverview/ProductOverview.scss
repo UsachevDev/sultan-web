@@ -22,6 +22,8 @@
     }
 
     &__subtitle {
+        display: flex;
+        gap: 4px;
         margin-top: 10px;
 
         color: $second-color;
@@ -32,6 +34,7 @@
 
     &__details {
         display: flex;
+        margin-top: 16px;
         flex-wrap: wrap;
     }
 

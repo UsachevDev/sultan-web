@@ -7,6 +7,12 @@
         "text": "В корзину"
     },
     "ProductCard": {
+        "locale" : "ru",
+        "article": "Артикул",
+        "weight": "Вес",
+        "volume": "Объем",
+        "desc": "Описание",
+        "amount" : "Кол-во в коробке",
         "brand": "Бренд",
         "barcode": "Штрихкод",
         "manufacturer": "Производитель",
