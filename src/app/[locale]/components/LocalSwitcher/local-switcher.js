@@ -11,15 +11,16 @@ import styles from './localSwitcher.module.scss';
 
 export default function LocalSwitcher() {
   const [isPending, startTransition] = useTransition();
+  const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
   const currentLocale = useLocale();
-  const [isHovered, setIsHovered] = useState(false);
-  
+  const t = useTranslations('LocalSwitcher');
   const getNextLocale = useNextLocale(currentLocale);
   
   const getFlagSvg = (locale) => {
     const flagStyle = isHovered ? { filter: 'brightness(0.9)' } : {};
     if (locale === LOCALES.RU) {
+
       return (
         <Image src='/icon/header-flag-gb.svg' 
           width={36} 
@@ -29,6 +30,7 @@ export default function LocalSwitcher() {
         />
       );
     }
+
     return (
       <Image src='/icon/header-flag-ru.svg' 
         width={36} 
@@ -43,6 +45,7 @@ export default function LocalSwitcher() {
     const nextLocale = getNextLocale(currentLocale);
     startTransition(() => {
       if (nextLocale === currentLocale) {
+        
         return;
       }
       const currentPath = window.location.pathname;
@@ -50,8 +53,6 @@ export default function LocalSwitcher() {
       router.replace(newPath);
     });
   };
-
-  const t = useTranslations('LocalSwitcher');
 
   return (
     <button

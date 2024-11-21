@@ -7,7 +7,6 @@ import "./productCardPage.scss";
 //     const resJson = await res.json();
 //     return resJson;
 // }
-
 export default async function Product({ params }) {
     // const products = await getProducts();
     // const product = products[params.productId];

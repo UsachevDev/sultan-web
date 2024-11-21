@@ -4,6 +4,7 @@ import styles from './componentsStyles.module.scss';
 
 const Cart = ({ itemCount = 3, totalAmount = 0 }) => {
     const t = useTranslations('Header');
+    
     return (
         <div className={styles.cart}>
             <Link href={'/cart'}>
