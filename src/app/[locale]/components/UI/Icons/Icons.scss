@@ -13,6 +13,10 @@
         margin-left: 12px;
 
         background-image: url("/icon/download.svg");
+        &-dark {
+            background-image: url("/icon/download-dark.svg");
+            margin-left: 12px;
+        }
     }
 
     &--basket {
@@ -43,5 +47,11 @@
         width: 20px;
         height: 14px;
         background-image: url("/icon/box-icon.svg");
+    }
+
+    &--share {
+        width: 24px;
+        height: 24px;
+        background-image: url("/icon/share.svg");
     }
 }

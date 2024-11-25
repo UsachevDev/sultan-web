@@ -1,6 +1,17 @@
 @import "vars";
 @import "mixins";
 
+.page-product-card {
+    max-width: 1367px;
+    margin: 0 auto;
+    margin-bottom: auto;
+
+    @include laptop {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
 .swiper-button-next,
 .swiper-button-prev {
     position: absolute;

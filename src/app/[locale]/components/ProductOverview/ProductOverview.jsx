@@ -7,25 +7,75 @@ import ButtonUI from "../UI/ButtonUI/ButtonUI";
 const ProductOverview = ({ card }) => {
     const t = useTranslations("ProductCard");
 
+    // Состояние для количества товара
+    const [quantity, setQuantity] = useState(1);
+
     // Состояние для видимости контента
     const [isDescriptionVisible, setDescriptionVisible] = useState(false);
     const [isSpecificationsVisible, setSpecificationsVisible] = useState(false);
 
     // Переключение видимости
-    const toggleDescription = () => setDescriptionVisible(!isDescriptionVisible);
-    const toggleSpecifications = () => setSpecificationsVisible(!isSpecificationsVisible);
+    const toggleDescription = () =>
+        setDescriptionVisible(!isDescriptionVisible);
+    const toggleSpecifications = () =>
+        setSpecificationsVisible(!isSpecificationsVisible);
+
+    // Изменение количества товара
+    const handleInputChange = (e) => {
+        const value = parseInt(e.target.value, 10);
+        if (value > 0) {
+            setQuantity(value);
+        } else {
+            setQuantity(1);
+        }
+
+        e.target.style.width = `${e.target.value.length + 1}ch`;
+    };
+    const handleIncrease = () => {
+        setQuantity((prevQuantity) => {
+            const newQuantity = prevQuantity + 1;
+            updateInputWidth(newQuantity);
+            return newQuantity;
+        });
+    };
+
+    const handleDecrease = () => {
+        setQuantity((prevQuantity) => {
+            const newQuantity = prevQuantity > 1 ? prevQuantity - 1 : 1;
+            updateInputWidth(newQuantity);
+            return newQuantity;
+        });
+    };
+
+    // Функция для обновления ширины инпута
+    const updateInputWidth = (value) => {
+        const inputElement = document.querySelector(
+            ".product-overview__quantity-value"
+        );
+        inputElement.style.width = `${value.toString().length + 1}ch`;
+    };
 
     return (
         <article className="product-overview">
             <figure className="product-overview__image">
-                <img src="/image/bio-mio-soap.png" alt="BioMio Bio-Soap Экологичное туалетное мыло" />
+                <img
+                    src="/image/bio-mio-soap.png"
+                    alt="BioMio Bio-Soap Экологичное туалетное мыло"
+                />
             </figure>
             <div className="product-overview__content">
                 <header className="product-overview__header">
                     <h1 className="product-overview__title">
-                        <span className="product-overview__title-span">{card.brand.name}</span> {t("locale") == "ru" ? card.nameRu : card.nameEn}
+                        <span className="product-overview__title-span">
+                            {card.brand.name}
+                        </span>{" "}
+                        {t("locale") == "ru" ? card.nameRu : card.nameEn}
                     </h1>
-                    <ShowProductSize card={card} t={t} className={"product-overview__subtitle"} />
+                    <ShowProductSize
+                        card={card}
+                        t={t}
+                        className={"product-overview__subtitle"}
+                    />
                 </header>
 
                 <section className="product-overview__details">
@@ -33,23 +83,53 @@ const ProductOverview = ({ card }) => {
                         <strong>{card.price} ₸</strong>
                     </p>
 
-                    <div className="product-overview__actions">
-                        <div className="product-overview__quantity">
-                            <button className="product-overview__quantity-decrease" aria-label="Уменьшить количество">-</button>
-                            <span className="product-overview__quantity-value" aria-live="polite">1</span>
-                            <button className="product-overview__quantity-increase" aria-label="Увеличить количество">+</button>
-                        </div>
-                        <ButtonUI icon="basket" size="sm" label="В корзину" className="product-overview__add-to-cart" />
+                    <div className="product-overview__quantity">
+                        <button
+                            className="product-overview__quantity-decrease"
+                            aria-label="Уменьшить количество"
+                            onClick={handleDecrease}
+                        >
+                            -
+                        </button>
+                        <input
+                            type="number"
+                            className="product-overview__quantity-value"
+                            value={quantity}
+                            onChange={handleInputChange}
+                            min="1"
+                            max="999999"
+                            aria-live="polite"
+                        />
+                        <button
+                            className="product-overview__quantity-increase"
+                            aria-label="Увеличить количество"
+                            onClick={handleIncrease}
+                        >
+                            +
+                        </button>
                     </div>
+                    <ButtonUI
+                        icon="basket"
+                        size="sm"
+                        label="В корзину"
+                        className="product-overview__add-to-cart"
+                    />
 
-                    <div className="product-overview__extras">
-                        <button className="product-overview__share-button"></button>
-                        <p className="product-overview__delivery-info">
-                            При покупке от 10 000 ₸ бесплатная доставка по Кокчетаву и области
-                        </p>
-                        <button className="product-overview__download-price-list">Скачать прайс-лист</button>
-                    </div>
-
+                    <ButtonUI
+                        icon="share"
+                        size="sm"
+                        className="product-overview__share-button"
+                    />
+                    <p className="product-overview__delivery-info">
+                        При покупке от 10 000 ₸ бесплатная доставка по Кокчетаву
+                        и области
+                    </p>
+                    <ButtonUI
+                        icon="download-dark"
+                        size="sm"
+                        label="Прайс-лист"
+                        className="product-overview__download-price-list"
+                    />
                 </section>
 
                 <footer className="product-overview__footer">
@@ -75,22 +155,28 @@ const ProductOverview = ({ card }) => {
                     </section>
                     <section className="product-overview__description">
                         <h2
-                            className={`product-overview__description-title ${isDescriptionVisible ? "open" : ""
-                                }`}
+                            className={`product-overview__description-title ${
+                                isDescriptionVisible ? "open" : ""
+                            }`}
                             onClick={toggleDescription}
                         >
                             {t("desc")}
                         </h2>
                         {isDescriptionVisible && (
-                            <p>{t("locale") === "ru" ? card.descriptionRu : card.descriptionEn}</p>
+                            <p>
+                                {t("locale") === "ru"
+                                    ? card.descriptionRu
+                                    : card.descriptionEn}
+                            </p>
                         )}
                     </section>
 
                     <section className="product-overview__specifications">
                         <div className="product-overview__specifications-title-container">
                             <h2
-                                className={`product-overview__specifications-title ${isSpecificationsVisible ? "open" : ""
-                                    }`}
+                                className={`product-overview__specifications-title ${
+                                    isSpecificationsVisible ? "open" : ""
+                                }`}
                                 onClick={toggleSpecifications}
                             >
                                 Характеристики
@@ -116,9 +202,18 @@ const ProductOverview = ({ card }) => {
                                     <dd>{card.barcode}</dd>
                                 </div>
                                 <div>
-                                    <dt>{card.isLiquid ? t("volume") : t("weight")}:</dt>
+                                    <dt>
+                                        {card.isLiquid
+                                            ? t("volume")
+                                            : t("weight")}
+                                        :
+                                    </dt>
                                     <dd>
-                                        <ShowProductSize card={card} t={t} disableIcon={true} />
+                                        <ShowProductSize
+                                            card={card}
+                                            t={t}
+                                            disableIcon={true}
+                                        />
                                     </dd>
                                 </div>
                                 <div>
@@ -128,10 +223,7 @@ const ProductOverview = ({ card }) => {
                             </dl>
                         )}
                     </section>
-
                 </footer>
-
-
             </div>
         </article>
     );
