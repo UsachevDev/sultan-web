@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { ShowProductSize } from "../ProductCard/ProductCard";
-import "./ProductOverview.scss";
 import ButtonUI from "../UI/ButtonUI/ButtonUI";
+import "./ProductOverview.scss";
 
 const ProductOverview = ({ card }) => {
     const t = useTranslations("ProductCard");
