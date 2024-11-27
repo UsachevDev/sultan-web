@@ -13,6 +13,7 @@
 
     &:hover {
         background-color: $search-color;
+        transition: background-color 0.4s;
     }
 
     a {
