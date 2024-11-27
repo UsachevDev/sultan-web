@@ -10,59 +10,60 @@
         padding-left: 15px;
         padding-right: 15px;
     }
-}
 
-.swiper-button-next,
-.swiper-button-prev {
-    position: absolute;
-    top: 50%;
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: 50%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 68px;
-    height: 68px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 68px;
+        height: 68px;
 
-    color: $primary-color;
-    background-color: $text-color-light;
-    border-radius: 50%;
+        color: $primary-color;
+        background-color: $text-color-light;
+        border-radius: 50%;
 
-    &:hover {
-        background-color: #f0f0f0;
+        &:hover {
+            background-color: #f0f0f0;
+        }
+
+        &:after {
+            font-size: 16px;
+        }
     }
 
-    &:after {
-        font-size: 16px;
+    /* Установка позиции стрелок */
+    .swiper-button-next {
+        right: 0;
     }
-}
 
-/* Установка позиции стрелок */
-.swiper-button-next {
-    right: 0;
-}
+    .swiper-button-prev {
+        left: 0;
+    }
 
-.swiper-button-prev {
-    left: 0;
-}
+    .swiper-pagination {
+        bottom: 10px;
 
-.swiper-pagination {
-    bottom: 10px;
-
-    &-bullet {
-        width: 16px;
-        height: 7px;
-
-        background: $second-color;
-        border-radius: 10px;
-        opacity: 0.5;
-
-        &-active {
-            opacity: 1;
-            width: 26px;
+        &-bullet {
+            width: 16px;
             height: 7px;
 
-            background: $primary-color;
+            background: $second-color;
             border-radius: 10px;
+            opacity: 0.5;
+
+            &-active {
+                opacity: 1;
+                width: 26px;
+                height: 7px;
+
+                background: $primary-color;
+                border-radius: 10px;
+            }
         }
     }
 }
+
