@@ -23,17 +23,20 @@ const ProductOverview = ({ card }) => {
     // Изменение количества товара
     const handleInputChange = (e) => {
         const value = parseInt(e.target.value, 10);
-        if (value > 0) {
+        if (value >= 1 && value <= 100) {
             setQuantity(value);
+        } else if (value > 100) {
+            setQuantity(100);
         } else {
             setQuantity(1);
         }
 
-        e.target.style.width = `${e.target.value.length + 1}ch`;
+        e.target.style.width = `${e.target.value.length + 5}ch`;
     };
+    
     const handleIncrease = () => {
         setQuantity((prevQuantity) => {
-            const newQuantity = prevQuantity + 1;
+            const newQuantity = Math.min(prevQuantity + 1, 100);
             updateInputWidth(newQuantity);
             return newQuantity;
         });
@@ -52,7 +55,7 @@ const ProductOverview = ({ card }) => {
         const inputElement = document.querySelector(
             ".product-overview__quantity-value"
         );
-        inputElement.style.width = `${value.toString().length + 1}ch`;
+        inputElement.style.width = `${value.toString().length + 5}ch`;
     };
 
     return (
@@ -97,7 +100,7 @@ const ProductOverview = ({ card }) => {
                             value={quantity}
                             onChange={handleInputChange}
                             min="1"
-                            max="999999"
+                            max="100"
                             aria-live="polite"
                         />
                         <button

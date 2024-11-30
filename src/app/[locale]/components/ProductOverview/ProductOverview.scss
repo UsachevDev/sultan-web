@@ -126,7 +126,8 @@
         }
 
         &-value {
-            width: auto;
+            max-width: 45px;
+            width: 45px;
             text-align: center;
 
             font-size: 14px;
@@ -163,6 +164,7 @@
     &__add-to-cart {
         width: 184px;
         margin-left: 40px;
+        margin-right: 20px;
         padding-top: 21px;
         padding-bottom: 21px;
 
