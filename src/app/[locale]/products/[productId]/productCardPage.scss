@@ -11,6 +11,11 @@
         padding-right: 15px;
     }
 
+    .cards-mobile {
+        margin-top: 80px;
+        margin-bottom: 100px;
+    }
+
     .swiper-button-next,
     .swiper-button-prev {
         position: absolute;
@@ -45,7 +50,8 @@
     }
 
     .swiper-pagination {
-        bottom: 10px;
+        position: relative;
+        margin-top: 40px;
 
         &-bullet {
             width: 16px;
@@ -63,6 +69,10 @@
                 background: $primary-color;
                 border-radius: 10px;
             }
+        }
+
+        @include tablet {
+            margin-top: 25px;
         }
     }
 }
