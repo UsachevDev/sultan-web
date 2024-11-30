@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import ButtonUI from "../UI/ButtonUI/ButtonUI";
-import "./ProductCard.scss";
-import Icon from "../UI/Icons/Icons";
 import { Link } from "@/i18n/routing";
+import ButtonUI from "../UI/ButtonUI/ButtonUI";
+import Icon from "../UI/Icons/Icons";
+import "./ProductCard.scss";
 
 export function ShowProductSize({ card: card, t: t, className: name, disableIcon = false}) {
     let size = +(card.size / card.amount).toFixed(2);
@@ -54,7 +54,7 @@ export default function ProductCard({ card: el }) {
                         </div>
                         <span className="product-footer">
                             <span className="product-price" style={{ fontWeight: 800 }}>{el.price}₽</span>
-                            <ButtonUI icon="basket" size="sm" label="В КОРЗИНУ" className="btn-tocart" />
+                            <ButtonUI icon="basket" size="sm" label={t('button').toUpperCase()} className="btn-tocart" />
                         </span>
                     </div>
                 </Link>

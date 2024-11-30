@@ -3,9 +3,6 @@
         "title": "Главная страница",
         "about": "Go to the about page"
     },
-    "ToBasketButton": {
-        "text": "В корзину"
-    },
     "ProductCard": {
         "locale" : "ru",
         "article": "Артикул",
@@ -19,7 +16,8 @@
         "productName": "ru",
         "popular": "Популярное",
         "type": "г",
-        "liquidType": "мл"
+        "liquidType": "мл",
+        "button": "В корзину"
     },
     "Header": {
         "address-1": "г. Кокчетав, ул. Ж. Ташенова 129Б",

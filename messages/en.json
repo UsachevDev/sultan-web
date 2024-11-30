@@ -3,9 +3,6 @@
         "title": "Home page",
         "about": "Go to the about page"
     },
-    "ToBasketButton": {
-        "text": "Add to cart"
-    },
     "ProductCard": {
         "locale": "en",
         "article": "Article",
@@ -19,7 +16,8 @@
         "productName": "en",
         "popular": "Popular",
         "type": "g",
-        "liquidType": "ml"
+        "liquidType": "ml",
+        "button": "Add to cart"
     },
     "Header": {
         "address-1": "Kokchetav, 129B Zh. Tashenov street",
