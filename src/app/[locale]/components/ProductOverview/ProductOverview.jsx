@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { ShowProductSize } from "../ProductCard/ProductCard";
+import Image from "next/image";
 import ButtonUI from "../UI/ButtonUI/ButtonUI";
 import "./ProductOverview.scss";
 
@@ -33,7 +34,7 @@ const ProductOverview = ({ card }) => {
 
         e.target.style.width = `${e.target.value.length + 5}ch`;
     };
-    
+
     const handleIncrease = () => {
         setQuantity((prevQuantity) => {
             const newQuantity = Math.min(prevQuantity + 1, 100);
@@ -61,9 +62,12 @@ const ProductOverview = ({ card }) => {
     return (
         <article className="product-overview">
             <figure className="product-overview__image">
-                <img
-                    src="/image/bio-mio-soap.png"
-                    alt="BioMio Bio-Soap Экологичное туалетное мыло"
+                <Image
+                    src={"/image/productCards/card" + card.id + ".svg"}
+                    layout="fill"
+                    objectFit="contain"
+                    objectPosition="top"
+                    alt={card.id}
                 />
             </figure>
             <div className="product-overview__content">

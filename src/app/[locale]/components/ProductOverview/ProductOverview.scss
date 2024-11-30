@@ -6,47 +6,15 @@
     margin-top: 65px;
 
     &__image {
-        img {
-            @include laptop {
-                width: 540px;
-            }
-
-            @include tabletLarge {
-                width: 380px;
-            }
-
-            @include tablet {
-                width: auto;
-                clip-path: inset(0 0 190px 0);
-                height: 500px;
-            }
-        }
+        position: relative;
+        width: 50%;
+        height: auto;
+        max-width: 664px;
 
         @include tablet {
-            height: 450px;
-            overflow: hidden;
-            position: relative;
-            img {
-                width: auto;
-                height: auto;
-                position: relative;
-            }
-        }
-
-        @include tabletSmall {
-            height: 320px;
-            img {
-                height: 500px;
-            }
-        }
-
-        @include mobile {
-            max-width: 320px;
-            margin-top: -114px;
-            img {
-                scale: 0.54;
-                left: -80px;
-            }
+            width: 100%;
+            min-height: 60vw;
+            margin-bottom: 15px;
         }
     }
 
@@ -328,6 +296,7 @@
         }
 
         p {
+            max-width: 612px;
             margin-top: 15px;
 
             font-size: 12px;
