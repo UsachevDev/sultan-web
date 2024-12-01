@@ -14,6 +14,7 @@ import "./productCardPage.scss";
 
 export default function Product({ params }) {
     const t = useTranslations("ProductCard");
+    const pageT = useTranslations("ProductPage");
     const [isLoading, setIsLoading] = useState(true);
     const [card, setCard] = useState([]);
     const [similar, setSimilar] = useState([]);
@@ -44,7 +45,10 @@ export default function Product({ params }) {
             <div className="page-product-card">
                 <Breadcrumbs current={t("locale") == "ru" ? card.nameRu : card.nameEn} />
                 <ProductOverview card={card} />
-                <ProductsSwiper cards={similar} />
+                <section className="page-product-card__similar">
+                    <h1><b>{pageT("headerPrimary")}</b>{pageT("headerSecondary")}</h1>
+                    <ProductsSwiper cards={similar} />
+                </section>
             </div>
             
         </>

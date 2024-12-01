@@ -141,5 +141,9 @@
     "Breadcrumbs": {
         "HomePage": "Главная",
         "Catalog": "Каталог"
+    },
+    "ProductPage":{
+        "headerPrimary": "Похожие ",
+        "headerSecondary":"Товары"
     }
 }

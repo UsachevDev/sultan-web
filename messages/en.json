@@ -141,5 +141,9 @@
     "Breadcrumbs": {
         "HomePage": "Home page",
         "Catalog": "Catalog"
+    },
+    "ProductPage":{
+        "headerPrimary": "Similar ",
+        "headerSecondary":"Products"
     }
 }

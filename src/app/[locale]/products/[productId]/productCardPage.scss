@@ -6,6 +6,19 @@
     margin: 0 auto;
     margin-bottom: auto;
 
+    &__similar h1 {
+        margin-top: 100px;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 48px;
+        text-transform: uppercase;
+        color: $text-color;
+        b {
+            font-weight: 800;
+            color: $primary-color;
+        }
+    }
+
     @include laptop {
         padding-left: 15px;
         padding-right: 15px;
@@ -76,4 +89,3 @@
         }
     }
 }
-

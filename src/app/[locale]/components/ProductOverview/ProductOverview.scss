@@ -9,6 +9,7 @@
         position: relative;
         width: 50%;
         height: auto;
+        max-height: 500px;
         max-width: 664px;
 
         @include tablet {
