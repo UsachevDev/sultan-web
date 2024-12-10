@@ -9,6 +9,7 @@
         "weight": "Weight",
         "volume": "Volume",
         "desc": "Description",
+        "spec" : "Specifications",
         "amount": "Amount in the box",
         "brand": "Brand",
         "barcode": "Barcode",
@@ -17,7 +18,9 @@
         "popular": "Popular",
         "type": "g",
         "liquidType": "ml",
-        "button": "Add to cart"
+        "button": "Add to cart",
+        "button-price-list": "Price-list",
+        "delivery-info": "When buying from 10 000 ₸, free shipping in Kokchetav and the region"
     },
     "Header": {
         "address-1": "Kokchetav, 129B Zh. Tashenov street",

@@ -3,60 +3,52 @@ import { useTranslations } from "next-intl";
 import { ShowProductSize } from "../ProductCard/ProductCard";
 import Image from "next/image";
 import ButtonUI from "../UI/ButtonUI/ButtonUI";
+import Accordion from "../UI/Accordion/Accordion";
 import "./ProductOverview.scss";
 
 const ProductOverview = ({ card }) => {
     const t = useTranslations("ProductCard");
 
-    // Состояние для количества товара
     const [quantity, setQuantity] = useState(1);
 
-    // Состояние для видимости контента
-    const [isDescriptionVisible, setDescriptionVisible] = useState(false);
-    const [isSpecificationsVisible, setSpecificationsVisible] = useState(false);
-
-    // Переключение видимости
-    const toggleDescription = () =>
-        setDescriptionVisible(!isDescriptionVisible);
-    const toggleSpecifications = () =>
-        setSpecificationsVisible(!isSpecificationsVisible);
-
-    // Изменение количества товара
-    const handleInputChange = (e) => {
-        const value = parseInt(e.target.value, 10);
+    // Проверка и установка значения в пределах допустимого диапазона
+    const updateQuantity = (value) => {
         if (value >= 1 && value <= 100) {
-            setQuantity(value);
-        } else if (value > 100) {
-            setQuantity(100);
-        } else {
-            setQuantity(1);
+            return value;
+        }
+        if (value > 100) {
+            return 100;
+        }
+        return 1;
+    };
+
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+
+        if (value === "") {
+            setQuantity("");
+            return;
         }
 
-        e.target.style.width = `${e.target.value.length + 5}ch`;
+        const parsedValue = parseInt(value, 10);
+
+        if (!isNaN(parsedValue)) {
+            setQuantity(updateQuantity(parsedValue));
+        }
+    };
+
+    const handleBlur = () => {
+        if (quantity === "") {
+            setQuantity(1);
+        }
     };
 
     const handleIncrease = () => {
-        setQuantity((prevQuantity) => {
-            const newQuantity = Math.min(prevQuantity + 1, 100);
-            updateInputWidth(newQuantity);
-            return newQuantity;
-        });
+        setQuantity((prevQuantity) => updateQuantity(prevQuantity + 1));
     };
 
     const handleDecrease = () => {
-        setQuantity((prevQuantity) => {
-            const newQuantity = prevQuantity > 1 ? prevQuantity - 1 : 1;
-            updateInputWidth(newQuantity);
-            return newQuantity;
-        });
-    };
-
-    // Функция для обновления ширины инпута
-    const updateInputWidth = (value) => {
-        const inputElement = document.querySelector(
-            ".product-overview__quantity-value"
-        );
-        inputElement.style.width = `${value.toString().length + 5}ch`;
+        setQuantity((prevQuantity) => updateQuantity(prevQuantity - 1));
     };
 
     return (
@@ -93,7 +85,6 @@ const ProductOverview = ({ card }) => {
                     <div className="product-overview__quantity">
                         <button
                             className="product-overview__quantity-decrease"
-                            aria-label="Уменьшить количество"
                             onClick={handleDecrease}
                         >
                             -
@@ -103,13 +94,13 @@ const ProductOverview = ({ card }) => {
                             className="product-overview__quantity-value"
                             value={quantity}
                             onChange={handleInputChange}
+                            onBlur={handleBlur}
                             min="1"
                             max="100"
                             aria-live="polite"
                         />
                         <button
                             className="product-overview__quantity-increase"
-                            aria-label="Увеличить количество"
                             onClick={handleIncrease}
                         >
                             +
@@ -118,7 +109,7 @@ const ProductOverview = ({ card }) => {
                     <ButtonUI
                         icon="basket"
                         size="sm"
-                        label="В корзину"
+                        label={t("button")}
                         className="product-overview__add-to-cart"
                     />
 
@@ -128,13 +119,12 @@ const ProductOverview = ({ card }) => {
                         className="product-overview__share-button"
                     />
                     <p className="product-overview__delivery-info">
-                        При покупке от 10 000 ₸ бесплатная доставка по Кокчетаву
-                        и области
+                        {t("delivery-info")}
                     </p>
                     <ButtonUI
                         icon="download-dark"
                         size="sm"
-                        label="Прайс-лист"
+                        label={t("button-price-list")}
                         className="product-overview__download-price-list"
                     />
                 </section>
@@ -160,76 +150,56 @@ const ProductOverview = ({ card }) => {
                             </div>
                         </dl>
                     </section>
-                    <section className="product-overview__description">
-                        <h2
-                            className={`product-overview__description-title ${
-                                isDescriptionVisible ? "open" : ""
-                            }`}
-                            onClick={toggleDescription}
-                        >
-                            {t("desc")}
-                        </h2>
-                        {isDescriptionVisible && (
-                            <p>
-                                {t("locale") === "ru"
-                                    ? card.descriptionRu
-                                    : card.descriptionEn}
-                            </p>
-                        )}
-                    </section>
+                    <Accordion
+                        title={t("desc")}
+                        className="product-overview__description"
+                    >
+                        <p>
+                            {t("locale") === "ru"
+                                ? card.descriptionRu
+                                : card.descriptionEn}
+                        </p>
+                    </Accordion>
 
-                    <section className="product-overview__specifications">
-                        <div className="product-overview__specifications-title-container">
-                            <h2
-                                className={`product-overview__specifications-title ${
-                                    isSpecificationsVisible ? "open" : ""
-                                }`}
-                                onClick={toggleSpecifications}
-                            >
-                                Характеристики
-                            </h2>
-                        </div>
-
-                        {isSpecificationsVisible && (
-                            <dl>
-                                <div>
-                                    <dt>{t("manufacturer")}:</dt>
-                                    <dd>{card.manufacturer}</dd>
-                                </div>
-                                <div>
-                                    <dt>{t("brand")}:</dt>
-                                    <dd>{card.brand.name}</dd>
-                                </div>
-                                <div>
-                                    <dt>{t("article")}:</dt>
-                                    <dd>{card.article}</dd>
-                                </div>
-                                <div>
-                                    <dt>{t("barcode")}:</dt>
-                                    <dd>{card.barcode}</dd>
-                                </div>
-                                <div>
-                                    <dt>
-                                        {card.isLiquid
-                                            ? t("volume")
-                                            : t("weight")}
-                                        :
-                                    </dt>
-                                    <dd>
-                                        <ShowProductSize
-                                            card={card}
-                                            t={t}
-                                            disableIcon={true}
-                                        />
-                                    </dd>
-                                </div>
-                                <div>
-                                    <dt>{t("amount")}:</dt>
-                                    <dd>{card.amount}</dd>
-                                </div>
-                            </dl>
-                        )}
-                    </section>
+                    <Accordion
+                        title={t("spec")}
+                        className="product-overview__specifications"
+                    >
+                        <dl>
+                            <div>
+                                <dt>{t("manufacturer")}:</dt>
+                                <dd>{card.manufacturer}</dd>
+                            </div>
+                            <div>
+                                <dt>{t("brand")}:</dt>
+                                <dd>{card.brand.name}</dd>
+                            </div>
+                            <div>
+                                <dt>{t("article")}:</dt>
+                                <dd>{card.article}</dd>
+                            </div>
+                            <div>
+                                <dt>{t("barcode")}:</dt>
+                                <dd>{card.barcode}</dd>
+                            </div>
+                            <div>
+                                <dt>
+                                    {card.isLiquid ? t("volume") : t("weight")}:
+                                </dt>
+                                <dd>
+                                    <ShowProductSize
+                                        card={card}
+                                        t={t}
+                                        disableIcon={true}
+                                    />
+                                </dd>
+                            </div>
+                            <div>
+                                <dt>{t("amount")}:</dt>
+                                <dd>{card.amount}</dd>
+                            </div>
+                        </dl>
+                    </Accordion>
                 </footer>
             </div>
         </article>

@@ -18,14 +18,20 @@ export default function Product({ params }) {
     const [isLoading, setIsLoading] = useState(true);
     const [card, setCard] = useState([]);
     const [similar, setSimilar] = useState([]);
+
     useEffect(() => {
         const fetchCards = async () => {
             try {
                 const response = await fetch("/data/products.json");
                 const data = await response.json();
-                const cardTmp = data.find(el => el.id == params.productId);
+                const cardTmp = data.find((el) => el.id == params.productId);
                 setCard(cardTmp);
-                setSimilar(data.filter((el) => el.category == cardTmp.category && el.id != cardTmp.id));
+                setSimilar(
+                    data.filter(
+                        ({ category, id }) =>
+                            category == cardTmp.category && id != cardTmp.id
+                    )
+                );
                 setIsLoading(false);
             } catch (error) {
                 console.error("Ошибка загрузки данных товаров:", error);
@@ -37,21 +43,22 @@ export default function Product({ params }) {
     }, []);
 
     if (isLoading) {
-        return <p>Загрузка...</p>
+        return <p>{t("locale") === "ru" ? "Загрузка..." : "Downloading..."}</p>;
     }
 
     return (
-        <>
-            <div className="page-product-card">
-                <Breadcrumbs current={t("locale") == "ru" ? card.nameRu : card.nameEn} />
-                <ProductOverview card={card} />
-                <section className="page-product-card__similar">
-                    <h1><b>{pageT("headerPrimary")}</b>{pageT("headerSecondary")}</h1>
-                    <ProductsSwiper cards={similar} />
-                </section>
-            </div>
-            
-        </>
-
-    )
+        <div className="page-product-card">
+            <Breadcrumbs
+                current={t("locale") == "ru" ? card.nameRu : card.nameEn}
+            />
+            <ProductOverview card={card} />
+            <section className="page-product-card__similar">
+                <h1>
+                    <b>{pageT("headerPrimary")}</b>
+                    {pageT("headerSecondary")}
+                </h1>
+                <ProductsSwiper cards={similar} />
+            </section>
+        </div>
+    );
 }
