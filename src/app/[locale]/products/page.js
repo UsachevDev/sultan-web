@@ -44,7 +44,26 @@ export default function Product({ params }) {
             <Breadcrumbs
                 current={""}
             />
-            <h2>{t("title")}</h2>
+
+            <div className="page-catalog__wrapper">
+                <h2 className="page-catalog__title">{t("title")}</h2>
+                <div className="page-catalog__sorting-bar">
+                    <p>Сортировка</p>
+                </div>
+            </div>
+
+            <div className="page-catalog__param-selector">
+                <p>Параметры выбора</p>
+            </div>
+
+            <div className="page-catalog__main-wrapper">
+                <div className="page-catalog__filter-sidebar">
+                    <p>Фильтры</p>
+                </div>
+                <div className="page-catalog__product-grid">
+                    <p>Товары</p>
+                </div>
+            </div>
         </div>
     );
 }

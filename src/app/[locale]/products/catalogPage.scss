@@ -2,7 +2,38 @@
 @import "mixins";
 
 .page-catalog {
+    display: flex;
+    flex-direction: column;
     max-width: 1367px;
     margin: 0 auto;
     margin-bottom: auto;
+
+    &__wrapper {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    &__main-wrapper {
+        display: flex;
+        margin-top: 30px;
+    }
+
+    &__sorting-bar {
+        margin-left: auto;
+    }
+    
+    &__param-selector {
+        width: 100%;
+        height: 70px;
+        margin-top: 18px;
+    }
+    
+    &__filter-sidebar {
+        width: 238px;
+        margin-top: 20px;
+    }
+
+    &__product-grid {
+        width: 80%;
+    }
 }
