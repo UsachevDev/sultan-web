@@ -1,60 +1,102 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import ButtonUI from "../UI/ButtonUI/ButtonUI";
-import "./ProductCard.scss";
 import Icon from "../UI/Icons/Icons";
+import "./ProductCard.scss";
 
-function ShowSize({ card: card, t: t }) {
+export function ShowProductSize({
+    card: card,
+    t: t,
+    className: name,
+    disableIcon = false,
+}) {
     let size = +(card.size / card.amount).toFixed(2);
     if (card.amount > 1) {
         size = card.amount + "x" + size;
     }
 
     let icon, type;
-    card.isLiquid 
-        ? (icon = <Icon name="bottle"/>, type = t('liquidType'))
-        : (icon = <Icon name="box"/>, type = t('type'))
+    card.isLiquid
+        ? ((icon = <Icon name="bottle" />), (type = t("liquidType")))
+        : ((icon = <Icon name="box" />), (type = t("type")));
 
     return (
-        <span className="product-size">
-            {icon}
+        <span className={name}>
+            {!disableIcon && icon}
             {size}
-            {type}
-        </span>);
+            <b>{type}</b>
+        </span>
+    );
 }
 
-export default function ProductCard({ card: el }) {
+export default function ProductCard({ card: element }) {
     const t = useTranslations("ProductCard");
-    const productName = t("productName") === "ru" ? el.nameRu : el.nameEn;
+    const productName =
+        t("productName") === "ru" ? element.nameRu : element.nameEn;
     return (
         <article className="product-card">
-            <div className="product-img">
-                {el.isPopular && (
-                    <span className="popular">{t("popular")}</span>
-                )}
-                <Image
-                    src={"/image/productCards/card" + el.id + ".svg"}
-                    fill={true}
-                    alt={productName}
-                />
-                <ShowSize card={el} t={t}/>
-            </div>
-            <div className="product">
-                <div className="product-name">
-                    <strong style={{ fontWeight: 800 }}>{el.brand.name} </strong>
-                    {productName}</div>
-                <div className="product-desc">
-                    <ul>
-                        <li><span className="product-desc-name">{t("barcode")}: </span>{el.barcode}</li>
-                        <li><span className="product-desc-name">{t("manufacturer")}: </span>{el.manufacturer}</li>
-                        <li><span className="product-desc-name">{t("brand")}: </span>{el.brand.name}</li>
-                    </ul>
+            <Link href={`/products/${element.id}`}>
+                <div className="product-img">
+                    {element.isPopular && (
+                        <span className="popular">{t("popular")}</span>
+                    )}
+                    <Image
+                        src={"/image/productCards/card" + element.id + ".svg"}
+                        fill={true}
+                        alt={productName}
+                    />
+                    <ShowProductSize
+                        card={element}
+                        t={t}
+                        className="product-size"
+                    />
                 </div>
-                <span className="product-footer">
-                    <span className="product-price" style={{ fontWeight: 800 }}>{el.price}₽</span>
-                    <ButtonUI icon="basket" size="sm" label="В КОРЗИНУ" className="btn-tocart" />
-                </span>
-            </div>
+                <div className="product">
+                    <div className="product-name">
+                        <strong style={{ fontWeight: 800 }}>
+                            {element.brand.name}{" "}
+                        </strong>
+                        {productName}
+                    </div>
+                    <div className="product-desc">
+                        <ul>
+                            <li>
+                                <span className="product-desc-name">
+                                    {t("barcode")}:{" "}
+                                </span>
+                                {element.barcode}
+                            </li>
+                            <li>
+                                <span className="product-desc-name">
+                                    {t("manufacturer")}:{" "}
+                                </span>
+                                {element.manufacturer}
+                            </li>
+                            <li>
+                                <span className="product-desc-name">
+                                    {t("brand")}:{" "}
+                                </span>
+                                {element.brand.name}
+                            </li>
+                        </ul>
+                    </div>
+                    <span className="product-footer">
+                        <span
+                            className="product-price"
+                            style={{ fontWeight: 800 }}
+                        >
+                            {element.price}₽
+                        </span>
+                        <ButtonUI
+                            icon="basket"
+                            size="sm"
+                            label={t("button")}
+                            className="btn-tocart"
+                        />
+                    </span>
+                </div>
+            </Link>
         </article>
-    )
-};
+    );
+}

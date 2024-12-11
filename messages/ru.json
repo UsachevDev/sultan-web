@@ -3,17 +3,24 @@
         "title": "Главная страница",
         "about": "Go to the about page"
     },
-    "ToBasketButton": {
-        "text": "В корзину"
-    },
     "ProductCard": {
+        "locale": "ru",
+        "article": "Артикул",
+        "weight": "Вес",
+        "volume": "Объем",
+        "desc": "Описание",
+        "spec": "Характеристики",
+        "amount": "Кол-во в коробке",
         "brand": "Бренд",
         "barcode": "Штрихкод",
         "manufacturer": "Производитель",
         "productName": "ru",
         "popular": "Популярное",
         "type": "г",
-        "liquidType": "мл"
+        "liquidType": "мл",
+        "button": "В корзину",
+        "button-price-list": "Прайс-лист",
+        "delivery-info": "При покупке от 10 000 ₸ бесплатная доставка по Кокчетаву и области"
     },
     "Header": {
         "address-1": "г. Кокчетав, ул. Ж. Ташенова 129Б",
@@ -63,9 +70,9 @@
         "promoDescriptor3": "Условия акции в пару строк, Условия акции в пару строк, Условия акции в пару строк"
     },
     "GoodsForSale": {
-        "h1" : {
-            "firstPart" : "Акционные",
-            "secondPart" : "Товары"
+        "h1": {
+            "firstPart": "Акционные",
+            "secondPart": "Товары"
         }
     },
     "Banner": {
@@ -133,5 +140,13 @@
     },
     "LocalSwitcher": {
         "locale": "Английский"
+    },
+    "Breadcrumbs": {
+        "HomePage": "Главная",
+        "Catalog": "Каталог"
+    },
+    "ProductPage": {
+        "headerPrimary": "Похожие ",
+        "headerSecondary": "Товары"
     }
 }

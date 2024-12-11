@@ -1,0 +1,27 @@
+@import "vars";
+@import "mixins";
+
+.breadcrumbs {
+    margin-top: 45px;
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        padding-right: 10px;
+        margin-right: 10px;
+
+        border-right: 1px rgba($second-color, 0.3) dashed;
+        color: rgba($second-color, 0.5);
+
+        &:last-child {
+            border: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: $second-color;
+        }
+    }
+}
