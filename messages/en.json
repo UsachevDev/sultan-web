@@ -9,7 +9,7 @@
         "weight": "Weight",
         "volume": "Volume",
         "desc": "Description",
-        "spec" : "Specifications",
+        "spec": "Specifications",
         "amount": "Amount in the box",
         "brand": "Brand",
         "barcode": "Barcode",
@@ -142,11 +142,16 @@
         "locale": "Russian"
     },
     "Breadcrumbs": {
+        "locale": "en",
         "HomePage": "Home page",
         "Catalog": "Catalog"
     },
-    "ProductPage":{
+    "ProductPage": {
         "headerPrimary": "Similar ",
-        "headerSecondary":"Products"
+        "headerSecondary": "Products"
+    },
+    "CatalogPage": {
+        "locale": "en",
+        "title": "Catalog"
     }
 }

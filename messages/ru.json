@@ -142,11 +142,16 @@
         "locale": "Английский"
     },
     "Breadcrumbs": {
+        "locale":"ru",
         "HomePage": "Главная",
         "Catalog": "Каталог"
     },
     "ProductPage": {
         "headerPrimary": "Похожие ",
         "headerSecondary": "Товары"
+    },
+    "CatalogPage": {
+        "locale": "ru",
+        "title": "Каталог"
     }
 }

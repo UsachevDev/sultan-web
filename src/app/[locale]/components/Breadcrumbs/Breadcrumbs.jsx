@@ -8,10 +8,10 @@ const Breadcrumbs = ({current}) => {
         <nav className="breadcrumbs">
             <ul className="breadcrumbs__list">
                 <li className="breadcrumbs__item">
-                    <a href="/" className="breadcrumbs__link">{t("HomePage")}</a>
+                    <a href={`/${t("locale")}`} className="breadcrumbs__link">{t("HomePage")}</a>
                 </li>
                 <li className="breadcrumbs__item">
-                    <a href="/category" className="breadcrumbs__link">{t("Catalog")}</a>
+                    <a href={`/${t("locale")}/products`} className="breadcrumbs__link">{t("Catalog")}</a>
                 </li>
                 <li className="breadcrumbs__item">
                     {current}
