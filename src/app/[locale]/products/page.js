@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
-
+import FilterSidebar from "../components/FilterSidebar/FilterSidebar";
 import { ProductsInARow } from "../components/Cards/Cards";
 import Pagination from "../components/Pagination/Pagination";
 import "./catalogPage.scss";
@@ -54,9 +54,7 @@ export default function Product({ params }) {
             </div>
 
             <div className="page-catalog__main-wrapper">
-                <div className="page-catalog__filter-sidebar">
-                    <p>Фильтры</p>
-                </div>
+                <FilterSidebar className="page-catalog__filter-sidebar"/>
                 <div className="page-catalog__product-grid">
                     <ProductsInARow cards={data.slice((currentPage - 1) * cardsPerPage, currentPage * cardsPerPage)} />
                     <Pagination currentPage={currentPage} pageCount = {Math.ceil(data.length / cardsPerPage)} method = {setCurrentPage}/>

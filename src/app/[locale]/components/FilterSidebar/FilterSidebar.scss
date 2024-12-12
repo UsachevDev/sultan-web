@@ -1,0 +1,38 @@
+@import "vars";
+@import "mixins";
+
+.filter {
+    &-title {
+        color: $text-color;
+        font-weight: 500;
+        line-height: 24px;
+    }
+}
+
+.price {
+    &-title {
+        color: $text-color;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+
+        &-span {
+            color: $second-color;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 21px;
+        }
+    }
+
+    &-inputs {
+        display: flex;
+        width: 232px;
+    }
+
+    &-min,
+    &-max {
+        max-width: 100px;
+        border-radius: 1000px;
+        background-color: $quantity-button;
+    }
+}
