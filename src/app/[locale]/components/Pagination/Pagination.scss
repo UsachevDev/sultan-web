@@ -26,4 +26,15 @@
         }
     }
 
+    &-pointer {
+        height: 36px;
+        background-color: $background-color;
+
+        &:hover {
+            color: $primary-color;
+            background-color: $search-color;
+        }
+    }
+
+
 }

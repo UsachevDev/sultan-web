@@ -4,6 +4,13 @@ import "./Pagination.scss";
 export const Pagination = ({currentPage, pageCount, method}) => {
 
     return <ol className="pagination">
+        <li>
+            <ButtonUI 
+                icon="leftPointer"
+                className="pagination-pointer"
+                onClick={() => method(currentPage > 1 ? currentPage - 1 : currentPage)}
+            />
+        </li>   
         {[...Array(pageCount)].map((_, index) => (
                 <li key={index+1}>
                     <ButtonUI label={index + 1} 
@@ -14,6 +21,13 @@ export const Pagination = ({currentPage, pageCount, method}) => {
                     />
                 </li>   
             ))}
+        <li>
+            <ButtonUI 
+                icon="rightPointer"
+                className="pagination-pointer"
+                onClick={() => method(currentPage < pageCount ? currentPage + 1 : currentPage)}
+            />
+        </li>  
     </ol>
 };
 
