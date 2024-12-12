@@ -21,13 +21,13 @@
     &__sorting-bar {
         margin-left: auto;
     }
-    
+
     &__param-selector {
         width: 100%;
         height: 70px;
         margin-top: 18px;
     }
-    
+
     &__filter-sidebar {
         width: 238px;
         margin-top: 20px;
@@ -35,5 +35,9 @@
 
     &__product-grid {
         width: 80%;
+    }
+
+    &__product-grid .cards{
+        grid-template-columns: repeat(3, auto);
     }
 }

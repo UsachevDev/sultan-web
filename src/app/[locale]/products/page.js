@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 
+import { ProductsInARow } from "../components/Cards/Cards";
+import Pagination from "../components/Pagination/Pagination";
 import "./catalogPage.scss";
 
 export default function Product({ params }) {
@@ -11,20 +13,15 @@ export default function Product({ params }) {
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState([]);
     const [similar, setSimilar] = useState([]);
-
+    const [currentPage, setCurrentPage] = useState(1);
+    const cardsPerPage = 3;
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await fetch("/data/productDTOs_main.json");
                 const data = await response.json();
-                const cardTmp = data.find((element) => element.id == params.productId);
-                setData(cardTmp);
-                setSimilar(
-                    data.filter(
-                        ({ category, id }) =>
-                            category == cardTmp.category && id != cardTmp.id
-                    )
-                );
+                setData(data);
+                setCardsCount(data.length);
                 setIsLoading(false);
             } catch (error) {
                 console.error("Ошибка загрузки данных:", error);
@@ -61,7 +58,8 @@ export default function Product({ params }) {
                     <p>Фильтры</p>
                 </div>
                 <div className="page-catalog__product-grid">
-                    <p>Товары</p>
+                    <ProductsInARow cards={data.slice((currentPage - 1) * cardsPerPage, currentPage * cardsPerPage)} />
+                    <Pagination currentPage={currentPage} pageCount = {Math.ceil(data.length / cardsPerPage)} method = {setCurrentPage}/>
                 </div>
             </div>
         </div>
