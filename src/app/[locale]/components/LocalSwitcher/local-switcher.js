@@ -48,8 +48,8 @@ export default function LocalSwitcher() {
         
         return;
       }
-      const currentPath = window.location.pathname;
-      const newPath = currentPath.replace(/^\/[a-z]{2}/, `/${nextLocale}`);
+      const currentPath = window.location.href;
+      const newPath = currentPath.replace(currentLocale, `/${nextLocale}`);
       router.replace(newPath);
     });
   };
