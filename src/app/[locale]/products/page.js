@@ -2,18 +2,20 @@
 
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 import FilterSidebar from "../components/FilterSidebar/FilterSidebar";
 import { ProductsInARow } from "../components/Cards/Cards";
 import Pagination from "../components/Pagination/Pagination";
 import "./catalogPage.scss";
 
-export default function Product({ params }) {
+export default function Product({ paramd }) {
     const t = useTranslations("CatalogPage");
+    const params = useSearchParams();
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState([]);
-    const [similar, setSimilar] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [category,setCategory] = useState(null);
     const cardsPerPage = 3;
     useEffect(() => {
         const fetchData = async () => {
@@ -60,6 +62,7 @@ export default function Product({ params }) {
                     <Pagination currentPage={currentPage} pageCount = {Math.ceil(data.length / cardsPerPage)} method = {setCurrentPage}/>
                 </div>
             </div>
+            {params.get("category")}
         </div>
     );
 }
