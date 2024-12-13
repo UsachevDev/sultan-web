@@ -8,14 +8,14 @@ import FilterSidebar from "../components/FilterSidebar/FilterSidebar";
 import { ProductsInARow } from "../components/Cards/Cards";
 import Pagination from "../components/Pagination/Pagination";
 import "./catalogPage.scss";
+import CategoriesList from "../components/CategoriesList/CategoriesList";
 
-export default function Product({ paramd }) {
+export default function Product({ params }) {
     const t = useTranslations("CatalogPage");
-    const params = useSearchParams();
+    const urlParams = useSearchParams();
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [category,setCategory] = useState(null);
     const cardsPerPage = 3;
     useEffect(() => {
         const fetchData = async () => {
@@ -56,13 +56,15 @@ export default function Product({ paramd }) {
             </div>
 
             <div className="page-catalog__main-wrapper">
-                <FilterSidebar className="page-catalog__filter-sidebar"/>
+                <div>
+                    <FilterSidebar className="page-catalog__filter-sidebar"/>
+                    <CategoriesList categoryId={urlParams.get("category") || 2}/>
+                </div>      
                 <div className="page-catalog__product-grid">
                     <ProductsInARow cards={data.slice((currentPage - 1) * cardsPerPage, currentPage * cardsPerPage)} />
                     <Pagination currentPage={currentPage} pageCount = {Math.ceil(data.length / cardsPerPage)} method = {setCurrentPage}/>
                 </div>
             </div>
-            {params.get("category")}
         </div>
     );
 }
