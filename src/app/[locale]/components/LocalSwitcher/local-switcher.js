@@ -48,9 +48,12 @@ export default function LocalSwitcher() {
         
         return;
       }
-      const currentPath = window.location.href;
-      const newPath = currentPath.replace(currentLocale, `/${nextLocale}`);
-      router.replace(newPath);
+      
+      const currentUrl = new URL(window.location.href);
+      const pathSegments = currentUrl.pathname.split('/');
+      pathSegments[1] = nextLocale;
+      currentUrl.pathname = pathSegments.join('/');
+      router.replace(currentUrl.toString());
     });
   };
 

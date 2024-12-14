@@ -3,7 +3,7 @@ import {Link} from '@/i18n/routing';
 import styles from './componentsStyles.module.scss'
 
 const LogoButton = () => {
-    
+
     return (
         <Link href={'/'}>
             <svg className={styles.logo}
