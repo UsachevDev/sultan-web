@@ -11,6 +11,7 @@ import { ProductsInARow } from "../components/Cards/Cards";
 import Pagination from "../components/Pagination/Pagination";
 import CategoriesList from "../components/CategoriesList/CategoriesList";
 import ButtonUI from "../components/UI/ButtonUI/ButtonUI";
+import { OPTIONS_EN, OPTIONS_RU } from "./constants.js";
 
 import "./catalogPage.scss";
 
@@ -24,12 +25,14 @@ export default function Product({ params }) {
     const [category, setCategory] = useState();
 
     const [currentPage, setCurrentPage] = useState(1);
-    const CARDS_PER_PAGE = 9;
     const [basicFiler, setBasicFilter] = useState('name');
+    const CARDS_PER_PAGE = 9;
 
     const isRuLocale = currentLocale == "ru"; 
+    const FILTER_OPTIONS = isRuLocale ? OPTIONS_RU : OPTIONS_EN;
+    
     const setValue = () => {
-        return basicFiler ? options.find(o => o.value == basicFiler) : " ";
+        return basicFiler ? FILTER_OPTIONS.find(o => o.value == basicFiler) : " ";
     }
     const cardFilter = (filter) => {
         setBasicFilter(filter.value);
@@ -42,16 +45,7 @@ export default function Product({ params }) {
                 break;
         }
     }
-    const options = [
-        {
-            "value" : "name",
-            "label" : "Name"
-        },
-        {
-            "value" : "manufacturer",
-            "label" : "Manufacturer"
-        }
-    ];
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -88,7 +82,7 @@ export default function Product({ params }) {
                 <h2 className="page-catalog__title">{isRuLocale ? category.nameRu : category.nameEn}</h2>
                 <div className="page-catalog__sorting-bar">
                     <p>Сортировка</p>
-                    <Select onChange={cardFilter} value={setValue()} options={options}/>
+                    <Select onChange={cardFilter} value={setValue()} options={FILTER_OPTIONS}/>
                 </div>
             </div>
 
