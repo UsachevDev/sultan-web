@@ -3,13 +3,16 @@
 import { useLocale, useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import Select from "react-select";
+
 import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 import FilterSidebar from "../components/FilterSidebar/FilterSidebar";
 import { ProductsInARow } from "../components/Cards/Cards";
 import Pagination from "../components/Pagination/Pagination";
-import "./catalogPage.scss";
 import CategoriesList from "../components/CategoriesList/CategoriesList";
 import ButtonUI from "../components/UI/ButtonUI/ButtonUI";
+
+import "./catalogPage.scss";
 
 export default function Product({ params }) {
     const t = useTranslations("CatalogPage");
@@ -21,10 +24,34 @@ export default function Product({ params }) {
     const [category, setCategory] = useState();
 
     const [currentPage, setCurrentPage] = useState(1);
-    const CARDS_PER_PAGE = 3;
+    const CARDS_PER_PAGE = 9;
+    const [basicFiler, setBasicFilter] = useState('name');
 
     const isRuLocale = currentLocale == "ru"; 
-
+    const setValue = () => {
+        return basicFiler ? options.find(o => o.value == basicFiler) : " ";
+    }
+    const cardFilter = (filter) => {
+        setBasicFilter(filter.value);
+        switch(filter.value) {
+            case "manufacturer":
+                setData(data.sort((a,b) => a.manufacturer > b.manufacturer ? 1 : -1));
+                break;
+            case "name":
+                setData(data.sort((a,b) => a.nameRu > b.nameRu ? 1 : -1));
+                break;
+        }
+    }
+    const options = [
+        {
+            "value" : "name",
+            "label" : "Name"
+        },
+        {
+            "value" : "manufacturer",
+            "label" : "Manufacturer"
+        }
+    ];
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -61,6 +88,7 @@ export default function Product({ params }) {
                 <h2 className="page-catalog__title">{isRuLocale ? category.nameRu : category.nameEn}</h2>
                 <div className="page-catalog__sorting-bar">
                     <p>Сортировка</p>
+                    <Select onChange={cardFilter} value={setValue()} options={options}/>
                 </div>
             </div>
 
