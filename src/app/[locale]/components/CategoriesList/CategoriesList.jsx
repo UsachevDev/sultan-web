@@ -1,43 +1,16 @@
-"use client";
-
 import { useTranslations } from "next-intl";
-import { useState } from "react";
-import { useEffect } from "react";
-
 import "./CategoriesList.scss";
 
-export default function CategoriesList({ categoryId }) {
-    const [isLoading, setIsLoading] = useState(true);
-    const [category, setCategory] = useState();
+
+export default function CategoriesList({ category }) {
     const t = useTranslations("CatalogPage");
-    useEffect(() => {
-        const fetchCategory = async () => {
-            try {
-                const response = await fetch("/data/categories.json");
-                const data = await response.json();
-                setCategory(data.find(((el) => el.id == categoryId)));
-
-                setIsLoading(false);
-            } catch (error) {
-                console.error("Ошибка загрузки", error);
-                setIsLoading(false);
-            }
-        };
-
-        fetchCategory();
-    }, []);
-
-    if (isLoading) {
-        return <p>{t("locale") === "ru" ? "Загрузка..." : "Downloading..."}</p>;
-    }
-
     return (
         <section className="categories-section">
-            {category.subcategories.map((el,index) => (
+            {category.subcategories.map((subcategory,index) => (
                 <div className={"categories-section-subcategory"} key={index}>
-                    <h2>{t("locale") == "ru" ? el.nameRu : el.nameEn}</h2>
+                    <h2>{t("locale") == "ru" ? subcategory.nameRu : subcategory.nameEn}</h2>
                     <ul>
-                        {(el.subcategoriesRu).map((sub,index) => (
+                        {(subcategory.subcategoriesRu).map((sub,index) => (
                             <li key={index}>{sub}</li>
                         ))}
                     </ul>
