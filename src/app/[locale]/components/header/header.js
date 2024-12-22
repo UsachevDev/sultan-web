@@ -1,7 +1,8 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { useBasket } from "../../core/context/BasketContext";
 import Image from 'next/image';
 import LocalSwitcher from '../LocalSwitcher';
 import LogoButton from './logo-button';
@@ -20,6 +21,8 @@ const Header = () => {
 
   const [isMobile, setIsMobile] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+
+  const { totalCost, totalQuantity } = useBasket();
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -111,7 +114,7 @@ const Header = () => {
               />
             </div>
             <div className={styles.mobileLogo}><LogoButton /></div>
-            <div className={styles.mobileCart}><Cart /></div>
+            <div className={styles.mobileCart}><Cart itemCount={totalQuantity} totalAmount={totalCost}/></div>
           </>
         )}
       </div>
@@ -198,7 +201,7 @@ const Header = () => {
                   customStyle={{width: '39px', height: '39px'}}
                 />
               </div>
-              <div className={styles.cart}><Cart /></div>
+              <div className={styles.cart}><Cart itemCount={totalQuantity} totalAmount={totalCost} /></div>
             </div>
             </div>
           </>

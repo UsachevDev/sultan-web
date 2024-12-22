@@ -7,7 +7,7 @@ const Cart = ({ itemCount = 3, totalAmount = 0 }) => {
     
     return (
         <div className={styles.cart}>
-            <Link href={'/cart'}>
+            <Link href={'/basket'}>
                 <svg
                     viewBox="0 0 46 46"
                     className={styles['cart__icon']}
