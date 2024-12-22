@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { ShowProductSize } from "../ProductCard/ProductCard";
+import { useBasket } from "../../core/context/BasketContext";
 import Image from "next/image";
 import ButtonUI from "../UI/ButtonUI/ButtonUI";
 import Accordion from "../UI/Accordion/Accordion";
@@ -8,11 +9,12 @@ import "./ProductOverview.scss";
 
 const ProductOverview = ({ card }) => {
     const t = useTranslations("ProductCard");
-
+    const { addToBasket, updateQuantity, findInBasket } = useBasket();
+    const existingItem = findInBasket(card.id);
     const [quantity, setQuantity] = useState(1);
 
     // Проверка и установка значения в пределах допустимого диапазона
-    const updateQuantity = (value) => {
+    const updateQuantityLocal = (value) => {
         if (value >= 1 && value <= 100) {
             return value;
         }
@@ -33,7 +35,7 @@ const ProductOverview = ({ card }) => {
         const parsedValue = parseInt(value, 10);
 
         if (!isNaN(parsedValue)) {
-            setQuantity(updateQuantity(parsedValue));
+            setQuantity(updateQuantityLocal(parsedValue));
         }
     };
 
@@ -44,11 +46,27 @@ const ProductOverview = ({ card }) => {
     };
 
     const handleIncrease = () => {
-        setQuantity((prevQuantity) => updateQuantity(prevQuantity + 1));
+        setQuantity((prevQuantity) => {
+            const newQuantity = prevQuantity + 1;
+            if (existingItem) {
+                updateQuantity(card.id, newQuantity);
+            }
+            return updateQuantityLocal(newQuantity);
+        });
     };
 
     const handleDecrease = () => {
-        setQuantity((prevQuantity) => updateQuantity(prevQuantity - 1));
+        setQuantity((prevQuantity) => {
+            const newQuantity = prevQuantity - 1;
+            if (existingItem) {
+                updateQuantity(card.id, newQuantity);
+            }
+            return updateQuantityLocal(newQuantity);
+        });
+    };
+
+    const handleAddToCart = () => {
+        addToBasket(card, quantity);
     };
 
     return (
@@ -111,6 +129,7 @@ const ProductOverview = ({ card }) => {
                         size="sm"
                         label={t("button")}
                         className="product-overview__add-to-cart"
+                        onClick={handleAddToCart}
                     />
 
                     <ButtonUI
