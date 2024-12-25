@@ -26,7 +26,7 @@
         flex-direction: column;
         margin-top: 16px;
         margin-left: 20px;
-        max-width: 480px;
+        width: 400px;
         gap: 10px;
 
         &::after {
@@ -60,7 +60,7 @@
         }
 
         @include tabletSmall {
-            max-width: 292px;
+            width: 292px;
         }
     }
 
@@ -93,7 +93,7 @@
     }
 
     &__description {
-        width: 444px;
+        max-width: 400px;
         color: $second-color;
         font-size: 12px;
         line-height: 16px;
