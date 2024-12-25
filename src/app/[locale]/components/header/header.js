@@ -2,8 +2,8 @@
 import { useState, useEffect, use } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { useBasket } from "../../core/context/BasketContext";
 import Image from 'next/image';
+import { useBasket } from "../../core/context/BasketContext";
 import LocalSwitcher from '../LocalSwitcher';
 import LogoButton from './logo-button';
 import ButtonUI from '../UI/ButtonUI/ButtonUI';
@@ -126,7 +126,7 @@ const Header = () => {
               <div className={styles.block3}>
                 <div className={styles.logo}><LogoButton /></div>
                 <div className={styles.button1}>
-                  <Link href="/catalog" className={styles.linkStyle}>
+                  <Link href="/products" className={styles.linkStyle}>
                     <ButtonUI 
                       label={t('button-1')}
                       icon='catalog'
@@ -135,7 +135,7 @@ const Header = () => {
                   </Link>
                 </div>
                 <div className={styles.tabletButton1}>
-                  <Link href="/catalog">
+                  <Link href="/products">
                     <MobileButton 
                       icon={<Image 
                           src="/icon/header-catalog-icon.svg" 
@@ -208,7 +208,7 @@ const Header = () => {
         )}
         {isMobile && (
           <>
-            <Link href="/catalog" className={styles.mobileCatalog}>
+            <Link href="/products" className={styles.mobileCatalog}>
               <Image 
                 src="/icon/header-mobile-catalog-icon.svg" 
                 height={15} 
