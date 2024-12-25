@@ -153,5 +153,10 @@
     "CatalogPage": {
         "locale": "ru",
         "title": "Каталог"
+    },
+    "BasketPage": {
+        "title": "Корзина",
+        "order": "Оформить заказ",
+        "emptyBasket": "Ваша корзина пуста."
     }
 }

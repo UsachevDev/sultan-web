@@ -153,5 +153,10 @@
     "CatalogPage": {
         "locale": "en",
         "title": "Catalog"
+    },
+    "BasketPage": {
+        "title": "Cart",
+        "order": "Place order",
+        "emptyBasket": "Your cart is empty."
     }
 }
