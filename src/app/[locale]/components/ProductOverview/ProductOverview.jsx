@@ -9,12 +9,12 @@ import "./ProductOverview.scss";
 
 const ProductOverview = ({ card }) => {
     const t = useTranslations("ProductCard");
-    const { addToBasket, updateQuantity, findInBasket } = useBasket();
-    const existingItem = findInBasket(card.id);
-    const [quantity, setQuantity] = useState(1);
+    const { getQuantity, addToBasket } = useBasket();
+    const existingQuantity = getQuantity(card.id);
+    const [quantity, setQuantity] = useState(existingQuantity === 0 ? 1 : existingQuantity);
 
     // Проверка и установка значения в пределах допустимого диапазона
-    const updateQuantityLocal = (value) => {
+    const updateQuantity = (value) => {
         if (value >= 1 && value <= 100) {
             return value;
         }
@@ -27,7 +27,7 @@ const ProductOverview = ({ card }) => {
     const handleInputChange = (e) => {
         const value = e.target.value;
 
-        if (value === "") {
+        if (!value) {
             setQuantity("");
             return;
         }
@@ -35,34 +35,22 @@ const ProductOverview = ({ card }) => {
         const parsedValue = parseInt(value, 10);
 
         if (!isNaN(parsedValue)) {
-            setQuantity(updateQuantityLocal(parsedValue));
+            setQuantity(updateQuantity(parsedValue));
         }
     };
 
     const handleBlur = () => {
-        if (quantity === "") {
+        if (!quantity) {
             setQuantity(1);
         }
     };
 
     const handleIncrease = () => {
-        setQuantity((prevQuantity) => {
-            const newQuantity = prevQuantity + 1;
-            if (existingItem) {
-                updateQuantity(card.id, newQuantity);
-            }
-            return updateQuantityLocal(newQuantity);
-        });
+        setQuantity((prevQuantity) => updateQuantity(prevQuantity + 1));
     };
 
     const handleDecrease = () => {
-        setQuantity((prevQuantity) => {
-            const newQuantity = prevQuantity - 1;
-            if (existingItem) {
-                updateQuantity(card.id, newQuantity);
-            }
-            return updateQuantityLocal(newQuantity);
-        });
+        setQuantity((prevQuantity) => updateQuantity(prevQuantity - 1));
     };
 
     const handleAddToCart = () => {
