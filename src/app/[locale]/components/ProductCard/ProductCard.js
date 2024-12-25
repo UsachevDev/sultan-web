@@ -88,12 +88,14 @@ export default function ProductCard({ card: element }) {
                         >
                             {element.price}₽
                         </span>
-                        <ButtonUI
+                        <Link href={`/basket`}>
+                            <ButtonUI
                             icon="basket"
                             size="sm"
                             label={t("button")}
                             className="btn-tocart"
-                        />
+                            />
+                        </Link>
                     </span>
                 </div>
             </Link>
