@@ -2,9 +2,9 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useLocale } from 'next-intl';
 import { Link } from "@/i18n/routing";
+import Image from "next/image";
 import { ShowProductSize } from "../ProductCard/ProductCard";
 import { useBasket } from "../../core/context/BasketContext";
-import Image from "next/image";
 import ButtonUI from "../UI/ButtonUI/ButtonUI";
 import { LOCALES } from '../constants.js';
 import "./ProductBasket.scss";
@@ -13,9 +13,9 @@ const ProductBasket = ({ card }) => {
     const t = useTranslations("ProductCard");
     const currentLocale = useLocale();
     
-    const { basket, updateQuantity, removeFromBasket } = useBasket();
-    const existingItem = basket.find((item) => item.id === card.id);
-    const [quantity, setQuantity] = useState(existingItem.quantity);
+    const { getQuantity, updateQuantity, removeFromBasket } = useBasket();
+    const existingQuantity = getQuantity(card.id);
+    const [quantity, setQuantity] = useState(existingQuantity);
 
     const updateQuantityLocal = (value) => {
         if (value >= 1 && value <= 100) {
@@ -30,7 +30,7 @@ const ProductBasket = ({ card }) => {
     const handleInputChange = (e) => {
         const value = e.target.value;
 
-        if (value === "") {
+        if (!value) {
             setQuantity("");
             return;
         }
@@ -38,34 +38,32 @@ const ProductBasket = ({ card }) => {
         const parsedValue = parseInt(value, 10);
 
         if (!isNaN(parsedValue)) {
-            setQuantity(updateQuantityLocal(parsedValue));
+            const newQuantity = updateQuantityLocal(parsedValue);
+            setQuantity(newQuantity);
+            updateQuantity(card.id, newQuantity)
         }
     };
 
     const handleBlur = () => {
-        if (quantity === "") {
+        if (!quantity) {
             setQuantity(1);
         }
     };
 
-    const handleIncrease = () => {
-        setQuantity((prevQuantity) => {
-            const newQuantity = prevQuantity + 1;
-            if (existingItem) {
-                updateQuantity(card.id, newQuantity);
-            }
-            return updateQuantityLocal(newQuantity);
+    const updateQuantityInBasket = (quantityChange) => {
+        return setQuantity((prevQuantity) => {
+          const newQuantity = updateQuantityLocal(prevQuantity + quantityChange);
+          updateQuantity(card.id, newQuantity);
+          return newQuantity;
         });
+      };
+
+    const handleIncrease = () => {
+        updateQuantityInBasket(1);
     };
 
     const handleDecrease = () => {
-        setQuantity((prevQuantity) => {
-            const newQuantity = prevQuantity - 1;
-            if (existingItem) {
-                updateQuantity(card.id, newQuantity);
-            }
-            return updateQuantityLocal(newQuantity);
-        });
+        updateQuantityInBasket(-1);
     };
 
     const handleRemoveFromBasket = () => {
