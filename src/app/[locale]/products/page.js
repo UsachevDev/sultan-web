@@ -23,7 +23,7 @@ export default function Product({ params }) {
     const [currentPage, setCurrentPage] = useState(1);
     const CARDS_PER_PAGE = 3;
 
-    const isRuLocale = currentLocale == "ru"; 
+    const isRuLocale = currentLocale == "ru";
 
     useEffect(() => {
         const fetchData = async () => {
@@ -33,10 +33,9 @@ export default function Product({ params }) {
                 const categoriesData = await responseCategories.json();
                 const productsData = await responseProducts.json();
 
-                const category = categoriesData.find((category) => category.id == (urlParams.get(category) || 2));
+                const category = categoriesData.find((category) => category.id == (urlParams.get('category') || 2));
                 setData(productsData);
                 setCategory(category);
-                setCardsCount(data.length);
                 setIsLoading(false);
             } catch (error) {
                 console.error("Ошибка загрузки данных:", error);
@@ -65,19 +64,19 @@ export default function Product({ params }) {
             </div>
 
             <div className="page-catalog__param-selector">
-                {category.subcategories.map((subcategories,index) => (
+                {category.subcategories.map((subcategories, index) => (
                     <ButtonUI className="page-catalog__param-selector-subcategory" key={index}>{isRuLocale ? subcategories.nameRu : subcategories.nameEn}</ButtonUI>
                 ))}
             </div>
 
             <div className="page-catalog__main-wrapper">
                 <div>
-                    <FilterSidebar className="page-catalog__filter-sidebar"/>
-                    <CategoriesList category={category}/>
-                </div>      
+                    <FilterSidebar className="page-catalog__filter-sidebar" />
+                    <CategoriesList category={category} />
+                </div>
                 <div className="page-catalog__product-grid">
                     <ProductsInARow cards={data.slice((currentPage - 1) * CARDS_PER_PAGE, currentPage * CARDS_PER_PAGE)} />
-                    <Pagination currentPage={currentPage} pageCount = {Math.ceil(data.length / CARDS_PER_PAGE)} method = {setCurrentPage}/>
+                    <Pagination currentPage={currentPage} pageCount={Math.ceil(data.length / CARDS_PER_PAGE)} method={setCurrentPage} />
                 </div>
             </div>
         </div>
