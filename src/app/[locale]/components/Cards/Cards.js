@@ -55,6 +55,7 @@ const Cards = () => {
 
     useEffect(() => {
         const fetchCards = async () => {
+            setIsLoading(true);
             try {
                 const response = await fetch("/data/productDTOs_main.json");
                 const data = await response.json();
@@ -62,7 +63,7 @@ const Cards = () => {
                 setIsLoading(false);
             } catch (error) {
                 console.error("Ошибка загрузки данных товаров:", error);
-                setIsLoaded(false);
+                setIsLoading(false);
             }
         };
 
@@ -75,9 +76,9 @@ const Cards = () => {
 
     return (
         <>
-            {isDesktop || isLaptop 
-            ? <ProductsInARow cards={cards} />
-            : <ProductsSwiper cards={cards} />
+            {isDesktop || isLaptop
+                ? <ProductsInARow cards={cards} />
+                : <ProductsSwiper cards={cards} />
             }
         </>
     )
