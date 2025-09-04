@@ -2,10 +2,33 @@
 @import "mixins";
 
 .filter {
+    &-section {
+        margin-bottom: 20px;
+    }
+
     &-title {
         color: $text-color;
         font-weight: 500;
         line-height: 24px;
+    }
+
+    &-subtitle {
+        color: $text-color;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+    }
+
+    &-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &-actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 20px;
     }
 }
 
@@ -35,4 +58,24 @@
         border-radius: 1000px;
         background-color: $quantity-button;
     }
+}
+
+.search-box {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.show-more {
+    background: none;
+    border: none;
+    color: $second-color;
+    cursor: pointer;
+}
+
+.apply-button,
+.reset-button {
+    border-radius: 1000px;
+    background-color: $quantity-button;
+    padding: 6px 16px;
 }

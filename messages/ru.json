@@ -142,7 +142,7 @@
         "locale": "Английский"
     },
     "Breadcrumbs": {
-        "locale":"ru",
+        "locale": "ru",
         "HomePage": "Главная",
         "Catalog": "Каталог"
     },
@@ -158,5 +158,15 @@
         "title": "Корзина",
         "order": "Оформить заказ",
         "emptyBasket": "Ваша корзина пуста."
+    },
+    "FilterSidebar": {
+        "title": "Подбор по параметрам",
+        "price": "Цена",
+        "manufacturer": "Производитель",
+        "brand": "Бренд",
+        "showAll": "Показать все",
+        "search": "Поиск...",
+        "show": "Показать",
+        "reset": "Сбросить"
     }
 }

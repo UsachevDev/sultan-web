@@ -158,5 +158,15 @@
         "title": "Cart",
         "order": "Place order",
         "emptyBasket": "Your cart is empty."
+    },
+    "FilterSidebar": {
+        "title": "Filter by parameters",
+        "price": "Price",
+        "manufacturer": "Manufacturer",
+        "brand": "Brand",
+        "showAll": "Show all",
+        "search": "Search...",
+        "show": "Show",
+        "reset": "Reset"
     }
 }
