@@ -77,6 +77,14 @@
         margin-left: 40px;
         text-transform: uppercase;
     }
+
+    .btn-tocart--added {
+    background: $green-color;
+    border-color: $green-color;
+    color: $background-color;
+
+    &:active { transform: scale(0.98); }
+  }
 }
 
 .product-price {
