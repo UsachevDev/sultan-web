@@ -17,10 +17,10 @@ export const BasketProvider = ({ children }) => {
     useEffect(() => {
         if (!!basket.length) {
             localStorage.setItem("basket", JSON.stringify(basket));
-            console.log("Saving Basket:", JSON.stringify(basket));
+            if (process.env.NODE_ENV !== 'production') console.log("Saving Basket:", JSON.stringify(basket));
         } else {
             localStorage.removeItem("basket");
-            console.log("Removing Basket from localStorage");
+            if (process.env.NODE_ENV !== 'production') console.log("Removing Basket from localStorage");
         }
     }, [basket]);
 
@@ -55,7 +55,7 @@ export const BasketProvider = ({ children }) => {
     const getQuantity = (productId) => {
         const item = basket.find((item) => item.id === productId);
         return item ? item.quantity : 0;
-      };
+    };
 
     const totalCost = basket.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
     const totalQuantity = basket.reduce((total, item) => total + item.quantity, 0);
