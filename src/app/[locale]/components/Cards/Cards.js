@@ -50,24 +50,31 @@ export const ProductsSwiper = ({ cards }) => {
 
 const Cards = () => {
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [cards, setCards] = useState([]);
     const { isDesktop, isLaptop } = useWidth();
 
     useEffect(() => {
+        let aborted = false;
+        const ctrl = new AbortController();
+
         const fetchCards = async () => {
             setIsLoading(true);
+            setError(null);
             try {
-                const response = await fetch("/data/productDTOs_main.json");
-                const data = await response.json();
-                setCards(data);
-                setIsLoading(false);
-            } catch (error) {
-                console.error("Ошибка загрузки данных товаров:", error);
-                setIsLoading(false);
+                const res = await fetch("/data/productDTOs_main.json", { signal: ctrl.signal });
+                if (!res.ok) throw new Error('HTTP ${res.status}');
+                const data = await res.json();
+                if (!aborted) setCards(data);
+            } catch (e) {
+                if (!aborted) setError(e.message || "Ошибка загрузки");
+            } finally {
+                if (!aborted) setIsLoading(false);
             }
         };
 
         fetchCards();
+        return () => { aborted = true; ctrl.abort(); };
     }, []);
 
     if (isLoading) {
