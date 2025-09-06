@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { useBasket } from "../../core/context/BasketContext";
 import ButtonUI from "../UI/ButtonUI/ButtonUI";
 import Icon from "../UI/Icons/Icons";
 import "./ProductCard.scss";
@@ -32,6 +33,8 @@ export function ShowProductSize({
 
 export default function ProductCard({ card: element }) {
     const t = useTranslations("ProductCard");
+    const { addToBasket, getQuantity } = useBasket();
+    const quantityInBasket = getQuantity(element.id)
     const productName =
         t("productName") === "ru" ? element.nameRu : element.nameEn;
     return (
@@ -90,10 +93,10 @@ export default function ProductCard({ card: element }) {
                         </span>
                         <Link href={`/basket`}>
                             <ButtonUI
-                            icon="basket"
-                            size="sm"
-                            label={t("button")}
-                            className="btn-tocart"
+                                icon="basket"
+                                size="sm"
+                                label={t("button")}
+                                className="btn-tocart"
                             />
                         </Link>
                     </span>
