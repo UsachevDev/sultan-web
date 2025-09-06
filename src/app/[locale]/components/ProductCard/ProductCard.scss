@@ -79,12 +79,25 @@
     }
 
     .btn-tocart--added {
-    background: $green-color;
-    border-color: $green-color;
-    color: $background-color;
+        background: $green-color;
+        border-color: $green-color;
+        color: $background-color;
+        cursor: default;
+        opacity: 0.9;
 
-    &:active { transform: scale(0.98); }
-  }
+        &:hover {
+            filter: none;
+        }
+
+        &:active {
+            transform: none;
+        }
+    }
+
+    .btn-tocart[disabled] {
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
 }
 
 .product-price {

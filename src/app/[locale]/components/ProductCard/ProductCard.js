@@ -34,7 +34,16 @@ export function ShowProductSize({
 export default function ProductCard({ card: element }) {
     const t = useTranslations("ProductCard");
     const { addToBasket, getQuantity } = useBasket();
-    const quantityInBasket = getQuantity(element.id)
+    const quantityInBasket = getQuantity?.(element.id) ?? 0;
+    const inBasket = quantityInBasket > 0;
+
+    const onAddClick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (inBasket) return;
+        addToBasket(element);
+    }
+
     const productName =
         t("productName") === "ru" ? element.nameRu : element.nameEn;
     return (
@@ -91,14 +100,16 @@ export default function ProductCard({ card: element }) {
                         >
                             {element.price}₽
                         </span>
-                        <Link href={`/basket`}>
-                            <ButtonUI
-                                icon="basket"
-                                size="sm"
-                                label={t("button")}
-                                className="btn-tocart"
-                            />
-                        </Link>
+                        <ButtonUI
+                            icon="basket"
+                            size="sm"
+                            type="button"
+                            label={inBasket ? t("inBasket") : t("button")}
+                            className={`btn-tocart ${inBasket ? "btn-tocart--added" : ""}`}
+                            onClick={onAddClick}
+                            disabled={inBasket}
+                            aria-disabled={inBasket}
+                        />
                     </span>
                 </div>
             </Link>
