@@ -7,12 +7,18 @@
     height: 1em;
     background-repeat: no-repeat;
     background-position: center;
+
     &--download {
         width: 17px;
         height: 17px;
         margin-left: 12px;
 
         background-image: url("/icon/download.svg");
+
+        &-dark {
+            background-image: url("/icon/download-dark.svg");
+            margin-left: 12px;
+        }
     }
 
     &--basket {
@@ -33,15 +39,46 @@
         background-image: url("/icon/header-catalog-icon.svg");
     }
 
-    &--bottle{
+    &--bottle {
         width: 9px;
         height: 15px;
         background-image: url("/icon/bottle-icon.svg");
     }
 
-    &--box{
+    &--box {
         width: 20px;
         height: 14px;
         background-image: url("/icon/box-icon.svg");
+    }
+
+    &--share {
+        width: 24px;
+        height: 24px;
+        background-image: url("/icon/share.svg");
+    }
+
+    &--leftPointer {
+        width: 8px;
+        height: 16px;
+        background-image: url("/icon/leftPointer.svg");
+    }
+
+    &--rightPointer {
+        width: 8px;
+        height: 16px;
+        background-image: url("/icon/rightPointer.svg");
+    }
+
+    &--delete {
+        width: 24px;
+        height: 24px;
+        background-image: url("/icon/delete.svg");
+    }
+
+    &--search {
+        width: 24px;
+        height: 24px;
+        background-image: url("/icon/search.svg");
+
     }
 }

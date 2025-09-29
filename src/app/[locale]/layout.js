@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import {routing} from '@/i18n/routing';
 import {notFound} from 'next/navigation';
+import { BasketProvider } from './core/context/BasketContext';
 import Header from './components/header/header';
 import Footer from './components/Footer/Footer';
 import "./globals.scss";
@@ -30,9 +31,11 @@ export default async function RootLayout({ children, params }) {
     <html lang={locale}>
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          {children}
-          <Footer />
+          <BasketProvider>
+            <Header />
+            {children}
+            <Footer />
+          </BasketProvider>
         </NextIntlClientProvider>
       </body>
     </html>

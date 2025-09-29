@@ -1,0 +1,40 @@
+@import "vars";
+
+.pagination {
+    display: flex;
+    margin-top: 52px;
+    justify-content: center;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    &-number{
+        width: 36px;
+        height: 36px;
+        
+        background-color: $background-color;
+        color: $text-color;
+
+        &:hover {
+            background-color: $primary-color;
+            transition: background-color 0.4s;
+        }
+
+        &-current {
+            background: $quantity-button;
+            border-radius: 80px;
+        }
+    }
+
+    &-pointer {
+        height: 36px;
+        background-color: $background-color;
+
+        &:hover {
+            color: $primary-color;
+            background-color: $search-color;
+        }
+    }
+
+
+}

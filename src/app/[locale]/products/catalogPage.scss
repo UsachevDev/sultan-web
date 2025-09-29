@@ -1,0 +1,102 @@
+@import "vars";
+@import "mixins";
+
+.page-catalog {
+    display: flex;
+    flex-direction: column;
+    max-width: $content-width; // 1368px из vars.scss
+    margin: 0 auto;
+    margin-bottom: auto;
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 48px;
+    }
+
+    &__wrapper {
+        display: flex;
+        margin-top: 50px;
+    }
+
+    /* КЛЮЧЕВОЕ: лейаут контента — грид 238px + 1fr с зазором 108px */
+    &__main-wrapper {
+        display: grid;
+        grid-template-columns: 238px 1fr;
+        column-gap: 108px;
+        /* макетный зазор справа от сайдбара */
+        align-items: start;
+        margin-top: 30px;
+    }
+
+    &__sorting-bar {
+        margin-left: auto;
+    }
+
+    &__param-selector {
+        display: flex;
+        width: 100%;
+        height: 70px;
+        margin-top: 18px;
+
+        &-subcategory {
+            width: 120px;
+            height: 70px;
+            margin-left: 12px;
+
+            font-weight: 400;
+            font-size: 14px;
+            text-wrap: inherit;
+
+            border-radius: 0%;
+            color: $second-color;
+            box-shadow: $box-shadow;
+            background: $background-color;
+
+            &:hover {
+                background: $gradient-color;
+            }
+        }
+    }
+
+    /* Левая колонка (сайдбар) — фикс ширина */
+    &__filter-sidebar {
+        width: 238px;
+        margin-top: 20px;
+    }
+
+    /* Правая колонка (грид карточек) — занимает оставшееся место */
+    &__product-grid {
+        min-width: 0;
+        /* чтобы контент не распирал колонку */
+        width: auto;
+        /* убираем 80%, даём 1fr из грида */
+    }
+
+    /* Сетка карточек внутри — как было */
+    &__product-grid .cards {
+        grid-template-columns: repeat(3, auto);
+    }
+
+    /* Небольшая адаптация под ноутбуки, если нужно */
+    @include laptop {
+        padding: 0 15px;
+
+        &__main-wrapper {
+            column-gap: 64px;
+        }
+    }
+
+    @include tablet {
+        &__main-wrapper {
+            grid-template-columns: 1fr;
+            /* сайдбар сверху, потом грид */
+            row-gap: 24px;
+        }
+
+        &__filter-sidebar {
+            width: auto;
+        }
+    }
+}

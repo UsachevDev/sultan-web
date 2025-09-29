@@ -1,124 +1,213 @@
+import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { ShowProductSize } from "../ProductCard/ProductCard";
+import { useBasket } from "../../core/context/BasketContext";
+import Image from "next/image";
+import ButtonUI from "../UI/ButtonUI/ButtonUI";
+import Accordion from "../UI/Accordion/Accordion";
 import "./ProductOverview.scss";
 
-const ProductOverview = () => {
-    const t = useTranslations("123");
+const ProductOverview = ({ card }) => {
+    const t = useTranslations("ProductCard");
+    const { getQuantity, addToBasket } = useBasket();
+    const existingQuantity = getQuantity(card.id);
+    const [quantity, setQuantity] = useState(existingQuantity === 0 ? 1 : existingQuantity);
+
+    // Проверка и установка значения в пределах допустимого диапазона
+    const updateQuantity = (value) => {
+        if (value >= 1 && value <= 100) {
+            return value;
+        }
+        if (value > 100) {
+            return 100;
+        }
+        return 1;
+    };
+
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+
+        if (!value) {
+            setQuantity("");
+            return;
+        }
+
+        const parsedValue = parseInt(value, 10);
+
+        if (!isNaN(parsedValue)) {
+            setQuantity(updateQuantity(parsedValue));
+        }
+    };
+
+    const handleBlur = () => {
+        if (!quantity) {
+            setQuantity(1);
+        }
+    };
+
+    const handleIncrease = () => {
+        setQuantity((prevQuantity) => updateQuantity(prevQuantity + 1));
+    };
+
+    const handleDecrease = () => {
+        setQuantity((prevQuantity) => updateQuantity(prevQuantity - 1));
+    };
+
+    const handleAddToCart = () => {
+        addToBasket(card, quantity);
+    };
 
     return (
         <article className="product-overview">
             <figure className="product-overview__image">
-                <img src="/image/bio-mio-soap.png" alt="BioMio Bio-Soap Экологичное туалетное мыло" />
+                <Image
+                    src={"/image/productCards/card" + card.id + ".svg"}
+                    layout="fill"
+                    objectFit="contain"
+                    objectPosition="top"
+                    alt={card.id}
+                />
             </figure>
             <div className="product-overview__content">
                 <header className="product-overview__header">
                     <h1 className="product-overview__title">
-                        <span className="product-overview__title-span">BioMio BIO-SOAP</span> Экологичное туалетное мыло. Литсея и бергамот
+                        <span className="product-overview__title-span">
+                            {card.brand.name}
+                        </span>{" "}
+                        {t("locale") == "ru" ? card.nameRu : card.nameEn}
                     </h1>
-                    <p className="product-overview__subtitle">90 г</p>
+                    <ShowProductSize
+                        card={card}
+                        t={t}
+                        className={"product-overview__subtitle"}
+                    />
                 </header>
 
                 <section className="product-overview__details">
                     <p className="product-overview__price">
-                        <strong>48,76 ₸</strong>
+                        <strong>{card.price} ₸</strong>
                     </p>
 
-                    <div className="product-overview__actions">
-                        <div className="product-overview__quantity">
-                            <button className="product-overview__quantity-decrease" aria-label="Уменьшить количество">-</button>
-                            <span className="product-overview__quantity-value" aria-live="polite">1</span>
-                            <button className="product-overview__quantity-increase" aria-label="Увеличить количество">+</button>
-                        </div>
-                        <button className="product-overview__add-to-cart" aria-label="Добавить в корзину">В корзину</button>
+                    <div className="product-overview__quantity">
+                        <button
+                            className="product-overview__quantity-decrease"
+                            onClick={handleDecrease}
+                        >
+                            -
+                        </button>
+                        <input
+                            type="number"
+                            className="product-overview__quantity-value"
+                            value={quantity}
+                            onChange={handleInputChange}
+                            onBlur={handleBlur}
+                            min="1"
+                            max="100"
+                            aria-live="polite"
+                        />
+                        <button
+                            className="product-overview__quantity-increase"
+                            onClick={handleIncrease}
+                        >
+                            +
+                        </button>
                     </div>
+                    <ButtonUI
+                        icon="basket"
+                        size="sm"
+                        label={t("button")}
+                        className="product-overview__add-to-cart"
+                        onClick={handleAddToCart}
+                    />
 
-                    <div className="product-overview__extras">
-                        <button className="product-overview__share-button"></button>
-                        <p className="product-overview__delivery-info">
-                            При покупке от 10 000 ₸ бесплатная доставка по Кокчетаву и области
-                        </p>
-                        <button className="product-overview__download-price-list">Скачать прайс-лист</button>
-                    </div>
-
+                    <ButtonUI
+                        icon="share"
+                        size="sm"
+                        className="product-overview__share-button"
+                    />
+                    <p className="product-overview__delivery-info">
+                        {t("delivery-info")}
+                    </p>
+                    <ButtonUI
+                        icon="download-dark"
+                        size="sm"
+                        label={t("button-price-list")}
+                        className="product-overview__download-price-list"
+                    />
                 </section>
 
                 <footer className="product-overview__footer">
                     <section className="product-overview__specifications">
                         <dl>
                             <div>
-                                <dt>Производитель:</dt>
-                                <dd>BioMio</dd>
+                                <dt>{t("manufacturer")}:</dt>
+                                <dd>{card.manufacturer}</dd>
                             </div>
                             <div>
-                                <dt>Бренд:</dt>
-                                <dd>BioMio</dd>
+                                <dt>{t("brand")}:</dt>
+                                <dd>{card.brand.name}</dd>
                             </div>
                             <div>
-                                <dt>Артикул:</dt>
-                                <dd>460404</dd>
+                                <dt>{t("article")}:</dt>
+                                <dd>{card.article}</dd>
                             </div>
                             <div>
-                                <dt>Штрихкод:</dt>
-                                <dd>4604049097548</dd>
-                            </div>
-                            <div>
-                                <dt>Размеры коробки:</dt>
-                                <dd>10x10x10</dd>
-                            </div>
-                            <div>
-                                <dt>Вес коробки:</dt>
-                                <dd>1020 г</dd>
+                                <dt>{t("barcode")}:</dt>
+                                <dd>{card.barcode}</dd>
                             </div>
                         </dl>
                     </section>
-                    <section className="product-overview__description">
-                        <h2 class="product-overview__description-title">Описание</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, omnis autem similique iste natus beatae, esse vero aspernatur magni asperiores reiciendis laboriosam deserunt! Vitae hic qui assumenda, eveniet quaerat dicta.</p>
-                    </section>
-                    <section className="product-overview__specifications">
-                        <h2 class="product-overview__specifications-title">Характеристики</h2>
+                    <Accordion
+                        title={t("desc")}
+                        className="product-overview__description"
+                    >
+                        <p>
+                            {t("locale") === "ru"
+                                ? card.descriptionRu
+                                : card.descriptionEn}
+                        </p>
+                    </Accordion>
+
+                    <Accordion
+                        title={t("spec")}
+                        className="product-overview__specifications"
+                    >
                         <dl>
                             <div>
-                                <dt>Назначение:</dt>
-                                <dd>BioMio</dd>
+                                <dt>{t("manufacturer")}:</dt>
+                                <dd>{card.manufacturer}</dd>
                             </div>
                             <div>
-                                <dt>Тип:</dt>
-                                <dd>BioMio</dd>
+                                <dt>{t("brand")}:</dt>
+                                <dd>{card.brand.name}</dd>
                             </div>
                             <div>
-                                <dt>Производитель:</dt>
-                                <dd>460404</dd>
+                                <dt>{t("article")}:</dt>
+                                <dd>{card.article}</dd>
                             </div>
                             <div>
-                                <dt>Бренд:</dt>
-                                <dd>4604049097548</dd>
+                                <dt>{t("barcode")}:</dt>
+                                <dd>{card.barcode}</dd>
                             </div>
                             <div>
-                                <dt>Артикул:</dt>
-                                <dd>4604049097548</dd>
+                                <dt>
+                                    {card.isLiquid ? t("volume") : t("weight")}:
+                                </dt>
+                                <dd>
+                                    <ShowProductSize
+                                        card={card}
+                                        t={t}
+                                        disableIcon={true}
+                                    />
+                                </dd>
                             </div>
                             <div>
-                                <dt>Штрихкод:</dt>
-                                <dd>4604049097548</dd>
-                            </div>
-                            <div>
-                                <dt>Вес:</dt>
-                                <dd>90 г</dd>
-                            </div>
-                            <div>
-                                <dt>Объем:</dt>
-                                <dd>90 г</dd>
-                            </div>
-                            <div>
-                                <dt>Кол-во в коробке:</dt>
-                                <dd>90 г</dd>
+                                <dt>{t("amount")}:</dt>
+                                <dd>{card.amount}</dd>
                             </div>
                         </dl>
-                    </section>
-
+                    </Accordion>
                 </footer>
-
-
             </div>
         </article>
     );

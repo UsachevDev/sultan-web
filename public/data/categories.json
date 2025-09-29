@@ -1,0 +1,222 @@
+[
+    {
+        "id": 1,
+        "nameRu":"Бытовая химия",
+        "nameEn":"Household chemicals",
+        "subcategories": [
+            {
+                "nameRu": "Уход за телом",
+                "nameEn": "Body care",
+                "subcategoriesRu": ["temp","temp","temp","temp","temp","temp","temp","temp"]
+            },
+            {
+                "nameRu": "Уход за руками",
+                "nameEn": "Hand care",
+                "subcategoriesRu": ["temp","temp","temp","temp","temp","temp","temp"]
+
+            },
+            {
+                "nameRu": "Уход за лицом",
+                "nameEn": "Face care",
+                "subcategoriesRu": ["temp","temp","temp","temp","temp","temp","temp","temp"]
+            },
+            {
+                "nameRu": "Уход за волосами",
+                "nameEn": "Hair care",
+                "subcategoriesRu": ["temp","temp","temp","temp"]
+            },
+            {
+                "nameRu": "Средства для загара",
+                "nameEn": "Tanning stuff",
+                "subcategoriesRu": ["temp"]
+            },
+            {
+                "nameRu": "Средства для бритья",
+                "nameEn": "Shaving products",
+                "subcategoriesRu":["temp","temp","temp"]
+            },
+            {
+                "nameRu": "Подарочные наборы",
+                "nameEn": "Gift sets",
+                "subcategoriesRu":["temp"]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nameRu":"Косметика и гигиена",
+        "nameEn":"Cosmetics and hygiene",
+        "subcategories": [
+            {
+                "nameRu": "Уход за телом",
+                "nameEn": "Body care",
+                "subcategoriesRu": ["Эпиляция и депиляция","Средства для ванны и душа","Скрабы, пилинги и пр.","Мочалки и губки для тела","Кремы, лосьоны, масла","Интимный уход","Дезодоранты, антиперспиранты","Гели для душа"]
+            },
+            {
+                "nameRu": "Уход за руками",
+                "nameEn": "Hand care",
+                "subcategoriesRu": ["Увлажнение и питание","Средства для ногтей","Мыло твердое","Мыло жидкое","Крем для рук","Защита рук","Жидкость для снятия лака"]
+
+            },
+            {
+                "nameRu": "Уход за ногами",
+                "nameEn": "Foot care",
+                "subcategoriesRu": ["Скрабы, пилинги","Пилки, ролики","Крем для ног","Дезодоранты для ног"]
+            },
+            {
+                "nameRu": "Уход за лицом",
+                "nameEn": "Face care",
+                "subcategoriesRu": ["Тональные средства","Средства для снятия макияжа","Средства для очищения","Маски, скрабы, сыворотки","Крем для лица","Крем для век","Жидкость для снятия макияжа","Гигиеническая помада"]
+            },
+            {
+                "nameRu": "Уход за волосами",
+                "nameEn": "Hair care",
+                "subcategoriesRu": ["Шампуни","Средства для укладки","Средства для окрашивания волос","Маски, сыворотки, масла","Кондиционеры, бальзамы"]
+            },
+            {
+                "nameRu": "Средства для загара",
+                "nameEn": "Tanning stuff",
+                "subcategoriesRu": ["Средства после загара"]
+            },
+            {
+                "nameRu": "Средства для бритья",
+                "nameEn": "Shaving products",
+                "subcategoriesRu":["Станки и кассеты","После бритья","Для бритья"]
+            },
+            {
+                "nameRu": "Подарочные наборы",
+                "nameEn": "Gift sets",
+                "subcategoriesRu":["Для мужчин","Для женщин"]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "nameRu":"Товары для дома",
+        "nameEn":"Household Goods",
+        "subcategories": [
+            {
+                "nameRu": "Уход за телом",
+                "nameEn": "Body care",
+                "subcategoriesRu": ["temp","temp","temp","temp","temp","temp","temp","temp"]
+            },
+            {
+                "nameRu": "Уход за руками",
+                "nameEn": "Hand care",
+                "subcategoriesRu": ["temp","temp","temp","temp","temp","temp","temp"]
+
+            },
+            {
+                "nameRu": "Уход за лицом",
+                "nameEn": "Face care",
+                "subcategoriesRu": ["temp","temp","temp","temp","temp","temp","temp","temp"]
+            },
+            {
+                "nameRu": "Уход за волосами",
+                "nameEn": "Hair care",
+                "subcategoriesRu": ["temp","temp","temp","temp"]
+            },
+            {
+                "nameRu": "Средства для загара",
+                "nameEn": "Tanning stuff",
+                "subcategoriesRu": ["temp"]
+            },
+            {
+                "nameRu": "Средства для бритья",
+                "nameEn": "Shaving products",
+                "subcategoriesRu":["temp","temp","temp"]
+            },
+            {
+                "nameRu": "Подарочные наборы",
+                "nameEn": "Gift sets",
+                "subcategoriesRu":["temp"]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "nameRu":"Товары для детей и мам",
+        "nameEn":"Products for children and mothers",
+        "subcategories": [
+            {
+                "nameRu": "Уход за телом",
+                "nameEn": "Body care",
+                "subcategoriesRu": ["temp","temp","temp","temp","temp","temp","temp","temp"]
+            },
+            {
+                "nameRu": "Уход за руками",
+                "nameEn": "Hand care",
+                "subcategoriesRu": ["temp","temp","temp","temp","temp","temp","temp"]
+
+            },
+            {
+                "nameRu": "Уход за лицом",
+                "nameEn": "Face care",
+                "subcategoriesRu": ["temp","temp","temp","temp","temp","temp","temp","temp"]
+            },
+            {
+                "nameRu": "Уход за волосами",
+                "nameEn": "Hair care",
+                "subcategoriesRu": ["temp","temp","temp","temp"]
+            },
+            {
+                "nameRu": "Средства для загара",
+                "nameEn": "Tanning stuff",
+                "subcategoriesRu": ["temp"]
+            },
+            {
+                "nameRu": "Средства для бритья",
+                "nameEn": "Shaving products",
+                "subcategoriesRu":["temp","temp","temp"]
+            },
+            {
+                "nameRu": "Подарочные наборы",
+                "nameEn": "Gift sets",
+                "subcategoriesRu":["temp"]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "nameRu":"Посуда",
+        "nameEn":"TableWare",
+        "subcategories": [
+            {
+                "nameRu": "Уход за телом",
+                "nameEn": "Body care",
+                "subcategoriesRu": ["temp","temp","temp","temp","temp","temp","temp","temp"]
+            },
+            {
+                "nameRu": "Уход за руками",
+                "nameEn": "Hand care",
+                "subcategoriesRu": ["temp","temp","temp","temp","temp","temp","temp"]
+
+            },
+            {
+                "nameRu": "Уход за лицом",
+                "nameEn": "Face care",
+                "subcategoriesRu": ["temp","temp","temp","temp","temp","temp","temp","temp"]
+            },
+            {
+                "nameRu": "Уход за волосами",
+                "nameEn": "Hair care",
+                "subcategoriesRu": ["temp","temp","temp","temp"]
+            },
+            {
+                "nameRu": "Средства для загара",
+                "nameEn": "Tanning stuff",
+                "subcategoriesRu": ["temp"]
+            },
+            {
+                "nameRu": "Средства для бритья",
+                "nameEn": "Shaving products",
+                "subcategoriesRu":["temp","temp","temp"]
+            },
+            {
+                "nameRu": "Подарочные наборы",
+                "nameEn": "Gift sets",
+                "subcategoriesRu":["temp"]
+            }
+        ]
+    }
+]

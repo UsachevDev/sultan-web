@@ -1,8 +1,9 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
+import { useBasket } from "../../core/context/BasketContext";
 import LocalSwitcher from '../LocalSwitcher';
 import LogoButton from './logo-button';
 import ButtonUI from '../UI/ButtonUI/ButtonUI';
@@ -20,6 +21,8 @@ const Header = () => {
 
   const [isMobile, setIsMobile] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+
+  const { totalCost, totalQuantity } = useBasket();
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -111,7 +114,7 @@ const Header = () => {
               />
             </div>
             <div className={styles.mobileLogo}><LogoButton /></div>
-            <div className={styles.mobileCart}><Cart /></div>
+            <div className={styles.mobileCart}><Cart itemCount={totalQuantity} totalAmount={totalCost}/></div>
           </>
         )}
       </div>
@@ -123,7 +126,7 @@ const Header = () => {
               <div className={styles.block3}>
                 <div className={styles.logo}><LogoButton /></div>
                 <div className={styles.button1}>
-                  <Link href="/catalog" className={styles.linkStyle}>
+                  <Link href="/products" className={styles.linkStyle}>
                     <ButtonUI 
                       label={t('button-1')}
                       icon='catalog'
@@ -132,7 +135,7 @@ const Header = () => {
                   </Link>
                 </div>
                 <div className={styles.tabletButton1}>
-                  <Link href="/catalog">
+                  <Link href="/products">
                     <MobileButton 
                       icon={<Image 
                           src="/icon/header-catalog-icon.svg" 
@@ -198,14 +201,14 @@ const Header = () => {
                   customStyle={{width: '39px', height: '39px'}}
                 />
               </div>
-              <div className={styles.cart}><Cart /></div>
+              <div className={styles.cart}><Cart itemCount={totalQuantity} totalAmount={totalCost} /></div>
             </div>
             </div>
           </>
         )}
         {isMobile && (
           <>
-            <Link href="/catalog" className={styles.mobileCatalog}>
+            <Link href="/products" className={styles.mobileCatalog}>
               <Image 
                 src="/icon/header-mobile-catalog-icon.svg" 
                 height={15} 

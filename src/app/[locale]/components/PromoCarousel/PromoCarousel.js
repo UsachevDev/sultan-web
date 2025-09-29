@@ -74,9 +74,6 @@ const PromoCarousel = () => {
                                     <ButtonUI
                                         label={t(slide.promoButton)}
                                         size="lg"
-                                        onClick={() =>
-                                            console.log("Кнопка нажата!")
-                                        }
                                     />
                                 )}
                             </div>

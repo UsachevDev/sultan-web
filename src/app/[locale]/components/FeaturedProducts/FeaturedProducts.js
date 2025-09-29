@@ -10,7 +10,7 @@ export default function FeaturedProducts() {
         <div className="featured-products">
             <div>
                 <h2 className="featured-products-head"><span>{t("h1.firstPart")}</span> {t("h1.secondPart")}</h2>
-                <Cards info="popular" />
+                <Cards />
             </div>
         </div>
     )
