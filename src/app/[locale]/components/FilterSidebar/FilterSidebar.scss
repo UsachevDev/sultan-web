@@ -1,12 +1,8 @@
 @import "vars";
 @import "mixins";
 
-/* локальная переменная для капсул цены */
-$price-chip-gradient: linear-gradient(90deg, #FFC650 0%, #FECA6E 100%);
-$price-chip-stroke: #BDC7D1;
-
 .filter {
-    width: 238px; // как в макете
+    width: 238px;
 
     &-section {
         margin-bottom: 20px;
@@ -67,7 +63,6 @@ $price-chip-stroke: #BDC7D1;
     }
 }
 
-/* Разделитель между группами — пунктир */
 .filter-divider {
     margin: 16px 0 20px;
     height: 0;
@@ -75,7 +70,6 @@ $price-chip-stroke: #BDC7D1;
     border-top: 1px dashed $border-color;
 }
 
-/* ====== ЦЕНА ====== */
 .price {
     &-title {
         color: $text-color;
@@ -92,7 +86,7 @@ $price-chip-stroke: #BDC7D1;
         }
     }
 
-    /* Контейнер с двумя капсулами — ширина по макету 232, gap 10, отступ сверху 16 */
+
     &-inputs {
         display: flex;
         align-items: center;
@@ -102,28 +96,22 @@ $price-chip-stroke: #BDC7D1;
     }
 }
 
-/* Сама «капсула» цены */
 #price-min,
 #price-max {
-    /* размеры макета */
     max-width: 100px;
-    /* левую делаем не уже 100 */
     height: 23px;
     border-radius: 1000px;
     padding: 0;
 
-    /* визуал */
     background: $quantity-button;
     border: 0;
 
-    /* типографика как в фигме: Inter 12 / 300, центруем цифры */
     color: $second-color;
     font-size: 12px;
     font-weight: 300;
     line-height: 15px;
     text-align: center;
 
-    /* убираем стрелки number */
     -moz-appearance: textfield;
     appearance: textfield;
 
@@ -141,7 +129,6 @@ $price-chip-stroke: #BDC7D1;
     margin: 0;
 }
 
-/* дефис между капсулами */
 .price-dash {
     color: $second-color;
     font-size: 14px;
@@ -149,7 +136,6 @@ $price-chip-stroke: #BDC7D1;
     line-height: 18px;
 }
 
-/* ====== Поиск ====== */
 .search-box {
     position: relative;
     display: flex;
@@ -158,10 +144,9 @@ $price-chip-stroke: #BDC7D1;
     border: 0;
     border-radius: 36px;
     padding: 10px 20px;
-    /* симметричнее */
+
     margin-bottom: 15px;
 
-    /* оставляем место под плавающую кнопку справа */
     input {
         flex: 1 1 auto;
         height: 36px;
@@ -171,20 +156,16 @@ $price-chip-stroke: #BDC7D1;
         color: $text-color;
         padding-right: 56px;
 
-        /* важно: чтобы текст не залезал под кнопку */
         &::placeholder {
             color: $text-color-search;
         }
     }
 
-    /* Плавающая круглая кнопка поиска */
     .search-button {
         position: absolute;
         top: 50%;
         right: 10px;
-        /* выносим за границу «капсулы» как в макете */
         transform: translateY(-50%);
-        /* только вертикальное центрирование */
         width: 40px;
         height: 40px;
         border: none;
@@ -193,7 +174,6 @@ $price-chip-stroke: #BDC7D1;
         background-color: $primary-color;
         color: $text-color-light;
 
-        /* без прыжков на hover; можно лёгкий эффект */
         transition: filter .15s ease;
 
         &:hover {
@@ -206,7 +186,6 @@ $price-chip-stroke: #BDC7D1;
     }
 }
 
-/* Кнопки снизу */
 .filter-apply {
     min-width: 169px;
     height: 59px;
@@ -224,7 +203,6 @@ $price-chip-stroke: #BDC7D1;
     justify-content: center;
 }
 
-/* Показать все / Скрыть */
 .show-more {
     display: inline-flex;
     align-items: center;

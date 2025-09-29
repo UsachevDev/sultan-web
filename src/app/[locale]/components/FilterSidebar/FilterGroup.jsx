@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from "react";
 
-// Показываем сначала 3 пункта — чтобы при 4-х появилась кнопка
 const VISIBLE_INIT = 3;
 
 const FilterGroup = ({ titleKey, items, selected, setSelected, t, countsMap = {} }) => {

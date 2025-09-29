@@ -55,12 +55,10 @@ export default function Product({ params }) {
         fetchData();
     }, []);
 
-    // нормализация
     const getManufacturer = (p) => p?.manufacturer ?? "";
     const getBrand = (p) => p?.brand?.name ?? "";
     const getPrice = (p) => (typeof p?.price === "number" ? p.price : null);
 
-    // применяем фильтры
     const filtered = useMemo(() => {
         const min = criteria.priceMin ? Number(criteria.priceMin) : -Infinity;
         const max = criteria.priceMax ? Number(criteria.priceMax) : Infinity;
@@ -80,7 +78,6 @@ export default function Product({ params }) {
         });
     }, [data, criteria]);
 
-    // при смене критериев — на первую страницу
     useEffect(() => {
         setCurrentPage(1);
     }, [criteria]);
