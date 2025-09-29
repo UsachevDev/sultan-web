@@ -166,6 +166,7 @@
         "manufacturer": "Manufacturer",
         "brand": "Brand",
         "showAll": "Show all",
+        "showLess": "Hide",
         "search": "Search...",
         "show": "Show",
         "reset": "Reset"
