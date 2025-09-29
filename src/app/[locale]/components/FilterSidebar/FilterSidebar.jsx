@@ -2,63 +2,46 @@
 
 import { useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
-import products from "@/../public/data/products.json";
 import FilterGroup from "./FilterGroup";
 import ButtonUI from "components/UI/ButtonUI/ButtonUI";
 import "./FilterSidebar.scss";
 
-const FilterSidebar = ({ onFilterChange }) => {
+/**
+ * props:
+ * - products: any[] (данные каталога)
+ * - onFilterChange?: (criteria) => void
+ * - className?: string
+ */
+const FilterSidebar = ({ products = [], onFilterChange, className = "" }) => {
     const t = useTranslations("FilterSidebar");
 
-    // состояние фильтров
     const [priceMin, setPriceMin] = useState("");
     const [priceMax, setPriceMax] = useState("");
     const [selectedManufacturers, setSelectedManufacturers] = useState([]);
     const [selectedBrands, setSelectedBrands] = useState([]);
-    const [manufacturerQuery, setManufacturerQuery] = useState("");
-    const [brandQuery, setBrandQuery] = useState("");
 
-    // уникальные производители и бренды
-    const manufacturers = useMemo(
-        () =>
-            Array.from(
-                new Set(
-                    products
-                        .map((p) => p.manufacturer)
-                        .filter((m) => m)
-                )
-            ),
-        []
+    const getManufacturer = (p) => p?.manufacturer ?? p?.producer ?? "";
+    const getBrand = (p) => p?.brand?.name ?? p?.brandName ?? "";
+
+    const countBy = (arr) =>
+        arr.reduce((acc, k) => {
+            const key = String(k || "").trim();
+            if (!key) return acc;
+            acc[key] = (acc[key] || 0) + 1;
+            return acc;
+        }, {});
+
+    const manufacturerCounts = useMemo(
+        () => countBy(products.map(getManufacturer)),
+        [products]
+    );
+    const brandCounts = useMemo(
+        () => countBy(products.map(getBrand)),
+        [products]
     );
 
-    const brands = useMemo(
-        () =>
-            Array.from(
-                new Set(
-                    products
-                        .map((p) => p.brand?.name)
-                        .filter((b) => b)
-                )
-            ),
-        []
-    );
-
-    // фильтрация списков по поиску
-    const filteredManufacturers = useMemo(
-        () =>
-            manufacturers.filter((m) =>
-                m.toLowerCase().includes(manufacturerQuery.toLowerCase())
-            ),
-        [manufacturers, manufacturerQuery]
-    );
-
-    const filteredBrands = useMemo(
-        () =>
-            brands.filter((b) =>
-                b.toLowerCase().includes(brandQuery.toLowerCase())
-            ),
-        [brands, brandQuery]
-    );
+    const manufacturers = useMemo(() => Object.keys(manufacturerCounts), [manufacturerCounts]);
+    const brands = useMemo(() => Object.keys(brandCounts), [brandCounts]);
 
     const applyFilters = () => {
         onFilterChange?.({
@@ -74,8 +57,6 @@ const FilterSidebar = ({ onFilterChange }) => {
         setPriceMax("");
         setSelectedManufacturers([]);
         setSelectedBrands([]);
-        setManufacturerQuery("");
-        setBrandQuery("");
         onFilterChange?.({
             manufacturers: [],
             brands: [],
@@ -85,13 +66,15 @@ const FilterSidebar = ({ onFilterChange }) => {
     };
 
     return (
-        <div className="filter">
+        <div className={`filter ${className}`}>
             <section className="filter-section">
                 <h2 className="filter-title">{t("title")}</h2>
+
                 <div className="price-filter">
-                    <label htmlFor="price-min">
-                        <span className="price-title-span">{t("price")}</span> ₸
+                    <label htmlFor="price-min" className="price-title">
+                        <span className="price-title-span">{t("price")}</span> ₽
                     </label>
+
                     <div className="price-inputs">
                         <input
                             type="number"
@@ -101,7 +84,7 @@ const FilterSidebar = ({ onFilterChange }) => {
                             value={priceMin}
                             onChange={(e) => setPriceMin(e.target.value)}
                         />
-                        <span>-</span>
+                        <span className="price-dash">-</span>
                         <input
                             type="number"
                             id="price-max"
@@ -116,32 +99,36 @@ const FilterSidebar = ({ onFilterChange }) => {
 
             <FilterGroup
                 titleKey="manufacturer"
-                items={filteredManufacturers}
+                items={manufacturers}
+                countsMap={manufacturerCounts}
                 selected={selectedManufacturers}
                 setSelected={setSelectedManufacturers}
                 t={t}
             />
 
+            <hr className="filter-divider" />
+
             <FilterGroup
                 titleKey="brand"
-                items={filteredBrands}
+                items={brands}
+                countsMap={brandCounts}
                 selected={selectedBrands}
                 setSelected={setSelectedBrands}
                 t={t}
             />
 
             <div className="filter-actions">
-                <ButtonUI className="filter-apply" size="sm" onClick={applyFilters}>
+                <ButtonUI className="filter-apply" size="lg" onClick={applyFilters}>
                     {t("show")}
                 </ButtonUI>
+
                 <ButtonUI
-                    className="filter-reset"
-                    variant="secondary"
-                    size="sm"
+                    className="filter-trash"
+                    size="lg"
+                    icon="delete"
                     onClick={resetFilters}
-                >
-                    {t("reset")}
-                </ButtonUI>
+                    aria-label={t("reset")}
+                />
             </div>
         </div>
     );
